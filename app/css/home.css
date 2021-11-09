@@ -1,6 +1,9 @@
 :root {
   --secondary-color: #209CEE;
-  --secondary-color-font-color: #FFFFFF;
+  /**
+    * Set to #000 for WCAG AAA rating
+    */
+  --secondary-color-font-color: #000000;
   --base-size: 0.5rem;
 }
 
