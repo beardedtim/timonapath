@@ -5,6 +5,11 @@
     */
   --secondary-color-font-color: #000000;
   --base-size: 0.5rem;
+  --link-color: #004299;
+}
+
+a {
+  color: var(--link-color);
 }
 
 .profile-body {
@@ -24,7 +29,21 @@
   padding: calc(2 * var(--base-size));
 }
 
-.profile header h2 {
+.profile header h3 {
   margin: 0;
   padding: 0;
+}
+
+.meta-header {
+  margin-bottom: 0;
+  text-decoration: underline;
+  padding-bottom: calc(2 * var(--base-size));
+}
+
+.meta-field {
+  font-size: 2.4rem;
+  line-height: 1.5;
+  font-weight: 300;
+  margin-bottom: 0;
+  padding-bottom: var(--base-size);
 }
