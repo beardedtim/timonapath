@@ -1,3 +1,9 @@
 body > main {
   padding: 1.0rem;
 }
+
+.logo {
+  width: 245px;
+  height: 245px;
+  border-radius: 50%;
+}
