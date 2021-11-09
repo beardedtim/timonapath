@@ -1,9 +1,27 @@
-body > main {
-  padding: 1.0rem;
+:root {
+  --secondary-color: #209CEE;
+  --secondary-color-font-color: #FFFFFF;
+  --base-size: 0.5rem;
+}
+
+.profile-body {
+  width: 100%;
+  padding: 1.5rem;
 }
 
 .logo {
   width: 245px;
   height: 245px;
   border-radius: 50%;
+}
+
+.profile header {
+  background: var(--secondary-color);
+  color: var(--secondary-color-font-color);
+  padding: calc(2 * var(--base-size));
+}
+
+.profile header h2 {
+  margin: 0;
+  padding: 0;
 }
