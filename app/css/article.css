@@ -1,0 +1,44 @@
+:root {
+  --secondary-color: #209CEE;
+  /**
+    * Set to #000 for WCAG AAA rating
+    */
+  --secondary-color-font-color: #000000;
+  --base-size: 0.5rem;
+  --link-color: #004299;
+}
+
+a {
+  color: var(--link-color);
+}
+
+article {
+  padding: calc(2 * var(--base-size));
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+article p {
+  max-width: 1000px;
+}
+
+blockquote {
+  background:burlywood;
+  padding: calc(2 * var(--base-size));
+  font-weight: 700;
+  font-style: italic;
+}
+
+.code {
+  background: blanchedalmond;
+  padding: 0 var(--base-size);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+section {
+  margin-bottom: calc(4 * var(--base-size));
+}
+
+section h3 {
+  border-bottom: 1px solid rgba(33, 33, 33, 0.25);
+}
