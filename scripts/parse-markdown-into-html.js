@@ -40,6 +40,7 @@ const main = async () => {
     split.pop()
     const [type] = split
     const folderPath = split.join('/')
+  
     try {
       await fs.mkdir(`${outputDir}/${folderPath}`, { recursive: true });
     } catch (e) {

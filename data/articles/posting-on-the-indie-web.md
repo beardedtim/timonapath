@@ -3,6 +3,7 @@ title: Posting on the IndieWeb
 summary: This post goes over what the IndieWeb is, why I am infatuated with it, and how you can join us.
 created_timestamp: 2021-11-11T19:14:02
 updated_timestamp: 2021-11-11T19:14:02
+url: articles/posting-on-the-indie-web
 ---
 
 <section>
