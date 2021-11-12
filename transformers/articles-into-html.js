@@ -1,4 +1,4 @@
-module.exports = (snippets) => `
+module.exports = (articles) => `
 <!DOCTYPE html>
 <html lang="en" xmlns:og="http://ogp.me/ns#">
 
@@ -9,7 +9,7 @@ module.exports = (snippets) => `
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A list of Snippets from Tim Roberts">
+  <meta name="description" content="A list of Articles from Tim Roberts">
   <meta name="author" content="Tim Roberts">
 
   <!--
@@ -51,7 +51,7 @@ module.exports = (snippets) => `
   <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/css/skeleton.css">
   <link rel="stylesheet" href="/css/home.css" />
-  <title>Snippets | Tim on a Path</title>
+  <title>Articles | Tim on a Path</title>
 
 </head>
 
@@ -59,13 +59,13 @@ module.exports = (snippets) => `
   <main>
     <section class="links">
       <header class="section-header">
-        <h3>Snippets</h3>
+        <h3>Articles</h3>
       </header>
       <div class="links-body">
         <div>
           <ul class="h-feed">
             ${
-              snippets.map(({ url, meta }) => `
+              articles.map(({ url, meta }) => `
                 <li><a href="${url}">${meta.title}</a></li>
               `).join('\n')
             }

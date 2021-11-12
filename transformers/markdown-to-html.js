@@ -66,7 +66,7 @@ const template = (meta, data) => `
   <article class="h-entry">
     <header>
       <a href="https://timonapath.com/${meta.url}" class="u-url">
-        <h2 class="p-name">Readstreams in Node</h2>
+        <h2 class="p-name">${meta.title}</h2>
       </a>
       <p>Published by <a class="p-author h-card" href="https://timonapath.com">Tim Roberts</a>
         on <time class="dt-published" datetime="${meta.created_at}">${meta.created_at}</time></p>

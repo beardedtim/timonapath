@@ -3,6 +3,7 @@ const fs = require('fs/promises')
 const read = require('./get-files-of-dir-recursively')
 const transform = require('../transformers/markdown-to-html')
 const createSnippetPage = require('../transformers/snippets-into-html')
+const createArticlesPage = require('../transformers/articles-into-html')
 
 const rootDir = resolve(__dirname, '..')
 const dataDir = resolve(rootDir, 'data')
@@ -12,7 +13,8 @@ const inputFileType = 'md'
 const outputFileType = 'html'
 
 const landingPageTemplates = {
-  snippets: createSnippetPage
+  snippets: createSnippetPage,
+  articles: createArticlesPage
 }
 
 const main = async () => {
