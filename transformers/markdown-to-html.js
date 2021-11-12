@@ -86,7 +86,7 @@ const template = (meta, data) => `
 </body>
 </html>`
 
-module.exports = async (markdownPath, htmlPath) => {
+module.exports = async (markdownPath) => {
   const source = new MarkdownIt({
     html: true,
     typographer: true,
@@ -119,5 +119,8 @@ module.exports = async (markdownPath, htmlPath) => {
 
   const parsed = source.render(await fss.readFile(markdownPath, 'utf-8'))
 
-  await fss.writeFile(htmlPath, template(metadata, parsed))
+  return {
+    template: template(metadata, parsed),
+    metadata
+  }
 }

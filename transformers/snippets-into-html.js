@@ -1,4 +1,4 @@
-
+module.exports = (snippets) => `
 <!DOCTYPE html>
 <html lang="en" xmlns:og="http://ogp.me/ns#">
 
@@ -64,12 +64,11 @@
       <div class="links-body">
         <div>
           <ul class="h-feed">
-            
-                <li><a href="/snippets/node/create-async-iterator">Create Async Iterator</a></li>
-              
-
-                <li><a href="/snippets/node/readstream">Readable Streams in Node</a></li>
-              
+            ${
+              snippets.map(({ url, meta }) => `
+                <li><a href="${url}">${meta.title}</a></li>
+              `).join('\n')
+            }
           </ul>
         </div>
       </div>
@@ -81,3 +80,4 @@
 </body>
 
 </html>
+`

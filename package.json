@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "create::snippets": "node scripts/parse-snippets-into-html.js"
+    "create::md": "node scripts/parse-markdown-into-html.js"
   },
   "repository": {
     "type": "git",
