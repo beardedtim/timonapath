@@ -1,0 +1,19 @@
+:root {
+  --secondary-color: #209CEE;
+  /**
+    * Set to #000 for WCAG AAA rating
+    */
+  --secondary-color-font-color: #000000;
+  --base-size: 0.5rem;
+  --link-color: #004299;
+}
+
+a {
+  color: var(--link-color);
+}
+
+article {
+  padding: calc(2 * var(--base-size));
+  max-width: 1080px;
+  margin: 0 auto;
+}
