@@ -57,7 +57,7 @@
 
 </head>
 <!--
-  {"created_timestamp":"2021-11-13T15:58:55.270Z","updated_timestamp":"2021-11-13T18:29:26.565Z","url":"/docs/internal/create-new-type","title":"Create New Type","summary":"Doc on how to create a new type within the current system"}
+  {"created_timestamp":"2021-11-13T15:58:55.270Z","updated_timestamp":"2021-11-13T18:30:17.439Z","url":"/docs/internal/create-new-type","title":"Create New Type","summary":"Doc on how to create a new type within the current system"}
 -->
 <body>
   <article class="h-entry">
@@ -67,7 +67,7 @@
       </a>
       <p>Published by <a class="p-author h-card" href="https://timonapath.com">Tim Roberts</a>
         on <time class="dt-published" datetime="undefined">November 13th, 2021 at 10:58 AM</time>
-         |  <span>Updated on <time class="dt-updated" datetime="2021-11-13T18:29:26.565Z">November 13th, 2021 at 1:29 PM</time></span></p>
+         |  <span>Updated on <time class="dt-updated" datetime="2021-11-13T18:30:17.439Z">November 13th, 2021 at 1:30 PM</time></span></p>
               <p class="p-summary">Doc on how to create a new type within the current system</p>
               </header>
               <main class="e-content">
@@ -93,41 +93,40 @@ EOL</span>
 </code></pre>
 <h2>Step 2: Add New Type</h2>
 <h3>Step 2.1: Add new Type File</h3>
-<pre><code class="language-bash"><span class="hljs-built_in">cat</span> &gt;types/my-new-type &lt;&lt;<span class="hljs-string">EOL
-const path = require(&#x27;path&#x27;)
-const rootTemplate = require(&#x27;../transformers/type-into-list-html&#x27;)
-const leafTemplate = require(&#x27;../transformers/markdown-to-html&#x27;)
-const intoType = require(&#x27;../transformers/config-into-type&#x27;)
-/**
+<pre><code class="language-js"><span class="hljs-comment">// types/my-new-type.js</span>
+<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;path&#x27;</span>)
+<span class="hljs-keyword">const</span> rootTemplate = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;../transformers/type-into-list-html&#x27;</span>)
+<span class="hljs-keyword">const</span> leafTemplate = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;../transformers/markdown-to-html&#x27;</span>)
+<span class="hljs-keyword">const</span> intoType = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;../transformers/config-into-type&#x27;</span>)
+<span class="hljs-comment">/**
  * All actions and paths are based off the
  * top level folder path to make it easy to grok
- */
-const rootDir = path.resolve(__dirname, &#x27;..&#x27;)
+ */</span>
+<span class="hljs-keyword">const</span> rootDir = path.<span class="hljs-title function_">resolve</span>(__dirname, <span class="hljs-string">&#x27;..&#x27;</span>)
 
-/**
+<span class="hljs-comment">/**
  * Our specific Type has its own path as well
- */
-const typeFolder = path.resolve(rootDir, &#x27;data&#x27;, &#x27;my-new-type&#x27;)
+ */</span>
+<span class="hljs-keyword">const</span> typeFolder = path.<span class="hljs-title function_">resolve</span>(rootDir, <span class="hljs-string">&#x27;data&#x27;</span>, <span class="hljs-string">&#x27;my-new-type&#x27;</span>)
 
-/**
+<span class="hljs-comment">/**
  * The configuration of the Type that we are constructing
  * 
- * @prop {string} folder The path to the folder for this Type
- * @prop {string} rootPath The path that we want to be served under
- * @prop {{root: function(config): string, leaf: function(config): string }}
- */
-const config = {
-  folder: typeFolder,
-  rootPath: &#x27;/my-new-type&#x27;,
-  templates: {
-    root: rootTemplate, // Can be custom root template. used for list page
-    leaf: leafTemplate // can be custom leaf template. used for leaf page
+ * <span class="hljs-doctag">@prop</span> {<span class="hljs-type">string</span>} folder The path to the folder for this Type
+ * <span class="hljs-doctag">@prop</span> {<span class="hljs-type">string</span>} rootPath The path that we want to be served under
+ * <span class="hljs-doctag">@prop</span> {<span class="hljs-type">{root: function(config): string, leaf: function(config): string </span>}}
+ */</span>
+<span class="hljs-keyword">const</span> config = {
+  <span class="hljs-attr">folder</span>: typeFolder,
+  <span class="hljs-attr">rootPath</span>: <span class="hljs-string">&#x27;/my-new-type&#x27;</span>,
+  <span class="hljs-attr">templates</span>: {
+    <span class="hljs-attr">root</span>: rootTemplate, <span class="hljs-comment">// Can be custom root template. used for list page</span>
+    <span class="hljs-attr">leaf</span>: leafTemplate <span class="hljs-comment">// can be custom leaf template. used for leaf page</span>
   },
-  name: &#x27;My New Type&#x27;
+  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;My New Type&#x27;</span>
 }
 
-module.exports = intoType(config)
-EOL</span>
+<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = <span class="hljs-title function_">intoType</span>(config)
 </code></pre>
 <h3>Step 2.2: Update Type Map</h3>
 <pre><code class="language-js"><span class="hljs-comment">// types/index.js</span>
