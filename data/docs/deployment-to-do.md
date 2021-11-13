@@ -1,7 +1,7 @@
 ---
 title: Deploy Website
 summary: How we currently update the site
-url: docs/internal/deploy-this-website
+url: /docs/internal/deploy-this-website
 ---
 
 # How to Deploy this Website
