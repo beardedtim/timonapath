@@ -1,4 +1,7 @@
+const markdownToHTML = require('./markdown-to-html')
+const { format: formatDate } = require("date-fns");
 
+const template = (meta, data) => `
 <!DOCTYPE html>
 <html lang="en" xmlns:og="http://ogp.me/ns#">
 
@@ -9,7 +12,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="In Reply To https://timonapath.com/">
+  <meta name="description" content="In Reply To ${meta.target}">
   <meta name="author" content="Tim Roberts">
 
   <!--
@@ -22,9 +25,9 @@
   <!--
     Facebook OpenGraph Cards
   -->
-  <meta property="og:url" content="https://timonapath.com//replies/replying-to-myself"/>
-  <meta property="og:title" content="Replying to Myself | Tim on a Path" />
-  <meta property="og:description" content="In Reply To https://timonapath.com/" />
+  <meta property="og:url" content="https://timonapath.com/${meta.url}"/>
+  <meta property="og:title" content="${meta.title} | Tim on a Path" />
+  <meta property="og:description" content="In Reply To ${meta.target}" />
   <meta property="og:site_name" content="Tim on a Path" />
 
   <!--
@@ -51,27 +54,28 @@
   <link rel="stylesheet" href="/css/leaf.css" />
   <link rel="stylesheet"
       href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
-  <title>Replying to Myself | Tim on a Path</title>
+  <title>${meta.title} | Tim on a Path</title>
 
 </head>
 
 <body>
   <article class="h-entry">
     <header>
-      <a href="https://timonapath.com/replies/replying-to-myself" class="u-url">
-        <h2 class="p-name">Replying to Myself</h2>
+      <a href="https://timonapath.com${meta.url}" class="u-url">
+        <h2 class="p-name">${meta.title}</h2>
       </a>
       <p>Published by <a class="p-author h-card u-url" href="https://timonapath.com">Tim Roberts</a>
-        on <time class="dt-published" datetime="undefined">November 13th, 2021 at 2:55 PM</time>
+        on <time class="dt-published" datetime="${
+          meta.created_at
+        }">${formatDate(
+  new Date(meta.created_timestamp),
+  "MMMM do, y"
+)} at ${formatDate(new Date(meta.created_timestamp), "h:mm a")}</time>
       </p>
       </header>
       <main class="e-content">
-      Repling to <a class="u-in-reply-to" href="https://timonapath.com/" target="_blank">https://timonapath.com/</a>
-        
-<p>This reply is in reply to my homepage. This will prove that I can
-handle Webmentions and will serve as a reminder in case I ever try
-to re-send Webmentions in bulk.</p>
-
+      Repling to <a class="u-in-reply-to" href="${meta.target}" target="_blank">${meta.target}</a>
+        ${data}
       </main>
     <footer>
       <p>
@@ -82,4 +86,6 @@ to re-send Webmentions in bulk.</p>
   </article>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
 </body>
-</html>
+</html>`;
+
+module.exports = (markdowPath, rootConfig) => markdownToHTML(markdowPath, rootConfig, template)

@@ -3,8 +3,8 @@ const fss = require("fs/promises");
 const hljs = require("highlight.js");
 const meta = require("markdown-it-front-matter");
 const { format: formatDate } = require("date-fns");
-
-const template = (meta, data) => `
+const yaml = require('yaml')
+const defaultTemplate = (meta, data) => `
 <!DOCTYPE html>
 <html lang="en" xmlns:og="http://ogp.me/ns#">
 
@@ -60,9 +60,7 @@ const template = (meta, data) => `
   <title>${meta.title} | Tim on a Path</title>
 
 </head>
-<!--
-  ${JSON.stringify(meta)}
--->
+
 <body>
   <article class="h-entry">
     <header>
@@ -115,7 +113,7 @@ const createInitialMetaData = async (markdowPath, rootConfig) => {
   };
 };
 
-module.exports = async (markdownPath, rootConfig) => {
+module.exports = async (markdownPath, rootConfig, template = defaultTemplate) => {
   console.log("Markdown Path: ", markdownPath);
   const source = new MarkdownIt({
     html: true,
@@ -136,17 +134,13 @@ module.exports = async (markdownPath, rootConfig) => {
     },
   });
 
-  const metadata = await createInitialMetaData(markdownPath, rootConfig);
+  let metadata = await createInitialMetaData(markdownPath, rootConfig);
 
   source.use(meta, function (str) {
-    const lines = str.split("\n");
-    const groups = lines.map((line) =>
-      line.split(":").map((str) => str.trim())
-    );
+    const parsed = yaml.parse(str)
 
-    for (const [key, value] of groups) {
-      metadata[key] = value;
-    }
+    metadata = Object.assign(metadata, parsed)
+    console.log(metadata)
   });
 
   console.log(metadata);

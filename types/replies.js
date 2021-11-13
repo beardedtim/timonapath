@@ -1,6 +1,6 @@
 const path = require('path')
 const rootTemplate = require('../transformers/type-into-list-html')
-const leafTemplate = require('../transformers/markdown-to-html')
+const leafTemplate = require('../transformers/replies-to-html')
 const intoType = require('../transformers/config-into-type')
 
 /**
