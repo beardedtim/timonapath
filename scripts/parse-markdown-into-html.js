@@ -1,9 +1,12 @@
-const { resolve } = require("path");
+const { resolve, extname } = require("path");
 const fs = require("fs/promises");
 const read = require("./get-files-of-dir-recursively");
-const transform = require("../transformers/markdown-to-html");
-const createSnippetPage = require("../transformers/snippets-into-html");
-const createArticlesPage = require("../transformers/articles-into-html");
+const trace = require("../utils/trace");
+
+const createHomePage = require("../transformers/homepage-to-html");
+
+const Types = require("../types");
+const Case = require("case");
 
 const rootDir = resolve(__dirname, "..");
 const dataDir = resolve(rootDir, "data");
@@ -12,70 +15,167 @@ const outputDir = resolve(rootDir, "app");
 const inputFileType = "md";
 const outputFileType = "html";
 
-const landingPageTemplates = {
-  snippets: createSnippetPage,
-  articles: createArticlesPage,
-};
+const findType = trace((leafPath) => {
+  console.log("Leaf: ", leafPath);
 
-const main = async () => {
-  const iterator = await read(dataDir, inputFileType);
-  const types = {};
-
-  for await (const str of iterator) {
-    // slice 1 because it starts with /
-    const inputPath = str.replace(rootDir, "").replace("data", "").slice(1);
-    // slice 0 -input.length because we wnt to remove the file type
-    const outputPath =
-      outputDir + inputPath.slice(0, -inputFileType.length) + outputFileType;
-    // slice 0 -output.length - 1 because we want to not have the file extension
-    const url = outputPath
-      .replace(outputDir, "")
-      .slice(0, -outputFileType.length - 1);
-
-    const split = inputPath.split("/");
-    // _ because the first value is empty due to /
-    // starting the string
-    split.shift()
-    // because we don't care about the last value
-    split.pop()
-    const [type] = split
-    const folderPath = split.join('/')
-  
-    try {
-      await fs.mkdir(`${outputDir}/${folderPath}`, { recursive: true });
-    } catch (e) {
-      console.error(e);
-    }
-
-    const { template, metadata } = await transform(str);
-    await fs.writeFile(outputPath, template);
-
-
-    if (type in types) {
-      types[type].push({ url, meta: metadata });
-    } else {
-      types[type] = [{ url, meta: metadata }];
+  for (const Type of Object.values(Types)) {
+    if (leafPath.indexOf(Type.folder) === 0) {
+      return Type;
     }
   }
+}, "Finding Best Type for Leaf");
 
-  console.log("generated all needed files. Generating landing/listing pages");
+const parseLeafAsType = trace(async (type, leafPath) => {
+  console.log("Type: ", type);
+  console.log("leafPath: ", leafPath);
+  const leafRelativePath = leafPath.replace(type.folder, "");
 
-  for (const [type, list] of Object.entries(types)) {
-    if (landingPageTemplates[type]) {
-      await fs.writeFile(
-        `${rootDir}/app/${type}/index.html`,
-        landingPageTemplates[type](list)
-      );
-    } else {
-      console.warn(
-        "Cannot create list type for ",
-        type,
-        " as you never gave me a transformer"
-      );
-    }
+  const { template, metadata } = await type.templates.leaf(leafPath, {
+    url: `${type.rootPath}${leafRelativePath.slice(
+      0,
+      -extname(leafPath).length
+    )}`,
+  });
+
+  const { url } = metadata;
+
+  return {
+    template,
+    metadata,
+    filePath: `${outputDir}/${url}.${outputFileType}`,
+    url,
+  };
+}, "Parse Leaf at Type");
+
+const writeHomePage = trace(async (types) => {
+  console.log("Now going to generate the home page.");
+  console.log("This will be by taking in the types above");
+  console.log("and turning it into links for the homepage to display");
+
+  const homepage = createHomePage({
+    links: [...types.keys()].map((type) => ({
+      url: type.rootPath,
+      title: Case.sentence(type.name),
+    })),
+  });
+
+  await fs.writeFile(`${rootDir}/app/index.html`, homepage);
+}, "Write Home Page");
+
+const writeLeafPage = trace(async (page) => {
+  console.log(`Handling LeafPage: `, page.filePath);
+
+  try {
+    console.log("Ensuring path is made");
+    await fs.mkdir(`${page.filePath.split("/").slice(0, -1).join("/")}`, {
+      recursive: true,
+    });
+  } catch (e) {
+    console.error(e);
+    console.log(
+      "Error occured while trying to ensure path. Swallowing but may cause issues later. If this does, rethrow"
+    );
+  }
+
+  console.log("Writing to disk: ", page.filePath);
+
+  await fs.writeFile(page.filePath, page.template);
+
+  console.log("Written to disk: ", page.filePath);
+}, "Write Leaf Page");
+
+const writeListPage = trace(async (type, pages) => {
+  console.log("Writing List Page for: ", type.toString());
+  console.log("Writing List Page");
+
+  const pageList = [...pages.values()];
+
+  const html = type.templates.root({
+    links: pageList.map(({ url, metadata }) => ({
+      url,
+      title: metadata.title,
+    })),
+    type: type.name,
+  });
+
+  await fs.writeFile(`${rootDir}/app/${type.rootPath}/index.html`, html);
+}, " Write List Page");
+
+const writeType = trace(async (type, pages) => {
+  console.log(`Handling Type::${type.name}`);
+  console.log("Type has # Leaf Pages: ", pages.size);
+
+  for (const page of pages.values()) {
+    await writeLeafPage(page);
+  }
+
+  await writeListPage(type, pages);
+}, "Writing Type");
+
+const writePages = trace(async (types) => {
+  console.log("Iterating over every Type");
+
+  for (const [type, pages] of types.entries()) {
+    await writeType(type, pages);
   }
 
   console.log("generated all need listing pages.");
-};
+}, "Write Pages to Disk");
+
+const buildTypeMap = trace(async (iterator) => {
+  const types = new Map();
+  for await (const str of iterator) {
+    console.log("Leaf Path: ", str);
+    const innerType = await findType(str);
+
+    if (!innerType) {
+      console.warn(
+        "We did not have a type associated with this leaf path. Add a new value to `types/index.js` with a new Type and try this command again."
+      );
+      continue;
+    }
+
+    const page = await parseLeafAsType(innerType, str);
+
+    if (types.has(innerType)) {
+      types.set(innerType, types.get(innerType).add(page));
+    } else {
+      types.set(innerType, new Set([page]));
+    }
+  }
+
+  return types;
+}, "Build Type Map");
+
+const customPages = [
+  {
+    url: "/",
+    template: writeHomePage,
+  },
+];
+
+const writeCustomPages = trace(async (pages, types) => {
+  for (const page of pages) {
+    await page.template(types);
+  }
+}, "Write Custom Pages");
+
+const main = trace(async () => {
+  console.log("Hello, Tim! Let's build some HTML pages from Markdown!");
+  console.log(
+    "First, we are going to create an async iterator of all of the files that are in markdown"
+  );
+  const iterator = await read(dataDir, inputFileType);
+
+  console.log(
+    "Now we are going to translate that iterator into a Map<Type,Set<Page>>"
+  );
+  const seenTypes = await buildTypeMap(iterator);
+
+  console.log("And we are going to go write all of the Set<Page> to disk");
+  await writePages(seenTypes);
+
+  await writeCustomPages(customPages, seenTypes);
+}, "Parse Markdown Files into HTML");
 
 main();

@@ -1,9 +1,6 @@
 ---
 title: Readable Streams in Node
 summary: How to create and consume from a readstream
-create_timestamp: 2021-11-12T16:32:23.567Z
-update_timestamp: 2021-11-12T16:32:23.567Z
-url: snippets/node/readstream
 ---
 
 ```ts

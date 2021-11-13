@@ -1,4 +1,4 @@
-
+module.exports = ({ links }) => `
 <!DOCTYPE html>
 <html lang="en" xmlns:og="http://ogp.me/ns#">
 
@@ -100,15 +100,11 @@
       <div class="links-body">
         <div>
           <ul>
-            
-                <li><a href="/articles">Articles</a></li>
-              
-
-                <li><a href="/docs">Docs</a></li>
-              
-
-                <li><a href="/snippets">Snippets</a></li>
-              
+            ${
+              links.map(link => `
+                <li><a href="${link.url}">${link.title}</a></li>
+              `).join('\n')
+            }
           </ul>
         </div>
       </div>
@@ -120,3 +116,4 @@
 </body>
 
 </html>
+`

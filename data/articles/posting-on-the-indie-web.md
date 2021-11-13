@@ -1,13 +1,10 @@
 ---
 title: Posting on the IndieWeb
 summary: This post goes over what the IndieWeb is, why I am infatuated with it, and how you can join us.
-created_timestamp: 2021-11-11T19:14:02
-updated_timestamp: 2021-11-11T19:14:02
-url: articles/posting-on-the-indie-web
 ---
 
 <section>
-  <h3>What is the IndieWeb?</h3>
+  <h3>What is the IndieWeb? </h3>
   <p>
     I first saw the internet in the early to mid 90s. I sat down at my uncle's computer, clicked the AOL
     desktop icon, and heard the light screeching of the modem trying to connect to the system. I didn't know

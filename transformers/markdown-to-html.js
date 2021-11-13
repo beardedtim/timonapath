@@ -1,7 +1,8 @@
-const MarkdownIt = require('markdown-it')
-const fss = require('fs/promises')
-const hljs = require('highlight.js')
-const meta = require('markdown-it-front-matter');
+const MarkdownIt = require("markdown-it");
+const fss = require("fs/promises");
+const hljs = require("highlight.js");
+const meta = require("markdown-it-front-matter");
+const { format: formatDate } = require("date-fns");
 
 const template = (meta, data) => `
 <!DOCTYPE html>
@@ -61,20 +62,40 @@ const template = (meta, data) => `
   <title>${meta.title} | Tim on a Path</title>
 
 </head>
-
+<!--
+  ${JSON.stringify(meta)}
+-->
 <body>
   <article class="h-entry">
     <header>
-      <a href="https://timonapath.com/${meta.url}" class="u-url">
+      <a href="https://timonapath.com${meta.url}" class="u-url">
         <h2 class="p-name">${meta.title}</h2>
       </a>
       <p>Published by <a class="p-author h-card" href="https://timonapath.com">Tim Roberts</a>
-        on <time class="dt-published" datetime="${meta.created_at}">${meta.created_at}</time></p>
-      <p class="p-summary">${meta.summary}</p>
-    </header>
-    <main class="e-content">
-      ${data}
-    </main>
+        on <time class="dt-published" datetime="${
+          meta.created_at
+        }">${formatDate(
+  new Date(meta.created_timestamp),
+  "MMMM do, y"
+)} at ${formatDate(new Date(meta.created_timestamp), "h:mm a")}</time>
+        ${
+          meta.updated_timestamp > meta.created_timestamp
+            ? ` |  <span>Updated on <time class="dt-updated" datetime="${
+            meta.updated_timestamp
+          }">${formatDate(
+                new Date(meta.updated_timestamp),
+                "MMMM do, y"
+              )} at ${formatDate(
+                new Date(meta.updated_timestamp),
+                "h:mm a"
+              )}</time></span>`
+            : ""
+        }</p>
+              <p class="p-summary">${meta.summary}</p>
+              </header>
+              <main class="e-content">
+              ${data}
+              </main>
     <footer>
       <p>
         Did you spot anything wrong? Do you disagree vehemently? Post on your own site, mark it up as a <a href="https://indieweb.org/reply" target="_blank">
@@ -84,43 +105,63 @@ const template = (meta, data) => `
   </article>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
 </body>
-</html>`
+</html>`;
 
-module.exports = async (markdownPath) => {
+const createInitialMetaData = async (markdowPath, rootConfig) => {
+  const stats = await fss.stat(markdowPath);
+
+  return {
+    created_timestamp: stats.birthtime.toISOString(),
+    updated_timestamp: stats.mtime.toISOString(),
+    url: rootConfig.url
+  };
+};
+
+module.exports = async (markdownPath, rootConfig) => {
+  console.log("Markdown Path: ", markdownPath);
   const source = new MarkdownIt({
     html: true,
     typographer: true,
-    langPrefix: 'language-',
+    langPrefix: "language-",
     highlight: function (str, lang) {
       if (lang && hljs.getLanguage(lang)) {
         try {
           return hljs.highlight(lang, str).value;
         } catch (err) {}
       }
-   
+
       try {
         return hljs.highlightAuto(str).value;
       } catch (err) {}
-   
-      return ''; // use external default escaping
-    }
-  })
-  
-  const metadata = {}
 
-  source.use(meta, function(str) {
-    const lines = str.split('\n')
-    const groups = lines.map(line => line.split(':').map(str => str.trim()))
+      return ""; // use external default escaping
+    },
+  });
+
+  const metadata = await createInitialMetaData(markdownPath, rootConfig);
+
+  source.use(meta, function (str) {
+    const lines = str.split("\n");
+    const groups = lines.map((line) =>
+      line.split(":").map((str) => str.trim())
+    );
 
     for (const [key, value] of groups) {
-      metadata[key] = value
+      metadata[key] = value;
     }
-  })
+  });
 
-  const parsed = source.render(await fss.readFile(markdownPath, 'utf-8'))
+  console.log(metadata);
+
+  const parsed = source.render(await fss.readFile(markdownPath, "utf-8"));
+
+  console.log(metadata);
+
+  metadata.url = metadata.url ?? pathURL
+
 
   return {
     template: template(metadata, parsed),
-    metadata
-  }
-}
+    metadata,
+  };
+};
