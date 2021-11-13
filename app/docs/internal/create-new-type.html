@@ -38,7 +38,13 @@
   <link href="mailto:timroberts@fastmail.org" rel="me" />
   <link href="https://github.com/beardedtim" rel="me" />
   <link href="https://indieauth.com/auth" rel="authorization_endpoint" />
+  <link rel="openid.delegate" href="https://timonapath.com/" />
+  <link rel="openid.server" href="https://openid.indieauth.com/openid" />
 
+  <!--
+    Webmentions
+  -->
+  <link href="https://timonapath.com/api/webmentions" rel="webmentions" />
   <!--
     Fonts
   -->
@@ -135,6 +141,12 @@ EOL</span>
 </code></pre>
 
               </main>
+    <aside>
+        <h3>Webmentions on this page</h3>
+        <div id="webmentions">
+          Loading...
+        </div>
+    </aside>
     <footer>
       <p>
         Did you spot anything wrong? Do you disagree vehemently? Post on your own site, mark it up as a <a href="https://indieweb.org/reply" target="_blank">
@@ -143,5 +155,20 @@ EOL</span>
     </footer>
   </article>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+  <script>
+    window.addEventListener('load', async () => {
+      const mentionsHTMLContainer = document.getElementById('webmentions')
+      const mentionHTML = await fetch('/api/webmentions?path=/docs/internal/create-new-type').then(x => {
+        if (x.status < 300) {
+          return x.text()
+        }
+
+        return '<i>None Available. Send me one?</i>'
+      })
+
+      mentionsHTMLContainer.innerHTML = mentionHTML
+      console.log('Updated webmentions')
+    })
+  </script>
 </body>
 </html>

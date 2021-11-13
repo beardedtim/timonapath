@@ -4,6 +4,22 @@ services:
     build:
       context: .
     ports:
-      - "80:80"
+      - "8080:80"
     volumes:
       - "./app/:/var/www/html/"
+  api:
+    restart: always
+    build:
+      context: .
+      dockerfile: Server.Dockerfile
+    command: yarn nodemon index.js
+    volumes:
+      - "./server/:/app/"
+      - "./artifacts/:/app/artifacts/"
+
+  database:
+    image: postgres
+    environment:
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: timonapath

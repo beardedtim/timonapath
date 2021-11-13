@@ -3,7 +3,9 @@ const fss = require("fs/promises");
 const hljs = require("highlight.js");
 const meta = require("markdown-it-front-matter");
 const { format: formatDate } = require("date-fns");
-const yaml = require('yaml')
+
+const yaml = require('yaml');
+
 const defaultTemplate = (meta, data) => `
 <!DOCTYPE html>
 <html lang="en" xmlns:og="http://ogp.me/ns#">
@@ -44,7 +46,13 @@ const defaultTemplate = (meta, data) => `
   <link href="mailto:timroberts@fastmail.org" rel="me" />
   <link href="https://github.com/beardedtim" rel="me" />
   <link href="https://indieauth.com/auth" rel="authorization_endpoint" />
+  <link rel="openid.delegate" href="https://timonapath.com/" />
+  <link rel="openid.server" href="https://openid.indieauth.com/openid" />
 
+  <!--
+    Webmentions
+  -->
+  <link href="${meta.webmentionURL}" rel="webmentions" />
   <!--
     Fonts
   -->
@@ -92,6 +100,12 @@ const defaultTemplate = (meta, data) => `
               <main class="e-content">
               ${data}
               </main>
+    <aside>
+        <h3>Webmentions on this page</h3>
+        <div id="webmentions">
+          Loading...
+        </div>
+    </aside>
     <footer>
       <p>
         Did you spot anything wrong? Do you disagree vehemently? Post on your own site, mark it up as a <a href="https://indieweb.org/reply" target="_blank">
@@ -100,6 +114,21 @@ const defaultTemplate = (meta, data) => `
     </footer>
   </article>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+  <script>
+    window.addEventListener('load', async () => {
+      const mentionsHTMLContainer = document.getElementById('webmentions')
+      const mentionHTML = await fetch('/api/webmentions?path=${encodeURI(meta.url)}').then(x => {
+        if (x.status < 300) {
+          return x.text()
+        }
+
+        return '<i>None Available. Send me one?</i>'
+      })
+
+      mentionsHTMLContainer.innerHTML = mentionHTML
+      console.log('Updated webmentions')
+    })
+  </script>
 </body>
 </html>`;
 
@@ -109,7 +138,8 @@ const createInitialMetaData = async (markdowPath, rootConfig) => {
   return {
     created_timestamp: stats.birthtime.toISOString(),
     updated_timestamp: stats.mtime.toISOString(),
-    url: rootConfig.url
+    url: rootConfig.url,
+    webmentionURL: rootConfig.webmentionURL
   };
 };
 

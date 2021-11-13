@@ -1,6 +1,7 @@
 const { resolve, extname } = require("path");
 const fs = require("fs/promises");
 const read = require("./get-files-of-dir-recursively");
+const config = require('../config/static.js')
 const trace = require("../utils/trace");
 
 const createHomePage = require("../transformers/homepage-to-html");
@@ -35,6 +36,7 @@ const parseLeafAsType = trace(async (type, leafPath) => {
       0,
       -extname(leafPath).length
     )}`,
+    webmentionURL: config.webmentionURL
   });
 
   const { url } = metadata;
@@ -57,6 +59,9 @@ const writeHomePage = trace(async (types) => {
       url: type.rootPath,
       title: Case.sentence(type.name),
     })),
+    meta: {
+      webmentionURL: config.webmentionURL
+    }
   });
 
   await fs.writeFile(`${rootDir}/app/index.html`, homepage);

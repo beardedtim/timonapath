@@ -12,3 +12,7 @@ article {
   max-width: 1080px;
   margin: 0 auto;
 }
+
+#webmentions {
+  margin-bottom: calc(4 * var(--base-size));
+}

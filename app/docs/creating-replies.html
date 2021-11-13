@@ -9,7 +9,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="How we currently update the site">
+  <meta name="description" content="This goes over how you can link posts in the system as replies to one another">
   <meta name="author" content="Tim Roberts">
 
   <!--
@@ -22,9 +22,9 @@
   <!--
     Facebook OpenGraph Cards
   -->
-  <meta property="og:url" content="https://timonapath.com//docs/internal/deploy-this-website"/>
-  <meta property="og:title" content="Deploy Website | Tim on a Path" />
-  <meta property="og:description" content="How we currently update the site" />
+  <meta property="og:url" content="https://timonapath.com//docs/creating-replies"/>
+  <meta property="og:title" content="Creating Replies | Tim on a Path" />
+  <meta property="og:description" content="This goes over how you can link posts in the system as replies to one another" />
   <meta property="og:site_name" content="Tim on a Path" />
 
   <!--
@@ -57,47 +57,48 @@
   <link rel="stylesheet" href="/css/leaf.css" />
   <link rel="stylesheet"
       href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
-  <title>Deploy Website | Tim on a Path</title>
+  <title>Creating Replies | Tim on a Path</title>
 
 </head>
 
 <body>
   <article class="h-entry">
     <header>
-      <a href="https://timonapath.com/docs/internal/deploy-this-website" class="u-url">
-        <h2 class="p-name">Deploy Website</h2>
+      <a href="https://timonapath.com/docs/creating-replies" class="u-url">
+        <h2 class="p-name">Creating Replies</h2>
       </a>
       <p>Published by <a class="p-author h-card" href="https://timonapath.com">Tim Roberts</a>
-        on <time class="dt-published" datetime="undefined">November 13th, 2021 at 10:54 AM</time>
-         |  <span>Updated on <time class="dt-updated" datetime="2021-11-13T18:48:09.485Z">November 13th, 2021 at 1:48 PM</time></span></p>
-              <p class="p-summary">How we currently update the site</p>
+        on <time class="dt-published" datetime="undefined">November 13th, 2021 at 4:38 PM</time>
+         |  <span>Updated on <time class="dt-updated" datetime="2021-11-13T21:41:25.472Z">November 13th, 2021 at 4:41 PM</time></span></p>
+              <p class="p-summary">This goes over how you can link posts in the system as replies to one another</p>
               </header>
               <main class="e-content">
               
-<h1>How to Deploy this Website</h1>
-<h2>Step 0: Make changes and commit to git <code>main</code></h2>
-<pre><code class="language-sh">git add . &amp;&amp; git commit -m <span class="hljs-string">&quot;My Message&quot;</span>
+<h2>Step 0: Create Replies MD File</h2>
+<pre><code class="language-sh"><span class="hljs-built_in">cat</span> &amp;data/replies/my-new-reply.md &lt;&lt;<span class="hljs-string">EOL
+---
+title: Some Reply Title
+traget: https://target.url/we/are/replying/to
+---
+
+
+## My reply in markdown
+
+EOL</span>
 </code></pre>
-<h2>Step 1: Update Origin</h2>
-<pre><code class="language-sh">git push
+<h2>Step 1: Send Request To Store Webmention</h2>
+<pre><code class="language-sh">curl -i \
+  -d <span class="hljs-built_in">source</span>=https://timonapath.com/replies/my-new-reply \
+  -d target=https://target.url/we/are/replying/to \
+  https://timonapath.com/api/webmentions
 </code></pre>
-<h2>Step 2: SSH into DO Droplet</h2>
-<pre><code class="language-sh">ssh username@ip
+<h2>Step 2 (optional): Send UPDATE or DELETE</h2>
+<pre><code class="language-sh">curl -i \
+  -d <span class="hljs-built_in">source</span>=https://timonapath.com/replies/my-new-reply \
+  -d target=https://target.url/we/are/replying/to \
+  -d <span class="hljs-built_in">type</span>=update \ <span class="hljs-comment"># also -d type=delete</span>
+  https://timonapath.com/api/webmentions
 </code></pre>
-<h2>Step 3: Go to directory</h2>
-<pre><code class="language-sh"><span class="hljs-built_in">cd</span> my/directory/place
-</code></pre>
-<h2>Step 4: Pull Origin</h2>
-<pre><code class="language-sh">git pull
-</code></pre>
-<h2>Step 5: Build Assets</h2>
-<pre><code class="language-sh">yarn create::static
-</code></pre>
-<h2>Step 6 (optional): Restart Docker-Compose</h2>
-<pre><code class="language-sh">docker-compose up --build -d
-</code></pre>
-<p><em><strong>Note</strong></em>: This is only needed when you need to restart or otherwise modify
-the running NGINX</p>
 
               </main>
     <aside>
@@ -117,7 +118,7 @@ the running NGINX</p>
   <script>
     window.addEventListener('load', async () => {
       const mentionsHTMLContainer = document.getElementById('webmentions')
-      const mentionHTML = await fetch('/api/webmentions?path=/docs/internal/deploy-this-website').then(x => {
+      const mentionHTML = await fetch('/api/webmentions?path=/docs/creating-replies').then(x => {
         if (x.status < 300) {
           return x.text()
         }

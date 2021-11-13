@@ -1,4 +1,6 @@
-module.exports = ({ links }) => `
+
+
+module.exports = ({ links, meta }) => `
 <!DOCTYPE html>
 <html lang="en" xmlns:og="http://ogp.me/ns#">
 
@@ -40,6 +42,11 @@ module.exports = ({ links }) => `
   <link href="https://indieauth.com/auth" rel="authorization_endpoint" />
 
   <!--
+    Webmentions
+  -->
+  <link href="${meta.webmentionURL}" rel="webmentions" />
+
+  <!--
     Fonts
   -->
   <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600&display=swap" rel="stylesheet" as="font"
@@ -54,9 +61,6 @@ module.exports = ({ links }) => `
 </head>
 
 <body>
-  <header>
-
-  </header>
   <main>
     <section class="h-card profile">
       <header class="section-header">
