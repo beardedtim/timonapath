@@ -57,7 +57,7 @@
 
 </head>
 <!--
-  {"created_timestamp":"2021-11-13T15:58:55.270Z","updated_timestamp":"2021-11-13T18:25:21.185Z","url":"/docs/internal/create-new-type","title":"Create New Type","summary":"Doc on how to create a new type within the current system"}
+  {"created_timestamp":"2021-11-13T15:58:55.270Z","updated_timestamp":"2021-11-13T18:29:26.565Z","url":"/docs/internal/create-new-type","title":"Create New Type","summary":"Doc on how to create a new type within the current system"}
 -->
 <body>
   <article class="h-entry">
@@ -67,7 +67,7 @@
       </a>
       <p>Published by <a class="p-author h-card" href="https://timonapath.com">Tim Roberts</a>
         on <time class="dt-published" datetime="undefined">November 13th, 2021 at 10:58 AM</time>
-         |  <span>Updated on <time class="dt-updated" datetime="2021-11-13T18:25:21.185Z">November 13th, 2021 at 1:25 PM</time></span></p>
+         |  <span>Updated on <time class="dt-updated" datetime="2021-11-13T18:29:26.565Z">November 13th, 2021 at 1:29 PM</time></span></p>
               <p class="p-summary">Doc on how to create a new type within the current system</p>
               </header>
               <main class="e-content">
@@ -80,12 +80,63 @@ path or <code>domain</code> for the system.</p>
 <pre><code class="language-sh"><span class="hljs-built_in">mkdir</span> data/my-new-path
 </code></pre>
 <h2>Step 1: Create First Entry</h2>
-<pre><code class="language-sh"><span class="hljs-built_in">cat</span> &gt;data/my-new-path &lt;&lt;<span class="hljs-string">EOL
+<pre><code class="language-bash"><span class="hljs-built_in">cat</span> &gt;data/my-new-path &lt;&lt;<span class="hljs-string">EOL
 ---
 title: My Title
 summary: Some Summary
 ---
+
+# Some Markdown
+
+## Some Other Markdown
 EOL</span>
+</code></pre>
+<h2>Step 2: Add New Type</h2>
+<h3>Step 2.1: Add new Type File</h3>
+<pre><code class="language-bash"><span class="hljs-built_in">cat</span> &gt;types/my-new-type &lt;&lt;<span class="hljs-string">EOL
+const path = require(&#x27;path&#x27;)
+const rootTemplate = require(&#x27;../transformers/type-into-list-html&#x27;)
+const leafTemplate = require(&#x27;../transformers/markdown-to-html&#x27;)
+const intoType = require(&#x27;../transformers/config-into-type&#x27;)
+/**
+ * All actions and paths are based off the
+ * top level folder path to make it easy to grok
+ */
+const rootDir = path.resolve(__dirname, &#x27;..&#x27;)
+
+/**
+ * Our specific Type has its own path as well
+ */
+const typeFolder = path.resolve(rootDir, &#x27;data&#x27;, &#x27;my-new-type&#x27;)
+
+/**
+ * The configuration of the Type that we are constructing
+ * 
+ * @prop {string} folder The path to the folder for this Type
+ * @prop {string} rootPath The path that we want to be served under
+ * @prop {{root: function(config): string, leaf: function(config): string }}
+ */
+const config = {
+  folder: typeFolder,
+  rootPath: &#x27;/my-new-type&#x27;,
+  templates: {
+    root: rootTemplate, // Can be custom root template. used for list page
+    leaf: leafTemplate // can be custom leaf template. used for leaf page
+  },
+  name: &#x27;My New Type&#x27;
+}
+
+module.exports = intoType(config)
+EOL</span>
+</code></pre>
+<h3>Step 2.2: Update Type Map</h3>
+<pre><code class="language-js"><span class="hljs-comment">// types/index.js</span>
+
+<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span>.<span class="hljs-property">Docs</span> = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;./docs&#x27;</span>)
+<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span>.<span class="hljs-property">Snippets</span> = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;./snippets&#x27;</span>)
+<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span>.<span class="hljs-property">Articles</span> = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;./articles&#x27;</span>)
+<span class="hljs-comment">// add more here</span>
+<span class="hljs-comment">// module.exports.MyNewType = require(&#x27;./my-new-type)</span>
 </code></pre>
 
               </main>
