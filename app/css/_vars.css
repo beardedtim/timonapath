@@ -1,0 +1,9 @@
+:root {
+  --secondary-color: #209CEE;
+  /**
+    * Set to #000 for WCAG AAA rating
+    */
+  --secondary-color-font-color: #000000;
+  --base-size: 0.5rem;
+  --link-color: #004299;
+}
