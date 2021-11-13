@@ -12,7 +12,7 @@ services:
     build:
       context: .
       dockerfile: Server.Dockerfile
-    command: yarn nodemon index.js
+    command: npx nodemon index.js
     volumes:
       - "./server/:/app/"
       - "./artifacts/:/app/artifacts/"
