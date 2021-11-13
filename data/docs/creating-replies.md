@@ -18,21 +18,4 @@ traget: https://target.url/we/are/replying/to
 EOL
 ```
 
-## Step 1: Send Request To Store Webmention
-
-```sh
-curl -i \
-  -d source=https://timonapath.com/replies/my-new-reply \
-  -d target=https://target.url/we/are/replying/to \
-  https://timonapath.com/api/webmentions
-```
-
-## Step 2 (optional): Send UPDATE or DELETE
-
-```sh
-curl -i \
-  -d source=https://timonapath.com/replies/my-new-reply \
-  -d target=https://target.url/we/are/replying/to \
-  -d type=update \ # also -d type=delete
-  https://timonapath.com/api/webmentions
-```
+## Step 1: [Send Webmention](/docs/sending-web-mention)

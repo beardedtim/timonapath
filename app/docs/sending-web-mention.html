@@ -9,7 +9,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="This goes over how you can link posts in the system as replies to one another">
+  <meta name="description" content="We go over how to send an HTTP request to this server for webmentions">
   <meta name="author" content="Tim Roberts">
 
   <!--
@@ -22,9 +22,9 @@
   <!--
     Facebook OpenGraph Cards
   -->
-  <meta property="og:url" content="https://timonapath.com//docs/creating-replies"/>
-  <meta property="og:title" content="Creating Replies | Tim on a Path" />
-  <meta property="og:description" content="This goes over how you can link posts in the system as replies to one another" />
+  <meta property="og:url" content="https://timonapath.com//docs/sending-web-mention"/>
+  <meta property="og:title" content="Sending Tim on a Path a Webmention | Tim on a Path" />
+  <meta property="og:description" content="We go over how to send an HTTP request to this server for webmentions" />
   <meta property="og:site_name" content="Tim on a Path" />
 
   <!--
@@ -58,36 +58,36 @@
   <link rel="stylesheet" href="/css/leaf.css" />
   <link rel="stylesheet"
       href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
-  <title>Creating Replies | Tim on a Path</title>
+  <title>Sending Tim on a Path a Webmention | Tim on a Path</title>
 
 </head>
 
 <body>
   <article class="h-entry">
     <header>
-      <a href="https://timonapath.com/docs/creating-replies" class="u-url">
-        <h2 class="p-name">Creating Replies</h2>
+      <a href="https://timonapath.com/docs/sending-web-mention" class="u-url">
+        <h2 class="p-name">Sending Tim on a Path a Webmention</h2>
       </a>
       <p>Published by <a class="p-author h-card" href="https://timonapath.com">Tim Roberts</a>
-        on <time class="dt-published" datetime="undefined">November 13th, 2021 at 4:38 PM</time>
-         |  <span>Updated on <time class="dt-updated" datetime="2021-11-13T22:05:15.506Z">November 13th, 2021 at 5:05 PM</time></span></p>
-              <p class="p-summary">This goes over how you can link posts in the system as replies to one another</p>
+        on <time class="dt-published" datetime="undefined">November 13th, 2021 at 5:04 PM</time>
+         |  <span>Updated on <time class="dt-updated" datetime="2021-11-13T22:04:53.654Z">November 13th, 2021 at 5:04 PM</time></span></p>
+              <p class="p-summary">We go over how to send an HTTP request to this server for webmentions</p>
               </header>
               <main class="e-content">
               
-<h2>Step 0: Create Replies MD File</h2>
-<pre><code class="language-sh"><span class="hljs-built_in">cat</span> &amp;data/replies/my-new-reply.md &lt;&lt;<span class="hljs-string">EOL
----
-title: Some Reply Title
-traget: https://target.url/we/are/replying/to
----
-
-
-## My reply in markdown
-
-EOL</span>
+<h2>Step 0: Send Request To Store Webmention</h2>
+<pre><code class="language-sh">curl -i \
+  -d <span class="hljs-built_in">source</span>=https://timonapath.com/replies/my-new-reply \
+  -d target=https://target.url/we/are/replying/to \
+  https://timonapath.com/api/webmentions
 </code></pre>
-<h2>Step 1: <a href="/docs/sending-web-mention">Send Webmention</a></h2>
+<h2>Step 1 (optional): Send UPDATE or DELETE</h2>
+<pre><code class="language-sh">curl -i \
+  -d <span class="hljs-built_in">source</span>=https://timonapath.com/replies/my-new-reply \
+  -d target=https://target.url/we/are/replying/to \
+  -d <span class="hljs-built_in">type</span>=update \ <span class="hljs-comment"># also -d type=delete</span>
+  https://timonapath.com/api/webmentions
+</code></pre>
 
               </main>
     <aside>
@@ -109,7 +109,7 @@ EOL</span>
 window.addEventListener('load', async () => {
   const mentionsHTMLContainer = document.getElementById('webmentions')
   if (mentionsHTMLContainer) {
-    const mentionHTML = await fetch('/api/webmentions?path=/docs/creating-replies').then(x => {
+    const mentionHTML = await fetch('/api/webmentions?path=/docs/sending-web-mention').then(x => {
       if (x.status < 300) {
         return x.text()
       }
