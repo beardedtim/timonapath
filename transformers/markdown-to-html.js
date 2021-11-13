@@ -2,6 +2,7 @@ const MarkdownIt = require("markdown-it");
 const fss = require("fs/promises");
 const hljs = require("highlight.js");
 const meta = require("markdown-it-front-matter");
+const webmentions = require('./meta-into-webmentions-script')
 const { format: formatDate } = require("date-fns");
 
 const yaml = require('yaml');
@@ -53,6 +54,7 @@ const defaultTemplate = (meta, data) => `
     Webmentions
   -->
   <link href="${meta.webmentionURL}" rel="webmentions" />
+
   <!--
     Fonts
   -->
@@ -115,19 +117,7 @@ const defaultTemplate = (meta, data) => `
   </article>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
   <script>
-    window.addEventListener('load', async () => {
-      const mentionsHTMLContainer = document.getElementById('webmentions')
-      const mentionHTML = await fetch('/api/webmentions?path=${encodeURI(meta.url)}').then(x => {
-        if (x.status < 300) {
-          return x.text()
-        }
-
-        return '<i>None Available. Send me one?</i>'
-      })
-
-      mentionsHTMLContainer.innerHTML = mentionHTML
-      console.log('Updated webmentions')
-    })
+    ${webmentions(meta)}
   </script>
 </body>
 </html>`;

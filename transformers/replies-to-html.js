@@ -1,5 +1,7 @@
 const markdownToHTML = require('./markdown-to-html')
 const { format: formatDate } = require("date-fns");
+const webmentions = require('./meta-into-webmentions-script')
+
 
 const template = (meta, data) => `
 <!DOCTYPE html>
@@ -43,6 +45,11 @@ const template = (meta, data) => `
   <link href="https://indieauth.com/auth" rel="authorization_endpoint" />
 
   <!--
+    Webmentions
+  -->
+  <link href="${meta.webmentionURL}" rel="webmentions" />
+
+  <!--
     Fonts
   -->
   <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600&display=swap" rel="stylesheet" as="font"
@@ -77,6 +84,12 @@ const template = (meta, data) => `
       Repling to <a class="u-in-reply-to" href="${meta.target}" target="_blank">${meta.target}</a>
         ${data}
       </main>
+      <aside>
+        <h3>Webmentions on this page</h3>
+        <div id="webmentions">
+          Loading...
+        </div>
+    </aside>
     <footer>
       <p>
         Did you spot anything wrong? Do you disagree vehemently? Post on your own site, mark it up as a <a href="https://indieweb.org/reply" target="_blank">
@@ -85,6 +98,9 @@ const template = (meta, data) => `
     </footer>
   </article>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+  <script>
+    ${webmentions(meta)}
+  </script>
 </body>
 </html>`;
 

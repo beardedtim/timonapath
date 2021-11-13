@@ -45,6 +45,7 @@
     Webmentions
   -->
   <link href="https://timonapath.com/api/webmentions" rel="webmentions" />
+
   <!--
     Fonts
   -->
@@ -133,19 +134,23 @@
   </article>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
   <script>
-    window.addEventListener('load', async () => {
-      const mentionsHTMLContainer = document.getElementById('webmentions')
-      const mentionHTML = await fetch('/api/webmentions?path=/snippets/node/create-async-iterator').then(x => {
-        if (x.status < 300) {
-          return x.text()
-        }
-
-        return '<i>None Available. Send me one?</i>'
-      })
-
-      mentionsHTMLContainer.innerHTML = mentionHTML
-      console.log('Updated webmentions')
+    
+window.addEventListener('load', async () => {
+  const mentionsHTMLContainer = document.getElementById('webmentions')
+  if (mentionsHTMLContainer) {
+    const mentionHTML = await fetch('/api/webmentions?path=/snippets/node/create-async-iterator').then(x => {
+      if (x.status < 300) {
+        return x.text()
+      }
+  
+      return '<i>None Available. Send me one?</i>'
     })
+  
+    mentionsHTMLContainer.innerHTML = mentionHTML
+    console.log('Updated webmentions')
+  }
+})
+
   </script>
 </body>
 </html>
