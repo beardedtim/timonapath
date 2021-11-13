@@ -36,7 +36,12 @@ cd my/directory/place
 git pull
 ```
 
-## Step 5 (optional): Restart Docker-Compose
+## Step 5: Build Assets
+
+```sh
+yarn create::static
+```
+## Step 6 (optional): Restart Docker-Compose
 
 ```sh
 docker-compose up --build -d

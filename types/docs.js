@@ -2,6 +2,7 @@ const path = require('path')
 const rootTemplate = require('../transformers/type-into-list-html')
 const leafTemplate = require('../transformers/markdown-to-html')
 const intoType = require('../transformers/config-into-type')
+
 /**
  * All actions and paths are based off the
  * top level folder path to make it easy to grok

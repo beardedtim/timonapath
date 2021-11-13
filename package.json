@@ -4,28 +4,39 @@
   "description": "## Overview",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "create::md": "node scripts/parse-markdown-into-html.js"
+    "create::md": "node scripts/parse-markdown-into-html.js",
+    "create::css": "postcss assets/css/ --dir app/css/",
+    "create::img": "cp -R assets/img app/",
+    "create::well-known": "cp assets/well-known/* app",
+    "create::clean": "rm -rf app",
+    "create::setup": "mkdir app",
+    "create::static": "yarn create::clean && yarn create::setup && yarn create::css && yarn create::well-known && yarn create::md && yarn create::img"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/beardedtim/timonapath.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Tim Roberts <timroberts@fastmail.org>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/beardedtim/timonapath/issues"
   },
   "homepage": "https://github.com/beardedtim/timonapath#readme",
   "dependencies": {
     "@beardedtim/lazy": "^0.0.10",
+    "autoprefixer": "^10.4.0",
     "case": "1.6.3",
     "date-fns": "2.25.0",
     "glob": "7.2.0",
     "highlight.js": "11.3.1",
     "markdown-it": "^12.2.0",
     "markdown-it-front-matter": "^0.2.3",
+    "postcss": "^8.3.11",
+    "postcss-cli": "^9.0.2",
+    "postcss-import": "^14.0.2",
+    "postcss-preset-env": "^6.7.0",
+    "precss": "^4.0.0",
     "yaml": "^1.10.2"
   }
 }

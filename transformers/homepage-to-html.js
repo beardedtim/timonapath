@@ -48,8 +48,6 @@ module.exports = ({ links }) => `
   <!--
     Styles
   -->
-  <link rel="stylesheet" href="/css/normalize.css">
-  <link rel="stylesheet" href="/css/skeleton.css">
   <link rel="stylesheet" href="/css/home.css" />
   <title>Tim on a Path</title>
 

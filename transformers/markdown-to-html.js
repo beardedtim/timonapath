@@ -54,9 +54,7 @@ const template = (meta, data) => `
   <!--
     Styles
   -->
-  <link rel="stylesheet" href="/css/normalize.css">
-  <link rel="stylesheet" href="/css/skeleton.css">
-  <link rel="stylesheet" href="/css/snippet.css" />
+  <link rel="stylesheet" href="/css/leaf.css" />
   <link rel="stylesheet"
       href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
   <title>${meta.title} | Tim on a Path</title>
