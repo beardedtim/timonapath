@@ -36,8 +36,8 @@ EOL
 
 ### Step 2.1: Add new Type File
 
-```bash
-cat >types/my-new-type <<EOL
+```js
+// types/my-new-type.js
 const path = require('path')
 const rootTemplate = require('../transformers/type-into-list-html')
 const leafTemplate = require('../transformers/markdown-to-html')
@@ -71,7 +71,6 @@ const config = {
 }
 
 module.exports = intoType(config)
-EOL
 ```
 
 ### Step 2.2: Update Type Map
