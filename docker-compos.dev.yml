@@ -12,7 +12,9 @@ services:
     build:
       context: .
       dockerfile: Server.Dockerfile
+    command: npx nodemon index.js
     volumes:
+      - "./server/:/app/"
       - "./artifacts/:/app/artifacts/"
 
   database:
