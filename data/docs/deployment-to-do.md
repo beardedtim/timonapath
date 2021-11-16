@@ -2,6 +2,8 @@
 title: Deploy Website
 summary: How we currently update the site
 url: /docs/internal/deploy-this-website
+tags:
+  - site docs
 ---
 
 # How to Deploy this Website

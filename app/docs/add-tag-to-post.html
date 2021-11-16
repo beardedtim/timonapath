@@ -10,7 +10,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="How we currently update the site">
+  <meta name="description" content="This goes over how to tag new posts, regardless of type, and add that post the tag list page">
   <meta name="author" content="Tim Roberts">
 
   <!--
@@ -23,9 +23,9 @@
   <!--
     Facebook OpenGraph Cards
   -->
-  <meta property="og:url" content="https://timonapath.com//docs/internal/deploy-this-website"/>
-  <meta property="og:title" content="Deploy Website | Tim on a Path" />
-  <meta property="og:description" content="How we currently update the site" />
+  <meta property="og:url" content="https://timonapath.com//docs/add-tag-to-post"/>
+  <meta property="og:title" content="How to Add a Tag to a Post | Tim on a Path" />
+  <meta property="og:description" content="This goes over how to tag new posts, regardless of type, and add that post the tag list page" />
   <meta property="og:site_name" content="Tim on a Path" />
 
   <!--
@@ -61,46 +61,30 @@
   
   <link rel="stylesheet"
       href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
-  <title>Deploy Website | Tim on a Path</title>
+  <title>How to Add a Tag to a Post | Tim on a Path</title>
 
 </head>
 
 <body>
   <article class="h-entry">
     <header>
-      <a href="https://timonapath.com/docs/internal/deploy-this-website" class="u-url">
-        <h2 class="p-name">Deploy Website</h2>
+      <a href="https://timonapath.com/docs/add-tag-to-post" class="u-url">
+        <h2 class="p-name">How to Add a Tag to a Post</h2>
       </a>
       <p>Published by <a class="p-author h-card" href="https://timonapath.com">Tim Roberts</a>
-        on <time class="dt-published" datetime="undefined">November 13th, 2021 at 10:54 AM</time>
-         |  <span>Updated on <time class="dt-updated" datetime="2021-11-16T21:37:05.499Z">November 16th, 2021 at 4:37 PM</time></span></p>
-              <p class="p-summary">How we currently update the site</p>
+        on <time class="dt-published" datetime="undefined">November 16th, 2021 at 4:35 PM</time>
+         |  <span>Updated on <time class="dt-updated" datetime="2021-11-16T21:36:37.707Z">November 16th, 2021 at 4:36 PM</time></span></p>
+              <p class="p-summary">This goes over how to tag new posts, regardless of type, and add that post the tag list page</p>
               </header>
               <main class="e-content">
               
-<h1>How to Deploy this Website</h1>
-<p>This assumes you have built the assets via <code>yarn create::static</code>
-already</p>
-<h2>Step 0: Make changes and commit to git <code>main</code></h2>
-<pre><code class="language-sh">git add . &amp;&amp; git commit -m <span class="hljs-string">&quot;My Message&quot;</span>
+<h2>Step 0: Add <code>tags: [...]</code> To Data</h2>
+<pre><code class="language-yaml"><span class="hljs-attr">title:</span> <span class="hljs-string">Some</span> <span class="hljs-string">Title</span>
+<span class="hljs-attr">summary:</span> <span class="hljs-string">Some</span> <span class="hljs-string">Summry</span>
+<span class="hljs-attr">tags:</span> 
+  <span class="hljs-bullet">-</span> <span class="hljs-string">tag</span> <span class="hljs-number">1</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">tag</span> <span class="hljs-number">2</span>
 </code></pre>
-<h2>Step 1: Update Origin</h2>
-<pre><code class="language-sh">git push
-</code></pre>
-<h2>Step 2: SSH into DO Droplet</h2>
-<pre><code class="language-sh">ssh username@ip
-</code></pre>
-<h2>Step 3: Go to directory</h2>
-<pre><code class="language-sh"><span class="hljs-built_in">cd</span> my/directory/place
-</code></pre>
-<h2>Step 4: Pull Origin</h2>
-<pre><code class="language-sh">git pull
-</code></pre>
-<h2>Step 6 (optional): Restart Docker-Compose</h2>
-<pre><code class="language-sh">docker-compose up --build -d
-</code></pre>
-<p><em><strong>Note</strong></em>: This is only needed when you need to restart or otherwise modify
-the running NGINX</p>
 
               </main>
     <aside>
@@ -122,7 +106,7 @@ the running NGINX</p>
 window.addEventListener('load', async () => {
   const mentionsHTMLContainer = document.getElementById('webmentions')
   if (mentionsHTMLContainer) {
-    const mentionHTML = await fetch('/api/webmentions?path=/docs/internal/deploy-this-website').then(x => {
+    const mentionHTML = await fetch('/api/webmentions?path=/docs/add-tag-to-post').then(x => {
       if (x.status < 300) {
         return x.text()
       }

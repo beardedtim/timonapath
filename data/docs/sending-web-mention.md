@@ -1,6 +1,8 @@
 ---
 title: Sending Tim on a Path a Webmention
 summary: We go over how to send an HTTP request to this server for webmentions
+tags:
+  - site docs
 ---
 
 ## Step 0: Send Request To Store Webmention

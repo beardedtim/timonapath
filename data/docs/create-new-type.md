@@ -2,6 +2,8 @@
 title: Create New Type
 summary: Doc on how to create a new type within the current system
 url: /docs/internal/create-new-type
+tags:
+  - site docs
 ---
 
 # How to Create a New Domain

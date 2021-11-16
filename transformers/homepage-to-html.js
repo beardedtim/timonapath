@@ -1,6 +1,6 @@
 const metaHTML = require('./meta-into-head-html')
 
-module.exports = ({ links, meta }) => `
+module.exports = ({ links, meta, tags }) => `
 <!DOCTYPE html>
 <html lang="en" xmlns:og="http://ogp.me/ns#">
 ${metaHTML({
@@ -63,6 +63,23 @@ ${metaHTML({
         </div>
       </div>
     </section>
+    <section class="links">
+    <header class="section-header">
+      <h3>Tags</h3>
+    </header>
+    <div class="links-body">
+      <div>
+        <ul>
+          ${
+            tags.map(tag => `
+              <li><a href="${tag.url}">${tag.title}</a></li>
+            `).join('\n')
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+    
   </main>
   <footer>
 

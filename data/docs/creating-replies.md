@@ -1,6 +1,8 @@
 ---
 title: Creating Replies
 summary: This goes over how you can link posts in the system as replies to one another
+tags:
+  - site docs
 ---
 
 ## Step 0: Create Replies MD File

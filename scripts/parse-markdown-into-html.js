@@ -5,6 +5,7 @@ const config = require('../config/static.js')
 const trace = require("../utils/trace");
 
 const createHomePage = require("../transformers/homepage-to-html");
+const tagTemplate = require('../transformers/type-into-list-html')
 
 const Types = require("../types");
 const Case = require("case");
@@ -49,7 +50,7 @@ const parseLeafAsType = trace(async (type, leafPath) => {
   };
 }, "Parse Leaf at Type");
 
-const writeHomePage = trace(async (types) => {
+const writeHomePage = trace(async (types, tags) => {
   console.log("Now going to generate the home page.");
   console.log("This will be by taking in the types above");
   console.log("and turning it into links for the homepage to display");
@@ -58,6 +59,10 @@ const writeHomePage = trace(async (types) => {
     links: [...types.keys()].map((type) => ({
       url: type.rootPath,
       title: Case.sentence(type.name),
+    })),
+    tags: [...tags.keys()].map(tag => ({
+      url: `/tags/${tag}`,
+      title: tag
     })),
     meta: {
       webmentionURL: config.webmentionURL
@@ -159,28 +164,88 @@ const customPages = [
   },
 ];
 
-const writeCustomPages = trace(async (pages, types) => {
+const writeCustomPages = trace(async (pages, types, tags) => {
   for (const page of pages) {
-    await page.template(types);
+    await page.template(types, tags);
   }
 }, "Write Custom Pages");
 
+
+const getTagGroup = trace(async (types) => {
+  const tags = new Map()
+
+  for (const pages of types.values()) {
+    for (const page of pages.values()) {
+      if (page.metadata.tags) {
+        for (const tag of page.metadata.tags) {
+          if (tags.has(tag)) {
+            tags.get(tag).add(page)
+          } else {
+            tags.set(tag, new Set([page]))
+          }
+        }
+      }
+    }
+  }
+
+  return tags
+})
+
+const writeTagPages = trace(async (types) => {
+  const tags = await getTagGroup(types)
+  
+  for (const [tag, pages] of tags.entries()) {
+    const template = tagTemplate({
+      type: `Tag: ${tag}`,
+      links: [...pages.values()].map(({ metadata }) => metadata)
+    })
+
+    const path = `${outputDir}/tags/${tag}.html`
+
+    try {
+      console.log("Ensuring path is made");
+      await fs.mkdir(`${path.split("/").slice(0, -1).join("/")}`, {
+        recursive: true,
+      });
+    } catch (e) {
+      console.error(e);
+      console.log(
+        "Error occured while trying to ensure path. Swallowing but may cause issues later. If this does, rethrow"
+      );
+    }
+    
+    await fs.writeFile(path, template)
+  }
+
+  return tags
+
+}, 'Write Tag Pages')
+
 const main = trace(async () => {
   console.log("Hello, Tim! Let's build some HTML pages from Markdown!");
+
   console.log(
     "First, we are going to create an async iterator of all of the files that are in markdown"
   );
+
   const iterator = await read(dataDir, inputFileType);
 
   console.log(
     "Now we are going to translate that iterator into a Map<Type,Set<Page>>"
   );
+
   const seenTypes = await buildTypeMap(iterator);
 
   console.log("And we are going to go write all of the Set<Page> to disk");
+
   await writePages(seenTypes);
 
-  await writeCustomPages(customPages, seenTypes);
+  console.log("Now we are going to go and create Tag pages that link to all of the Pages that uses the tag")
+  const tags = await writeTagPages(seenTypes);
+
+  console.log('Now we are going to write our custom pages')
+  await writeCustomPages(customPages, seenTypes, tags);
+
 }, "Parse Markdown Files into HTML");
 
 main();
