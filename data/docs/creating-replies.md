@@ -9,7 +9,7 @@ summary: This goes over how you can link posts in the system as replies to one a
 cat &data/replies/my-new-reply.md <<EOL
 ---
 title: Some Reply Title
-traget: https://target.url/we/are/replying/to
+target: https://target.url/we/are/replying/to
 ---
 
 

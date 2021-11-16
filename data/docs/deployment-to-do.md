@@ -6,6 +6,9 @@ url: /docs/internal/deploy-this-website
 
 # How to Deploy this Website
 
+This assumes you have built the assets via `yarn create::static`
+already
+
 ## Step 0: Make changes and commit to git `main`
 
 ```sh
@@ -36,11 +39,6 @@ cd my/directory/place
 git pull
 ```
 
-## Step 5: Build Assets
-
-```sh
-yarn create::static
-```
 ## Step 6 (optional): Restart Docker-Compose
 
 ```sh

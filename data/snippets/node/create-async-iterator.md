@@ -1,6 +1,9 @@
 ---
 title: Create Async Iterator
 summary: How to create an Async Iterator
+tags:
+  - node
+  - javascript
 ---
 
 ```ts

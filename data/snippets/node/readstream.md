@@ -1,6 +1,9 @@
 ---
 title: Readable Streams in Node
 summary: How to create and consume from a readstream
+tags:
+  - node
+  - javascript
 ---
 
 ```ts

@@ -1,65 +1,17 @@
-
+const metaHTML = require('./meta-into-head-html')
 
 module.exports = ({ links, meta }) => `
 <!DOCTYPE html>
 <html lang="en" xmlns:og="http://ogp.me/ns#">
-
-<head>
-  <!--
-    Meta Tags
-  -->
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="The Internet Portal of Tim Roberts">
-  <meta name="author" content="Tim Roberts">
-
-  <!--
-    Icon Links
-  -->
-  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-  <link rel="manifest" href="img/site.webmanifest">
-  <!--
-    Facebook OpenGraph Cards
-  -->
-  <meta property="og:url" content="https://timonapath.com/" />
-  <meta property="og:title" content="Tim on a Path" />
-  <meta property="og:description" content="The Internet Interface for Tim Roberts" />
-  <meta property="og:site_name" content="Tim on a Path" />
-
-  <!--
-    Twitter Card
-  -->
-  <meta name="twitter:card" content="summary" />
-
-  <!--
-    IndieAuth
-  -->
-  <link href="mailto:timroberts@fastmail.org" rel="me" />
-  <link href="https://github.com/beardedtim" rel="me" />
-  <link href="https://indieauth.com/auth" rel="authorization_endpoint" />
-
-  <!--
-    Webmentions
-  -->
-  <link href="${meta.webmentionURL}" rel="webmentions" />
-
-  <!--
-    Fonts
-  -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600&display=swap" rel="stylesheet" as="font"
-    type="text/css">
-
-  <!--
-    Styles
-  -->
-  <link rel="stylesheet" href="/css/home.css" />
-  <title>Tim on a Path</title>
-
-</head>
-
+${metaHTML({
+  ...meta,
+  css: `
+    <link rel="stylesheet" src="/css/home.css" />
+  `,
+  title: '',
+  summary: 'The Internet Portal for Tim Roberts',
+  url: '/'
+})}
 <body>
   <main>
     <section class="h-card profile">

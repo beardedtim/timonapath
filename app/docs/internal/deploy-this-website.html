@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:og="http://ogp.me/ns#">
 
+
 <head>
   <!--
     Meta Tags
@@ -55,7 +56,9 @@
   <!--
     Styles
   -->
-  <link rel="stylesheet" href="/css/leaf.css" />
+  
+    <link rel="stylesheet" src="/css/leaf.css" />
+  
   <link rel="stylesheet"
       href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
   <title>Deploy Website | Tim on a Path</title>
@@ -70,12 +73,14 @@
       </a>
       <p>Published by <a class="p-author h-card" href="https://timonapath.com">Tim Roberts</a>
         on <time class="dt-published" datetime="undefined">November 13th, 2021 at 10:54 AM</time>
-         |  <span>Updated on <time class="dt-updated" datetime="2021-11-13T18:48:09.485Z">November 13th, 2021 at 1:48 PM</time></span></p>
+         |  <span>Updated on <time class="dt-updated" datetime="2021-11-16T21:05:58.900Z">November 16th, 2021 at 4:05 PM</time></span></p>
               <p class="p-summary">How we currently update the site</p>
               </header>
               <main class="e-content">
               
 <h1>How to Deploy this Website</h1>
+<p>This assumes you have built the assets via <code>yarn create::static</code>
+already</p>
 <h2>Step 0: Make changes and commit to git <code>main</code></h2>
 <pre><code class="language-sh">git add . &amp;&amp; git commit -m <span class="hljs-string">&quot;My Message&quot;</span>
 </code></pre>
@@ -90,9 +95,6 @@
 </code></pre>
 <h2>Step 4: Pull Origin</h2>
 <pre><code class="language-sh">git pull
-</code></pre>
-<h2>Step 5: Build Assets</h2>
-<pre><code class="language-sh">yarn create::static
 </code></pre>
 <h2>Step 6 (optional): Restart Docker-Compose</h2>
 <pre><code class="language-sh">docker-compose up --build -d
