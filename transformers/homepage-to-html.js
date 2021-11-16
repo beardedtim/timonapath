@@ -6,7 +6,7 @@ module.exports = ({ links, meta, tags }) => `
 ${metaHTML({
   ...meta,
   css: `
-    <link rel="stylesheet" src="/css/home.css" />
+    <link rel="stylesheet" href="/css/home.css" />
   `,
   title: '',
   summary: 'The Internet Portal for Tim Roberts',

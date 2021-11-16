@@ -15,7 +15,7 @@ const defaultTemplate = (meta, data) => `
 ${headHTML({
   ...meta,
   css: `
-    <link rel="stylesheet" src="/css/leaf.css" />
+    <link rel="stylesheet" href="/css/leaf.css" />
   `
 })}
 
