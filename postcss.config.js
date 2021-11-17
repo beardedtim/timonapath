@@ -7,6 +7,7 @@ module.exports = {
         'last 2 versions'
       ]
     }),
-    require("postcss-import")()
+    require("postcss-import")(),
+    require('cssnano')()
   ]
 }
