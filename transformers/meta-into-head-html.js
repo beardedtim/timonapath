@@ -1,3 +1,5 @@
+const ifPresent = require('../utils/if-present')
+
 module.exports = (meta) => `
 <head>
   <!--
@@ -6,7 +8,7 @@ module.exports = (meta) => `
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="${meta.summary}">
+  ${ifPresent(meta.summary, (value) => `<meta name="description" content="${value}">` )}
   <meta name="author" content="Tim Roberts">
 
   <!--
@@ -21,7 +23,7 @@ module.exports = (meta) => `
   -->
   <meta property="og:url" content="https://timonapath.com/${meta.url}"/>
   <meta property="og:title" content="${meta.title ? `${meta.title} | ` : ''}Tim on a Path" />
-  <meta property="og:description" content="${meta.summary}" />
+  ${ifPresent(meta.summary, (value) => `<meta property="og:description" content="${value}" />` )}
   <meta property="og:site_name" content="Tim on a Path" />
 
   <!--

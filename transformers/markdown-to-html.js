@@ -4,6 +4,8 @@ const hljs = require("highlight.js");
 const meta = require("markdown-it-front-matter");
 const webmentions = require('./meta-into-webmentions-script')
 const headHTML = require('./meta-into-head-html')
+const ifPresent = require('../utils/if-present')
+
 const { format: formatDate } = require("date-fns");
 
 const yaml = require('yaml');
@@ -45,7 +47,9 @@ ${headHTML({
               )}</time></span>`
             : ""
         }</p>
-              <p class="p-summary">${meta.summary}</p>
+              ${
+                ifPresent(meta.summary, (value) => `<p class="p-summary">${value}</p>`)
+              }
               </header>
               <main class="e-content">
               ${data}
