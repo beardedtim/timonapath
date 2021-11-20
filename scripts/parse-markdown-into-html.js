@@ -60,7 +60,12 @@ const writeHomePage = trace(async (types, tags) => {
     links: [...types.keys()].map((type) => ({
       url: type.rootPath,
       title: Case.sentence(type.name),
-    })),
+    })).concat([
+      {
+        url: '/sitemap',
+        title: 'Sitemap'
+      }
+    ]),
     tags: [...tags.keys()].map(tag => ({
       url: `/tags/${tag}`,
       title: tag
