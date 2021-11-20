@@ -1,16 +1,16 @@
-const knex = require('knex')
-const defaultConfig = require('./knexfile')
+const knex = require("knex");
+const defaultConfig = require("./knexfile");
 
 const config = {
-  client: 'postgres',
+  client: "postgres",
   connection: {
-    user: process.env.DB_USERNAME || 'username',
-    password: process.env.DB_PASSWORD || 'password',
-    host: process.env.DB_HOST || 'database',
-    database: process.env.DB_NAME || 'timonapath'
+    user: process.env.DB_USERNAME || "username",
+    password: process.env.DB_PASSWORD || "password",
+    host: process.env.DB_HOST || "database",
+    database: process.env.DB_NAME || "timonapath",
   },
   debug: true,
-  ...defaultConfig
-}
+  ...defaultConfig,
+};
 
-module.exports = knex(config)
+module.exports = knex(config);

@@ -10,7 +10,8 @@
     "create::well-known": "cp assets/well-known/* app",
     "create::clean": "rm -rf app",
     "create::setup": "mkdir app",
-    "create::static": "yarn create::css && yarn create::well-known && yarn create::md && yarn create::img"
+    "create::static": "yarn create::css && yarn create::well-known && yarn create::md && yarn create::img",
+    "fmt": "prettier --write **/*.{js,html,md,css,json,yaml}"
   },
   "repository": {
     "type": "git",
@@ -43,5 +44,8 @@
     "postcss-preset-env": "^6.7.0",
     "precss": "^4.0.0",
     "yaml": "1.10.2"
+  },
+  "devDependencies": {
+    "prettier": "^2.4.1"
   }
 }

@@ -2,7 +2,9 @@ module.exports = (meta) => `
 window.addEventListener('load', async () => {
   const mentionsHTMLContainer = document.getElementById('webmentions')
   if (mentionsHTMLContainer) {
-    const mentionHTML = await fetch('/api/webmentions?path=${encodeURI(meta.url)}').then(x => {
+    const mentionHTML = await fetch('/api/webmentions?path=${encodeURI(
+      meta.url
+    )}').then(x => {
       if (x.status < 300) {
         return x.text()
       }
@@ -14,4 +16,4 @@ window.addEventListener('load', async () => {
     console.log('Updated webmentions')
   }
 })
-`
+`;

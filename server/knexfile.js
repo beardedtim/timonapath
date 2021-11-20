@@ -1,11 +1,11 @@
 // Update with your config settings.
 
 module.exports = {
-  client: 'postgresql',
+  client: "postgresql",
   migrations: {
-    directory: 'artifacts/migrations'
+    directory: "artifacts/migrations",
   },
   seeds: {
-    directory: 'artifacts/seeds'
-  }
-}
+    directory: "artifacts/seeds",
+  },
+};

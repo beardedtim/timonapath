@@ -1,10 +1,10 @@
-const Case = require('case')
+const Case = require("case");
 
 module.exports = ({ links, type }) => {
-  const sentenceCase = Case.sentence(type)
-  const urlCase = Case.lower(type, '/', true)
+  const sentenceCase = Case.sentence(type);
+  const urlCase = Case.lower(type, "/", true);
 
-  return  `
+  return `
   <!DOCTYPE html>
   <html lang="en" xmlns:og="http://ogp.me/ns#">
   
@@ -28,7 +28,9 @@ module.exports = ({ links, type }) => {
     <!--
       Facebook OpenGraph Cards
     -->
-    <meta property="og:url" content="https://timonapath.com/${urlCase.indexOf('/') === 0 ? urlCase.slice(1): urlCase}" />
+    <meta property="og:url" content="https://timonapath.com/${
+      urlCase.indexOf("/") === 0 ? urlCase.slice(1) : urlCase
+    }" />
     <meta property="og:title" content="Snippets | Tim on a Path" />
     <meta property="og:description" content="A list of ${sentenceCase} from Tim Roberts" />
     <meta property="og:site_name" content="Tim on a Path" />
@@ -70,11 +72,13 @@ module.exports = ({ links, type }) => {
         <div class="links-body">
           <div>
             <ul class="h-feed">
-              ${
-                links.map(({ url, title }) => `
+              ${links
+                .map(
+                  ({ url, title }) => `
                   <li><a href="${url}">${title}</a></li>
-                `).join('\n')
-              }
+                `
+                )
+                .join("\n")}
             </ul>
           </div>
         </div>
@@ -86,5 +90,5 @@ module.exports = ({ links, type }) => {
   </body>
   
   </html>
-  `
-}
+  `;
+};

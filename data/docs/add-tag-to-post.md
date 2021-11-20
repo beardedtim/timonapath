@@ -11,7 +11,7 @@ tags:
 ```yaml
 title: Some Title
 summary: Some Summry
-tags: 
+tags:
   - tag 1
   - tag 2
 ```

@@ -11,7 +11,7 @@ tags:
 
 import { Readable } from  'stream'
 
-// CommonJS 
+// CommonJS
 const { Readable } = require('stream')
 
 // Creating a new stream

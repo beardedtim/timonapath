@@ -1,5 +1,5 @@
-const metaHTML = require('./meta-into-head-html')
-const linesHTML = require('./lines-to-html')
+const metaHTML = require("./meta-into-head-html");
+const linesHTML = require("./lines-to-html");
 
 module.exports = ({ groups, meta }) => `
 <!DOCTYPE html>
@@ -9,36 +9,36 @@ ${metaHTML({
   css: `
     <link rel="stylesheet" href="/css/home.css" />
   `,
-  title: '',
-  summary: 'The Sitemap for timonapath.com',
-  url: '/sitemap'
+  title: "",
+  summary: "The Sitemap for timonapath.com",
+  url: "/sitemap",
 })}
 <body>
   <main>
     <ul class="h-sitemap">
-      ${
-        linesHTML([
-          ...groups.entries()
-        ].map(([header, pages]) => `
+      ${linesHTML(
+        [...groups.entries()].map(
+          ([header, pages]) => `
           <li>${header}
             <ul>
-              ${
-                linesHTML(
-                  pages.map(({ url, name }) => `
+              ${linesHTML(
+                pages.map(
+                  ({ url, name }) => `
                 <li>
                   <a href="${url}">${name}</a> 
                 </li>
-                `)
+                `
                 )
-              }
+              )}
             </ul>
           </li>
-        `))
-      }
+        `
+        )
+      )}
     </ul>
     
   </main>
 </body>
 
 </html>
-`
+`;

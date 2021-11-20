@@ -1,5 +1,5 @@
-const trace = require('../utils/trace')
-const fs = require('fs/promises')
+const trace = require("../utils/trace");
+const fs = require("fs/promises");
 
 const writeLeafPage = trace(async (page) => {
   console.log(`Handling LeafPage: `, page.filePath);
@@ -23,4 +23,4 @@ const writeLeafPage = trace(async (page) => {
   console.log("Written to disk: ", page.filePath);
 }, "Write Leaf Page");
 
-module.exports = writeLeafPage
+module.exports = writeLeafPage;

@@ -18,8 +18,8 @@ and define some of these.
 
 I believe, without question, that every human is born with the physical freedom to do what they
 please. There are _social consequences_ to doing things and others have the same freedom as you
-so this isn't to say that _you_ can be a dick cheese and everyone else has to _deal with it_. 
-This is to say that you, as a human on this Earth, only answer to yourself. 
+so this isn't to say that _you_ can be a dick cheese and everyone else has to _deal with it_.
+This is to say that you, as a human on this Earth, only answer to yourself.
 
 Hobbes and Rousseau called out this idea, with Rousseau saying it best I feel:
 
@@ -46,7 +46,6 @@ This fact is the basis for all other things in my world view. Without this agenc
 this free will to make the choices that you think are best for you, none of the other things
 become possible. As such, I want to dive into the _consequences_ of this to ensure that I am
 clear on what this means.
-
 
 #### Agency Means: Your body, your choice
 
@@ -85,16 +84,16 @@ that there are some people that play Devil's Advocate and are contradictory just
 nature. And it is _within their agency to truly feel that way_! Instead of trying to say that _some_ things
 are true and others are merely _that person being a troll_, I think we must take others at face value and
 if they say that calling you "Bar" is the only thing keeping them alive, even if _we_ disagree, then we
-behave and treat them _as if that were true_. 
+behave and treat them _as if that were true_.
 
 If your agency truly depends on a lack of my agency, where do we land? In a world without societies,
 without _social contracts_ as described by Hobbes or Rousseau, it is the strongest that gets to define what
 the rules are and others must either obey or be consumed by the strong. We have the agency to tell others
 to call us "Foo" but they have the agency to kill us and put "Bar" on our tombstone. This is less than
 ideal for the individual, even the strong ones, for your agency, your ability to seek betterment, is tied
-to your vigor and strength, both qualities that are fleeting and difficult to keep. 
+to your vigor and strength, both qualities that are fleeting and difficult to keep.
 
-Over and over again, humans have seen this and have built societies in order to find strength in 
+Over and over again, humans have seen this and have built societies in order to find strength in
 numbers. These societies, which I call Groups, are in and of themselves _things_ that we can treat
 as if it were an individual, with Agency and Freedom similar to that of a single actor. _Outside_ these
 groups the power of might is still active, there is still no concrete, well established way to _fairly_
@@ -105,7 +104,7 @@ different story.
 
 Hobbes talks about this natural state, or _war_ as he described it:
 
-> [...] the state of men without civil society (which state we may properly call the state of nature) is 
+> [...] the state of men without civil society (which state we may properly call the state of nature) is
 > nothing else but a mere war of all against all; and in that war all men have equal right unto all things.
 >
 > _**Leviathan or The Matter, Forme and Power of a Commonwealth Ecclesiasticall and Civil**_
@@ -115,7 +114,7 @@ that are at war with us. The scientific reasons for why we as humans are draw to
 selection or mutual altruism, as discussed in _**The Moral Animal**_, isn't the focus of this work. Instead
 I'd like to ask _what then?_ If we are, in nature, at war with each other, and we find solace in a group,
 what then are we to say about that paradox of agency? _What_ society should we then cling to or _how_
-might we settle the debate of if you _have to be_ called "Foo" or "Bar". 
+might we settle the debate of if you _have to be_ called "Foo" or "Bar".
 
 _We_ decide, as a Group, how. There is not an arbitrator, some authority or soverign _outside_ of the
 Group to petition to; no force outside of the Group that we can call upon for all outside of the Group
@@ -127,7 +126,7 @@ perhaps a dictatorship of the people? As there is no _higher power than the Grou
 possible _from the Group itself_. But this higher power than ourselves contradicts the
 [facts](#facts-on-the-ground) that I started this work with: that I as a human have agency.
 
-If I have complete agency to do as I please, how can I give that up in order to be a part of a larger 
+If I have complete agency to do as I please, how can I give that up in order to be a part of a larger
 whole?
 
 Rousseau answers:
@@ -143,7 +142,7 @@ What is this _social contract_? What is the resolution to this paradox of agency
 
 > These articles of association, rightly understood, are reducible to a single one, namely the total
 > alienation by each associate of himself and all his rights to the whole community.
-> 
+>
 > [...]
 >
 > Each one of us puts into the community his person and all his powers under the supreme direction of
@@ -154,7 +153,7 @@ What is this _social contract_? What is the resolution to this paradox of agency
 We give up _ourselves and our self-driven desires_ to the Group completely and, in turn, the Group makes
 decisions that are in the best interest of _every member of the Group_. Just as you decide to cut your
 toe nails or trim your hair, so too can the Group decide what actions are best made for and against the
-_very well-being_ of an individual. 
+_very well-being_ of an individual.
 
 ## This is Reality
 
@@ -184,7 +183,7 @@ self identity is the Group, what is possible in not only _my_ lifetime but mille
 
 I will call you "Bar" today, "Baz" tomorrow, and won't speak to you the next, if that is what you need
 to feel accepted and complete in this Group. Your identity as an individual is important just like the
-toe and its pain is the pain of the whole body and must be addressed by the whole body. 
+toe and its pain is the pain of the whole body and must be addressed by the whole body.
 
 You _are_ the body, just as _I_ am the body. We may be different appendages but we are all the _same_
 thing as _we see our identity as the Group_ not as the _individuals that are a part of it_. We are the
@@ -203,10 +202,10 @@ This ideal is, for all intent and purpose, impossible for a group of 7 billion p
 even 300 thousand. I accept that my Group will not and probably could not ever be the _only_ Group. I
 support others finding their own rules and dogma to follow and give themselves over to. I will respect
 that they will always call me "Foo" no matter how much I prefer "Bar". They are not a part of my Group
-but have every right to form their own. 
+but have every right to form their own.
 
 I see the pragmatic answer being that just like I myself give up total control to my Group, so too shall
-many Groups give themselves over to form larger ones. This is a republic, formed by many smaller 
+many Groups give themselves over to form larger ones. This is a republic, formed by many smaller
 city-states or similar divisional providences. I am not trying to describe a "more perfect union" nor am
 I of the illusion that this is a novel idea. I do believe, however, if that we were honest and open with
 _each other Groups_, we would find these ideals playing out in much more robust and fruitful ways. If
@@ -215,28 +214,28 @@ and form better _social contracts_ in place of _war_, we would find that there i
 have full agency, regardless of how that may or may not be amenable to any certain group.
 
 Instead of trying to describe the meta-Group, I am trying to describe _my_ specific Group. I do not nor can
-not describe _your_ Group. 
+not describe _your_ Group.
 
 I believe that my Group should be based solely on Grace and Acceptance. We should not fall into the trap
 of intolerance, even if that means we must be tolerant of intolerance. Even if that means that any one
 individual should be hurt or even killed. Just as the toe may be cut off if it is too far broken, so too
 shall the Group accept the death of an individual if that means the Group grows and lives. The Group _must_
 be pacifist and practice [ahimsa](https://en.wikipedia.org/wiki/Ahimsa) or nonviolence. There is no other
-option that ensures that _we_ are not selfish and that _we_ do not take away others agency. 
+option that ensures that _we_ are not selfish and that _we_ do not take away others agency.
 
 We must "cause no injury". We must "turn the other cheek". There is no possible way for me and my
 understanding of the world, to reconcile other's agency with mine. We must accept disrespect, for enforcing
 others, outside of our Group, into anything, is an act of selfishness and selfishness hinders us from
-indentifying as a Group and _only as_ the Group. 
+indentifying as a Group and _only as_ the Group.
 
-We must die to ourselves daily and accept a plight in life that is counter to our own self interests. 
+We must die to ourselves daily and accept a plight in life that is counter to our own self interests.
 
 ### My Own Hypocrisy
 
 I do not turn the other cheek. I am selfish and quite possibly the _most selfish_ person I know. I am
 the least able to do this and the most in need of the Grace and Acceptance that I proport to be the basic
 tenants of my Group. And it is this _very point_ that drives _my need_ of a Group built upon these
-tenants. 
+tenants.
 
 If we are to say that if you are racist you will be removed from the love of the Group, then I am to
 be removed from the Group for I am the most racist person I know. If we are to say that if you cause others
@@ -253,7 +252,7 @@ than I need to survive; I am the cause of other people's suffering and possibly 
 economy and/or butterfly effect to its final conclusions. If we are to say that _we_ can have a Group,
 I am only able to _join_ a Group that allows the outcasts, the sinners, the Enemies of the Group.
 
-How am I able to _be an equal part_ of a Group if that Group doesn't accept me _for who I am?_ 
+How am I able to _be an equal part_ of a Group if that Group doesn't accept me _for who I am?_
 
 ## Tim on a Path
 
@@ -266,12 +265,12 @@ The person I am today, the Group I dedicate my life to, will shape the universe 
 phathom. More immediately it will affect those around me and will drive them towards or away from what I
 said is my ideal world. It is my duty as a rational actor to design my lifestyle around this and to view
 my actions in light of this; I must choose the path that I wish the Group to live even when that path will
-hurt my _individual_ feelings or livelihood, if it's in order to better the Group. 
+hurt my _individual_ feelings or livelihood, if it's in order to better the Group.
 
 I don't propose to _know_ anything. As we grow and find more influences, my views will change and I will
 evolve into a different person. I ask, if you are to follow for a day or for a lifetime, that you
 have Grace and Acceptance for me. Call me out when I do you harm and call me home when you need a Group
-to support you. _**I am a piece of shit**_ and my words will be out of place, incorrect, and harmful. That 
+to support you. _**I am a piece of shit**_ and my words will be out of place, incorrect, and harmful. That
 is something I am working on and any Group that has power over me will understand that. I ask that you have
 love for me and allow me to repent and pay penitence for my actions.
 
@@ -283,7 +282,7 @@ Now we explore what the Group should look like and take an honest look into ours
 we currently are with how we believe the Group should act and focus our lives around changing anything that
 falls short and investing in anything that already has alignment. We have as our tenant Grace and Acceptance
 for that is a prerequisite for any Group we _can_ be a part of. What does that actively mean? If we were to
-imagine a perfect example of the Group, what does any individual of that Group look like? 
+imagine a perfect example of the Group, what does any individual of that Group look like?
 
 I don't know and I think that's a good place for us to start this discussion. This post and all others
 have [Webmentions](https://www.w3.org/TR/webmention/) enabled. You can find that information in the
@@ -291,4 +290,4 @@ markup of the site along with [tutorials](/docs/sending-web-mention) on how to s
 have the URL for `target`. If you have any ideas on what that individual looks like, or possibly where
 we might start our exploration of other people's prior search for this same question, create a post about
 it and send me a Webmention. I'd love to explore this with you and learn from you on how our Group can grow
-and become _something_. 
+and become _something_.

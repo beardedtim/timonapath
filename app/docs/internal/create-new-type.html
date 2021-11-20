@@ -1,92 +1,137 @@
-
 <!DOCTYPE html>
 <html lang="en" xmlns:og="http://ogp.me/ns#">
-
-
-<head>
-  <!--
+  <head>
+    <!--
     Meta Tags
   -->
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Doc on how to create a new type within the current system">
-  <meta name="author" content="Tim Roberts">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Doc on how to create a new type within the current system"
+    />
+    <meta name="author" content="Tim Roberts" />
 
-  <!--
+    <!--
     Icon Links
   -->
-  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-  <link rel="manifest" href="img/site.webmanifest">
-  <!--
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="img/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="img/favicon-16x16.png"
+    />
+    <link rel="manifest" href="img/site.webmanifest" />
+    <!--
     Facebook OpenGraph Cards
   -->
-  <meta property="og:url" content="https://timonapath.com/docs/internal/create-new-type"/>
-  <meta property="og:title" content="Create New Type | Tim on a Path" />
-  <meta property="og:description" content="Doc on how to create a new type within the current system" />
-  <meta property="og:site_name" content="Tim on a Path" />
+    <meta
+      property="og:url"
+      content="https://timonapath.com/docs/internal/create-new-type"
+    />
+    <meta property="og:title" content="Create New Type | Tim on a Path" />
+    <meta
+      property="og:description"
+      content="Doc on how to create a new type within the current system"
+    />
+    <meta property="og:site_name" content="Tim on a Path" />
 
-  <!--
+    <!--
     Twitter Card
   -->
-  <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary" />
 
-  <!--
+    <!--
     IndieAuth
   -->
-  <link href="mailto:timroberts@fastmail.org" rel="me" />
-  <link href="https://github.com/beardedtim" rel="me" />
-  <link href="https://indieauth.com/auth" rel="authorization_endpoint" />
-  <link rel="openid.delegate" href="https://timonapath.com/" />
-  <link rel="openid.server" href="https://openid.indieauth.com/openid" />
+    <link href="mailto:timroberts@fastmail.org" rel="me" />
+    <link href="https://github.com/beardedtim" rel="me" />
+    <link href="https://indieauth.com/auth" rel="authorization_endpoint" />
+    <link rel="openid.delegate" href="https://timonapath.com/" />
+    <link rel="openid.server" href="https://openid.indieauth.com/openid" />
 
-  <!--
+    <!--
     Webmentions
   -->
-  <link href="https://timonapath.com/api/webmentions" rel="webmentions" />
+    <link href="https://timonapath.com/api/webmentions" rel="webmentions" />
 
-  <!--
+    <!--
     Fonts
   -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600&display=swap" rel="stylesheet" as="font"
-    type="text/css">
+    <link
+      href="//fonts.googleapis.com/css?family=Raleway:400,300,600&display=swap"
+      rel="stylesheet"
+      as="font"
+      type="text/css"
+    />
 
-  <!--
+    <!--
     Styles
   -->
-  
+
     <link rel="stylesheet" href="/css/leaf.css" />
-  
-  <link rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
-  <title>Create New Type | Tim on a Path</title>
 
-</head>
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css"
+    />
+    <title>Create New Type | Tim on a Path</title>
+  </head>
 
-<body>
-  <article class="h-entry">
-    <header>
-      <a href="https://timonapath.com/docs/internal/create-new-type" class="u-url">
-        <h2 class="p-name">Create New Type</h2>
-      </a>
-      <p>Published by <a class="p-author h-card" href="https://timonapath.com">Tim Roberts</a>
-        on <time class="dt-published" datetime="undefined">November 13th, 2021 at 10:58 AM</time>
-         |  <span>Updated on <time class="dt-updated" datetime="2021-11-16T21:36:48.467Z">November 16th, 2021 at 4:36 PM</time></span></p>
-              <p class="p-summary">Doc on how to create a new type within the current system</p>
-              </header>
-              <main class="e-content">
-              
-<h1>How to Create a New Domain</h1>
-<h2>Overview</h2>
-<p>This will walk us through how to create a new top-level
-path or <code>domain</code> for the system.</p>
-<h2>Step 0: Create Folder Structure</h2>
-<pre><code class="language-sh"><span class="hljs-built_in">mkdir</span> data/my-new-path
+  <body>
+    <article class="h-entry">
+      <header>
+        <a
+          href="https://timonapath.com/docs/internal/create-new-type"
+          class="u-url"
+        >
+          <h2 class="p-name">Create New Type</h2>
+        </a>
+        <p>
+          Published by
+          <a class="p-author h-card" href="https://timonapath.com"
+            >Tim Roberts</a
+          >
+          on
+          <time class="dt-published" datetime="undefined"
+            >November 13th, 2021 at 10:58 AM</time
+          >
+          |
+          <span
+            >Updated on
+            <time class="dt-updated" datetime="2021-11-20T21:25:09.299Z"
+              >November 20th, 2021 at 4:25 PM</time
+            ></span
+          >
+        </p>
+        <p class="p-summary">
+          Doc on how to create a new type within the current system
+        </p>
+      </header>
+      <main class="e-content">
+        <h1>How to Create a New Domain</h1>
+        <h2>Overview</h2>
+        <p>
+          This will walk us through how to create a new top-level path or
+          <code>domain</code> for the system.
+        </p>
+        <h2>Step 0: Create Folder Structure</h2>
+        <pre><code class="language-sh"><span class="hljs-built_in">mkdir</span> data/my-new-path
 </code></pre>
-<h2>Step 1: Create First Entry</h2>
-<pre><code class="language-bash"><span class="hljs-built_in">cat</span> &gt;data/my-new-path &lt;&lt;<span class="hljs-string">EOL
+        <h2>Step 1: Create First Entry</h2>
+        <pre><code class="language-bash"><span class="hljs-built_in">cat</span> &gt;data/my-new-path &lt;&lt;<span class="hljs-string">EOL
 ---
 title: My Title
 summary: Some Summary
@@ -97,86 +142,86 @@ summary: Some Summary
 ## Some Other Markdown
 EOL</span>
 </code></pre>
-<h2>Step 2: Add New Type</h2>
-<h3>Step 2.1: Add new Type File</h3>
-<pre><code class="language-js"><span class="hljs-comment">// types/my-new-type.js</span>
-<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;path&#x27;</span>)
-<span class="hljs-keyword">const</span> rootTemplate = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;../transformers/type-into-list-html&#x27;</span>)
-<span class="hljs-keyword">const</span> leafTemplate = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;../transformers/markdown-to-html&#x27;</span>)
-<span class="hljs-keyword">const</span> intoType = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;../transformers/config-into-type&#x27;</span>)
+        <h2>Step 2: Add New Type</h2>
+        <h3>Step 2.1: Add new Type File</h3>
+        <pre><code class="language-js"><span class="hljs-comment">// types/my-new-type.js</span>
+<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;path&quot;</span>);
+<span class="hljs-keyword">const</span> rootTemplate = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;../transformers/type-into-list-html&quot;</span>);
+<span class="hljs-keyword">const</span> leafTemplate = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;../transformers/markdown-to-html&quot;</span>);
+<span class="hljs-keyword">const</span> intoType = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;../transformers/config-into-type&quot;</span>);
 <span class="hljs-comment">/**
  * All actions and paths are based off the
  * top level folder path to make it easy to grok
  */</span>
-<span class="hljs-keyword">const</span> rootDir = path.<span class="hljs-title function_">resolve</span>(__dirname, <span class="hljs-string">&#x27;..&#x27;</span>)
+<span class="hljs-keyword">const</span> rootDir = path.<span class="hljs-title function_">resolve</span>(__dirname, <span class="hljs-string">&quot;..&quot;</span>);
 
 <span class="hljs-comment">/**
  * Our specific Type has its own path as well
  */</span>
-<span class="hljs-keyword">const</span> typeFolder = path.<span class="hljs-title function_">resolve</span>(rootDir, <span class="hljs-string">&#x27;data&#x27;</span>, <span class="hljs-string">&#x27;my-new-type&#x27;</span>)
+<span class="hljs-keyword">const</span> typeFolder = path.<span class="hljs-title function_">resolve</span>(rootDir, <span class="hljs-string">&quot;data&quot;</span>, <span class="hljs-string">&quot;my-new-type&quot;</span>);
 
 <span class="hljs-comment">/**
  * The configuration of the Type that we are constructing
- * 
+ *
  * <span class="hljs-doctag">@prop</span> {<span class="hljs-type">string</span>} folder The path to the folder for this Type
  * <span class="hljs-doctag">@prop</span> {<span class="hljs-type">string</span>} rootPath The path that we want to be served under
  * <span class="hljs-doctag">@prop</span> {<span class="hljs-type">{root: function(config): string, leaf: function(config): string </span>}}
  */</span>
 <span class="hljs-keyword">const</span> config = {
   <span class="hljs-attr">folder</span>: typeFolder,
-  <span class="hljs-attr">rootPath</span>: <span class="hljs-string">&#x27;/my-new-type&#x27;</span>,
+  <span class="hljs-attr">rootPath</span>: <span class="hljs-string">&quot;/my-new-type&quot;</span>,
   <span class="hljs-attr">templates</span>: {
     <span class="hljs-attr">root</span>: rootTemplate, <span class="hljs-comment">// Can be custom root template. used for list page</span>
-    <span class="hljs-attr">leaf</span>: leafTemplate <span class="hljs-comment">// can be custom leaf template. used for leaf page</span>
+    <span class="hljs-attr">leaf</span>: leafTemplate, <span class="hljs-comment">// can be custom leaf template. used for leaf page</span>
   },
-  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;My New Type&#x27;</span>
-}
+  <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;My New Type&quot;</span>,
+};
 
-<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = <span class="hljs-title function_">intoType</span>(config)
+<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = <span class="hljs-title function_">intoType</span>(config);
 </code></pre>
-<h3>Step 2.2: Update Type Map</h3>
-<pre><code class="language-js"><span class="hljs-comment">// types/index.js</span>
+        <h3>Step 2.2: Update Type Map</h3>
+        <pre><code class="language-js"><span class="hljs-comment">// types/index.js</span>
 
-<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span>.<span class="hljs-property">Docs</span> = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;./docs&#x27;</span>)
-<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span>.<span class="hljs-property">Snippets</span> = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;./snippets&#x27;</span>)
-<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span>.<span class="hljs-property">Articles</span> = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;./articles&#x27;</span>)
+<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span>.<span class="hljs-property">Docs</span> = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;./docs&quot;</span>);
+<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span>.<span class="hljs-property">Snippets</span> = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;./snippets&quot;</span>);
+<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span>.<span class="hljs-property">Articles</span> = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;./articles&quot;</span>);
 <span class="hljs-comment">// add more here</span>
 <span class="hljs-comment">// module.exports.MyNewType = require(&#x27;./my-new-type)</span>
 </code></pre>
-
-              </main>
-    <aside>
+      </main>
+      <aside>
         <h3>Webmentions on this page</h3>
-        <div id="webmentions">
-          Loading...
-        </div>
-    </aside>
-    <footer>
-      <p>
-        Did you spot anything wrong? Do you disagree vehemently? Post on your own site, mark it up as a <a href="https://indieweb.org/reply" target="_blank">
-        <span class="code">reply</span></a>, and email me (email found in my <span class="code">h-card</span>).
-      </p>
-    </footer>
-  </article>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
-  <script>
-    
-window.addEventListener('load', async () => {
-  const mentionsHTMLContainer = document.getElementById('webmentions')
-  if (mentionsHTMLContainer) {
-    const mentionHTML = await fetch('/api/webmentions?path=/docs/internal/create-new-type').then(x => {
-      if (x.status < 300) {
-        return x.text()
-      }
-  
-      return '<i>None Available. Send me one?</i>'
-    })
-  
-    mentionsHTMLContainer.innerHTML = mentionHTML
-    console.log('Updated webmentions')
-  }
-})
+        <div id="webmentions">Loading...</div>
+      </aside>
+      <footer>
+        <p>
+          Did you spot anything wrong? Do you disagree vehemently? Post on your
+          own site, mark it up as a
+          <a href="https://indieweb.org/reply" target="_blank">
+            <span class="code">reply</span></a
+          >, and email me (email found in my <span class="code">h-card</span>).
+        </p>
+      </footer>
+    </article>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script>
+      window.addEventListener("load", async () => {
+        const mentionsHTMLContainer = document.getElementById("webmentions");
+        if (mentionsHTMLContainer) {
+          const mentionHTML = await fetch(
+            "/api/webmentions?path=/docs/internal/create-new-type"
+          ).then((x) => {
+            if (x.status < 300) {
+              return x.text();
+            }
 
-  </script>
-</body>
+            return "<i>None Available. Send me one?</i>";
+          });
+
+          mentionsHTMLContainer.innerHTML = mentionHTML;
+          console.log("Updated webmentions");
+        }
+      });
+    </script>
+  </body>
 </html>

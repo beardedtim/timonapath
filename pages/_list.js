@@ -1,6 +1,6 @@
-const config = require('../config/static')
-const fs = require('fs/promises')
-const trace = require('../utils/trace')
+const config = require("../config/static");
+const fs = require("fs/promises");
+const trace = require("../utils/trace");
 
 const writeListPage = trace(async (type, pages) => {
   console.log("Writing List Page for: ", type.toString());
@@ -15,7 +15,10 @@ const writeListPage = trace(async (type, pages) => {
     type: type.name,
   });
 
-  await fs.writeFile(`${config.directories.output}/${type.rootPath}/index.html`, html);
+  await fs.writeFile(
+    `${config.directories.output}/${type.rootPath}/index.html`,
+    html
+  );
 }, " Write List Page");
 
-module.exports = writeListPage
+module.exports = writeListPage;

@@ -3,8 +3,9 @@ const db = require("./db");
 
 const app = express();
 
-const createMentionHTML = (mentions) => mentions.length ?
-`
+const createMentionHTML = (mentions) =>
+  mentions.length
+    ? `
 <ul class="h-cite p-mention">
   ${mentions
     .map(
@@ -13,7 +14,8 @@ const createMentionHTML = (mentions) => mentions.length ?
     )
     .join("\n")}
 </ul>
-` : '<em>No Webmentions yet...Send me one?</em>'
+`
+    : "<em>No Webmentions yet...Send me one?</em>";
 
 app
   .post(
@@ -76,11 +78,14 @@ app
     }
 
     console.log('Looking for webmentions for "%s"', path);
-    console.log('Setting target at "%s"', `https://timonapath.com${path}`)
+    console.log('Setting target at "%s"', `https://timonapath.com${path}`);
     try {
-      const mentions = await db.from("webmentions").select("*").where({
-        target: `https://timonapath.com${path}`,
-      });
+      const mentions = await db
+        .from("webmentions")
+        .select("*")
+        .where({
+          target: `https://timonapath.com${path}`,
+        });
 
       res.end(createMentionHTML(mentions));
     } catch (e) {

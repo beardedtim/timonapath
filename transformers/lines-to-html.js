@@ -1,1 +1,1 @@
-module.exports = (arr) => arr.join('\n')
+module.exports = (arr) => arr.join("\n");

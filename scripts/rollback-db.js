@@ -1,7 +1,7 @@
-const db = require('../server/db')
+const db = require("../server/db");
 
 const main = async () => {
-  await db.migrate.rollback()
-}
+  await db.migrate.rollback();
+};
 
-main()
+main();

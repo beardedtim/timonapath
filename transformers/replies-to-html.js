@@ -1,7 +1,6 @@
-const markdownToHTML = require('./markdown-to-html')
+const markdownToHTML = require("./markdown-to-html");
 const { format: formatDate } = require("date-fns");
-const webmentions = require('./meta-into-webmentions-script')
-
+const webmentions = require("./meta-into-webmentions-script");
 
 const template = (meta, data) => `
 <!DOCTYPE html>
@@ -81,7 +80,9 @@ const template = (meta, data) => `
       </p>
       </header>
       <main class="e-content">
-      Repling to <a class="u-in-reply-to" href="${meta.target}" target="_blank">${meta.target}</a>
+      Repling to <a class="u-in-reply-to" href="${
+        meta.target
+      }" target="_blank">${meta.target}</a>
         ${data}
       </main>
       <aside>
@@ -104,4 +105,5 @@ const template = (meta, data) => `
 </body>
 </html>`;
 
-module.exports = (markdowPath, rootConfig) => markdownToHTML(markdowPath, rootConfig, template)
+module.exports = (markdowPath, rootConfig) =>
+  markdownToHTML(markdowPath, rootConfig, template);

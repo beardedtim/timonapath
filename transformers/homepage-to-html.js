@@ -1,4 +1,4 @@
-const metaHTML = require('./meta-into-head-html')
+const metaHTML = require("./meta-into-head-html");
 
 module.exports = ({ links, meta, tags }) => `
 <!DOCTYPE html>
@@ -8,15 +8,15 @@ ${metaHTML({
   css: `
     <link rel="stylesheet" href="/css/home.css" />
   `,
-  title: '',
-  summary: 'The Internet Portal for Tim Roberts',
-  url: '/'
+  title: "",
+  summary: "The Internet Portal for Tim Roberts",
+  url: "/",
 })}
 <body>
   <main>
     <section class="h-card profile">
       <header class="section-header">
-        <h3 class="p-name">Tim <span class="p-family-name">Roberts</span></h2>
+        <h3 class="p-name">Tim <span class="p-family-name">Roberts</span></h3>
       </header>
       <div class="profile-body">
         <div>
@@ -54,11 +54,13 @@ ${metaHTML({
       <div class="links-body">
         <div>
           <ul>
-            ${
-              links.map(link => `
+            ${links
+              .map(
+                (link) => `
                 <li><a href="${link.url}">${link.title}</a></li>
-              `).join('\n')
-            }
+              `
+              )
+              .join("\n")}
           </ul>
         </div>
       </div>
@@ -70,11 +72,13 @@ ${metaHTML({
     <div class="links-body">
       <div>
         <ul>
-          ${
-            tags.map(tag => `
+          ${tags
+            .map(
+              (tag) => `
               <li><a href="${tag.url}">${tag.title}</a></li>
-            `).join('\n')
-          }
+            `
+            )
+            .join("\n")}
         </ul>
       </div>
     </div>
@@ -87,4 +91,4 @@ ${metaHTML({
 </body>
 
 </html>
-`
+`;

@@ -2,13 +2,13 @@ const MarkdownIt = require("markdown-it");
 const fss = require("fs/promises");
 const hljs = require("highlight.js");
 const meta = require("markdown-it-front-matter");
-const webmentions = require('./meta-into-webmentions-script')
-const headHTML = require('./meta-into-head-html')
-const ifPresent = require('../utils/if-present')
+const webmentions = require("./meta-into-webmentions-script");
+const headHTML = require("./meta-into-head-html");
+const ifPresent = require("../utils/if-present");
 
 const { format: formatDate } = require("date-fns");
 
-const yaml = require('yaml');
+const yaml = require("yaml");
 
 const defaultTemplate = (meta, data) => `
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ ${headHTML({
   ...meta,
   css: `
     <link rel="stylesheet" href="/css/leaf.css" />
-  `
+  `,
 })}
 
 <body>
@@ -37,8 +37,8 @@ ${headHTML({
         ${
           meta.updated_timestamp > meta.created_timestamp
             ? ` |  <span>Updated on <time class="dt-updated" datetime="${
-            meta.updated_timestamp
-          }">${formatDate(
+                meta.updated_timestamp
+              }">${formatDate(
                 new Date(meta.updated_timestamp),
                 "MMMM do, y"
               )} at ${formatDate(
@@ -47,9 +47,10 @@ ${headHTML({
               )}</time></span>`
             : ""
         }</p>
-              ${
-                ifPresent(meta.summary, (value) => `<p class="p-summary">${value}</p>`)
-              }
+              ${ifPresent(
+                meta.summary,
+                (value) => `<p class="p-summary">${value}</p>`
+              )}
               </header>
               <main class="e-content">
               ${data}
@@ -81,11 +82,15 @@ const createInitialMetaData = async (markdowPath, rootConfig) => {
     created_timestamp: stats.birthtime.toISOString(),
     updated_timestamp: stats.mtime.toISOString(),
     url: rootConfig.url,
-    webmentionURL: rootConfig.webmentionURL
+    webmentionURL: rootConfig.webmentionURL,
   };
 };
 
-module.exports = async (markdownPath, rootConfig, template = defaultTemplate) => {
+module.exports = async (
+  markdownPath,
+  rootConfig,
+  template = defaultTemplate
+) => {
   console.log("Markdown Path: ", markdownPath);
 
   const source = new MarkdownIt({
@@ -110,15 +115,14 @@ module.exports = async (markdownPath, rootConfig, template = defaultTemplate) =>
   let metadata = await createInitialMetaData(markdownPath, rootConfig);
 
   source.use(meta, function (str) {
-    const parsed = yaml.parse(str)
+    const parsed = yaml.parse(str);
 
-    metadata = Object.assign(metadata, parsed)
+    metadata = Object.assign(metadata, parsed);
   });
 
   const parsed = source.render(await fss.readFile(markdownPath, "utf-8"));
 
-  metadata.url = metadata.url ?? pathURL
-
+  metadata.url = metadata.url ?? pathURL;
 
   return {
     template: template(metadata, parsed),

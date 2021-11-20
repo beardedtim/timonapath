@@ -22,10 +22,9 @@ const customPages = [
   },
   {
     url: "/sitemap",
-    template: writeSitemapPage
-  }
+    template: writeSitemapPage,
+  },
 ];
-
 ```
 
 Add a new object to the `customPages` array that describes your new page along with a new template
@@ -34,18 +33,17 @@ file:
 ```js
 /** ... */
 const writeAboutPage = trace(async (types, tags) => {
-  console.log('Stubbed for now!')
-}, 'Write About Page')
+  console.log("Stubbed for now!");
+}, "Write About Page");
 
 /** ... */
 const customPages = [
   /** ... */
   {
-    url: '/about',
-    template: writeAboutPage
-  }
+    url: "/about",
+    template: writeAboutPage,
+  },
 ];
-
 ```
 
 Now go back and implement however you want to create the About page and save it to the
