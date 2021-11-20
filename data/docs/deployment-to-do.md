@@ -49,3 +49,9 @@ docker-compose up --build -d
 
 _**Note**_: This is only needed when you need to restart or otherwise modify
 the running NGINX 
+
+### Notes:
+
+- This is being done by the Github Actions defined in the repository. You should
+only have to build and push to `origin` and the system should take care of the
+rest.
