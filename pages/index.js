@@ -6,5 +6,4 @@ module.exports.Internal = {
   Type: require("./_type"),
   Page: require("./_page"),
   Utils: require("./_utils"),
-  Tag: require("./_tag"),
 };

@@ -24,7 +24,7 @@ const writeHomePage = trace(async (types, tags) => {
       ]),
     tags: [...tags.keys()].map((tag) => ({
       url: `/tags/${tag}`,
-      title: tag,
+      title: Case.capital(tag),
     })),
     meta: {
       webmentionURL: config.webmentionURL,
