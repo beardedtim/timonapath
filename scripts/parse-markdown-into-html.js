@@ -91,7 +91,10 @@ const writeSitemapPage = trace(async (types, tags) => {
     sitemap.groups.set(type.name, [...urls, { url: type.rootPath, name: type.name }])
   }
 
-  sitemap.groups.set('Tags', [...tags.keys()].map(tag => `https://timonapath.com/tags/${tag}`))
+  sitemap.groups.set('Tags', [...tags.keys()].map(tag => ({
+    url: `https://timonapath.com/tags/${tag}`,
+    name: Case.capital(tag)
+  })))
 
   const sitemapPage = createSitemapPage({
     meta: {
