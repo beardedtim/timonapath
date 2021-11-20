@@ -14,7 +14,8 @@ ${
           linesHTML(
             pages.map(({ url }) => `
             <url>
-              <loc>https://timonapath.com${url}</loc>
+              <loc>${url.indexOf('https') === 0
+              ? url : `https://timonapath.com${url}`}</loc>
               <changefreq>daily</changefreq>
             </url>
           `)
