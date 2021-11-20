@@ -1,191 +1,146 @@
+
 <!DOCTYPE html>
 <html lang="en" xmlns:og="http://ogp.me/ns#">
-  <head>
-    <!--
+
+
+<head>
+  <!--
     Meta Tags
   -->
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="How we currently update the site" />
-    <meta name="author" content="Tim Roberts" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How we currently update the site">
+  <meta name="author" content="Tim Roberts">
 
-    <!--
+  <!--
     Icon Links
   -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="img/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="img/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="img/favicon-16x16.png"
-    />
-    <link rel="manifest" href="img/site.webmanifest" />
-    <!--
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="manifest" href="img/site.webmanifest">
+  <!--
     Facebook OpenGraph Cards
   -->
-    <meta
-      property="og:url"
-      content="https://timonapath.com/docs/internal/deploy-this-website"
-    />
-    <meta property="og:title" content="Deploy Website | Tim on a Path" />
-    <meta
-      property="og:description"
-      content="How we currently update the site"
-    />
-    <meta property="og:site_name" content="Tim on a Path" />
+  <meta property="og:url" content="https://timonapath.com/docs/internal/deploy-this-website"/>
+  <meta property="og:title" content="Deploy Website | Tim on a Path" />
+  <meta property="og:description" content="How we currently update the site" />
+  <meta property="og:site_name" content="Tim on a Path" />
 
-    <!--
+  <!--
     Twitter Card
   -->
-    <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary" />
 
-    <!--
+  <!--
     IndieAuth
   -->
-    <link href="mailto:timroberts@fastmail.org" rel="me" />
-    <link href="https://github.com/beardedtim" rel="me" />
-    <link href="https://indieauth.com/auth" rel="authorization_endpoint" />
-    <link rel="openid.delegate" href="https://timonapath.com/" />
-    <link rel="openid.server" href="https://openid.indieauth.com/openid" />
+  <link href="mailto:timroberts@fastmail.org" rel="me" />
+  <link href="https://github.com/beardedtim" rel="me" />
+  <link href="https://indieauth.com/auth" rel="authorization_endpoint" />
+  <link rel="openid.delegate" href="https://timonapath.com/" />
+  <link rel="openid.server" href="https://openid.indieauth.com/openid" />
 
-    <!--
+  <!--
     Webmentions
   -->
-    <link href="https://timonapath.com/api/webmentions" rel="webmentions" />
+  <link href="https://timonapath.com/api/webmentions" rel="webmentions" />
 
-    <!--
+  <!--
     Fonts
   -->
-    <link
-      href="//fonts.googleapis.com/css?family=Raleway:400,300,600&display=swap"
-      rel="stylesheet"
-      as="font"
-      type="text/css"
-    />
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600&display=swap" rel="stylesheet" as="font"
+    type="text/css">
 
-    <!--
+  <!--
     Styles
   -->
-
+  
     <link rel="stylesheet" href="/css/leaf.css" />
+  
+  <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
+  <title>Deploy Website | Tim on a Path</title>
 
-    <link
-      rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css"
-    />
-    <title>Deploy Website | Tim on a Path</title>
-  </head>
+</head>
 
-  <body>
-    <article class="h-entry">
-      <header>
-        <a
-          href="https://timonapath.com/docs/internal/deploy-this-website"
-          class="u-url"
-        >
-          <h2 class="p-name">Deploy Website</h2>
-        </a>
-        <p>
-          Published by
-          <a class="p-author h-card" href="https://timonapath.com"
-            >Tim Roberts</a
-          >
-          on
-          <time class="dt-published" datetime="undefined"
-            >November 13th, 2021 at 10:54 AM</time
-          >
-          |
-          <span
-            >Updated on
-            <time class="dt-updated" datetime="2021-11-20T21:25:09.311Z"
-              >November 20th, 2021 at 4:25 PM</time
-            ></span
-          >
-        </p>
-        <p class="p-summary">How we currently update the site</p>
-      </header>
-      <main class="e-content">
-        <h1>How to Deploy this Website</h1>
-        <p>
-          This assumes you have built the assets via
-          <code>yarn create::static</code> already
-        </p>
-        <h2>Step 0: Make changes and commit to git <code>main</code></h2>
-        <pre><code class="language-sh">git add . &amp;&amp; git commit -m <span class="hljs-string">&quot;My Message&quot;</span>
+<body>
+  <article class="h-entry">
+    <header>
+      <a href="https://timonapath.com/docs/internal/deploy-this-website" class="u-url">
+        <h2 class="p-name">Deploy Website</h2>
+      </a>
+      <p>Published by <a class="p-author h-card" href="https://timonapath.com">Tim Roberts</a>
+        on <time class="dt-published" datetime="undefined">November 13th, 2021 at 10:54 AM</time>
+         |  <span>Updated on <time class="dt-updated" datetime="2021-11-20T21:25:09.311Z">November 20th, 2021 at 4:25 PM</time></span></p>
+              <p class="p-summary">How we currently update the site</p>
+              </header>
+              <main class="e-content">
+              
+<h1>How to Deploy this Website</h1>
+<p>This assumes you have built the assets via <code>yarn create::static</code>
+already</p>
+<h2>Step 0: Make changes and commit to git <code>main</code></h2>
+<pre><code class="language-sh">git add . &amp;&amp; git commit -m <span class="hljs-string">&quot;My Message&quot;</span>
 </code></pre>
-        <h2>Step 1: Update Origin</h2>
-        <pre><code class="language-sh">git push
+<h2>Step 1: Update Origin</h2>
+<pre><code class="language-sh">git push
 </code></pre>
-        <h2>Step 2: SSH into DO Droplet</h2>
-        <pre><code class="language-sh">ssh username@ip
+<h2>Step 2: SSH into DO Droplet</h2>
+<pre><code class="language-sh">ssh username@ip
 </code></pre>
-        <h2>Step 3: Go to directory</h2>
-        <pre><code class="language-sh"><span class="hljs-built_in">cd</span> my/directory/place
+<h2>Step 3: Go to directory</h2>
+<pre><code class="language-sh"><span class="hljs-built_in">cd</span> my/directory/place
 </code></pre>
-        <h2>Step 4: Pull Origin</h2>
-        <pre><code class="language-sh">git pull
+<h2>Step 4: Pull Origin</h2>
+<pre><code class="language-sh">git pull
 </code></pre>
-        <h2>Step 6 (optional): Restart Docker-Compose</h2>
-        <pre><code class="language-sh">docker-compose up --build -d
+<h2>Step 6 (optional): Restart Docker-Compose</h2>
+<pre><code class="language-sh">docker-compose up --build -d
 </code></pre>
-        <p>
-          <em><strong>Note</strong></em
-          >: This is only needed when you need to restart or otherwise modify
-          the running NGINX
-        </p>
-        <h3>Notes:</h3>
-        <ul>
-          <li>
-            This is being done by the Github Actions defined in the repository.
-            You should only have to build and push to <code>origin</code> and
-            the system should take care of the rest.
-          </li>
-        </ul>
-      </main>
-      <aside>
+<p><em><strong>Note</strong></em>: This is only needed when you need to restart or otherwise modify
+the running NGINX</p>
+<h3>Notes:</h3>
+<ul>
+<li>This is being done by the Github Actions defined in the repository. You should
+only have to build and push to <code>origin</code> and the system should take care of the
+rest.</li>
+</ul>
+
+              </main>
+    <aside>
         <h3>Webmentions on this page</h3>
-        <div id="webmentions">Loading...</div>
-      </aside>
-      <footer>
-        <p>
-          Did you spot anything wrong? Do you disagree vehemently? Post on your
-          own site, mark it up as a
-          <a href="https://indieweb.org/reply" target="_blank">
-            <span class="code">reply</span></a
-          >, and email me (email found in my <span class="code">h-card</span>).
-        </p>
-      </footer>
-    </article>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
-    <script>
-      window.addEventListener("load", async () => {
-        const mentionsHTMLContainer = document.getElementById("webmentions");
-        if (mentionsHTMLContainer) {
-          const mentionHTML = await fetch(
-            "/api/webmentions?path=/docs/internal/deploy-this-website"
-          ).then((x) => {
-            if (x.status < 300) {
-              return x.text();
-            }
+        <div id="webmentions">
+          Loading...
+        </div>
+    </aside>
+    <footer>
+      <p>
+        Did you spot anything wrong? Do you disagree vehemently? Post on your own site, mark it up as a <a href="https://indieweb.org/reply" target="_blank">
+        <span class="code">reply</span></a>, and email me (email found in my <span class="code">h-card</span>).
+      </p>
+    </footer>
+  </article>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+  <script>
+    
+window.addEventListener('load', async () => {
+  const mentionsHTMLContainer = document.getElementById('webmentions')
+  if (mentionsHTMLContainer) {
+    const mentionHTML = await fetch('/api/webmentions?path=/docs/internal/deploy-this-website').then(x => {
+      if (x.status < 300) {
+        return x.text()
+      }
+  
+      return '<i>None Available. Send me one?</i>'
+    })
+  
+    mentionsHTMLContainer.innerHTML = mentionHTML
+    console.log('Updated webmentions')
+  }
+})
 
-            return "<i>None Available. Send me one?</i>";
-          });
-
-          mentionsHTMLContainer.innerHTML = mentionHTML;
-          console.log("Updated webmentions");
-        }
-      });
-    </script>
-  </body>
+  </script>
+</body>
 </html>
