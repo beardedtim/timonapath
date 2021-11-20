@@ -14,7 +14,7 @@ ${
           linesHTML(
             pages.map(({ url }) => `
             <url>
-              <loc>${url}</loc>
+              <loc>https://timonapath.com${url}</loc>
               <changefreq>daily</changefreq>
             </url>
           `)
