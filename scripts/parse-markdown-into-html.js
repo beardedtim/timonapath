@@ -5,6 +5,7 @@ const config = require('../config/static.js')
 const trace = require("../utils/trace");
 
 const createHomePage = require("../transformers/homepage-to-html");
+const createSitemapPage = require('../transformers/sitemap-to-html')
 const tagTemplate = require('../transformers/type-into-list-html')
 
 const Types = require("../types");
@@ -71,6 +72,38 @@ const writeHomePage = trace(async (types, tags) => {
 
   await fs.writeFile(`${rootDir}/app/index.html`, homepage);
 }, "Write Home Page");
+
+const writeSitemapPage = trace(async (types, tags) => {
+  console.log("Now we are generating the sitemap page")
+  console.log("This will be by taking in the types and tags created")
+  console.log("and turning them into groupings of links to their pages")
+
+  const sitemap = {
+    groups: new Map(),
+  }
+
+  for (const [type, pages] of types.entries()) {
+    const urls = [...pages.values()].map(({ url, metadata }) => ({
+      url,
+      name: metadata.title
+    }))
+
+    sitemap.groups.set(type.name, [...urls, { url: type.rootPath, name: type.name }])
+  }
+
+  sitemap.groups.set('Tags', [...tags.keys()].map(tag => `https://timonapath.com/tags/${tag}`))
+
+  const sitemapPage = createSitemapPage({
+    meta: {
+      webmentionURL: config.webmentionURL,
+      title: 'Sitemap',
+    },
+    groups: sitemap.groups
+  })
+
+  await fs.writeFile(`${rootDir}/app/sitemap.html`, sitemapPage);
+  
+ }, 'Write Sitemap Page')
 
 const writeLeafPage = trace(async (page) => {
   console.log(`Handling LeafPage: `, page.filePath);
@@ -162,6 +195,10 @@ const customPages = [
     url: "/",
     template: writeHomePage,
   },
+  {
+    url: "/sitemap",
+    template: writeSitemapPage
+  }
 ];
 
 const writeCustomPages = trace(async (pages, types, tags) => {

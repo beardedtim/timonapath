@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:og="http://ogp.me/ns#">
+
+
+<head>
+  <!--
+    Meta Tags
+  -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Doc on how to create a new custom page to be built at runtime using the
+types and tags
+">
+  <meta name="author" content="Tim Roberts">
+
+  <!--
+    Icon Links
+  -->
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="manifest" href="img/site.webmanifest">
+  <!--
+    Facebook OpenGraph Cards
+  -->
+  <meta property="og:url" content="https://timonapath.com//docs/internal/create-new-custom-page"/>
+  <meta property="og:title" content="Create New Custom Page | Tim on a Path" />
+  <meta property="og:description" content="Doc on how to create a new custom page to be built at runtime using the
+types and tags
+" />
+  <meta property="og:site_name" content="Tim on a Path" />
+
+  <!--
+    Twitter Card
+  -->
+  <meta name="twitter:card" content="summary" />
+
+  <!--
+    IndieAuth
+  -->
+  <link href="mailto:timroberts@fastmail.org" rel="me" />
+  <link href="https://github.com/beardedtim" rel="me" />
+  <link href="https://indieauth.com/auth" rel="authorization_endpoint" />
+  <link rel="openid.delegate" href="https://timonapath.com/" />
+  <link rel="openid.server" href="https://openid.indieauth.com/openid" />
+
+  <!--
+    Webmentions
+  -->
+  <link href="https://timonapath.com/api/webmentions" rel="webmentions" />
+
+  <!--
+    Fonts
+  -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600&display=swap" rel="stylesheet" as="font"
+    type="text/css">
+
+  <!--
+    Styles
+  -->
+  
+    <link rel="stylesheet" href="/css/leaf.css" />
+  
+  <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
+  <title>Create New Custom Page | Tim on a Path</title>
+
+</head>
+
+<body>
+  <article class="h-entry">
+    <header>
+      <a href="https://timonapath.com/docs/internal/create-new-custom-page" class="u-url">
+        <h2 class="p-name">Create New Custom Page</h2>
+      </a>
+      <p>Published by <a class="p-author h-card" href="https://timonapath.com">Tim Roberts</a>
+        on <time class="dt-published" datetime="undefined">November 20th, 2021 at 12:57 PM</time>
+         |  <span>Updated on <time class="dt-updated" datetime="2021-11-20T18:00:49.343Z">November 20th, 2021 at 1:00 PM</time></span></p>
+              <p class="p-summary">Doc on how to create a new custom page to be built at runtime using the
+types and tags
+</p>
+              </header>
+              <main class="e-content">
+              
+<h1>How to Create a New Custom Page</h1>
+<h2>Step 0: Stub Out Page</h2>
+<p>Inside of <code>scripts/parse-markdown-into-html.js</code>, there is a block defining <code>customPages</code>:</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> customPages = [
+  {
+    <span class="hljs-attr">url</span>: <span class="hljs-string">&quot;/&quot;</span>,
+    <span class="hljs-attr">template</span>: writeHomePage,
+  },
+  {
+    <span class="hljs-attr">url</span>: <span class="hljs-string">&quot;/sitemap&quot;</span>,
+    <span class="hljs-attr">template</span>: writeSitemapPage
+  }
+];
+
+</code></pre>
+<p>Add a new object to the <code>customPages</code> array that describes your new page along with a new template
+file:</p>
+<pre><code class="language-js"><span class="hljs-comment">/** ... */</span>
+<span class="hljs-keyword">const</span> writeAboutPage = <span class="hljs-title function_">trace</span>(<span class="hljs-keyword">async</span> (types, tags) =&gt; {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;Stubbed for now!&#x27;</span>)
+}, <span class="hljs-string">&#x27;Write About Page&#x27;</span>)
+
+<span class="hljs-comment">/** ... */</span>
+<span class="hljs-keyword">const</span> customPages = [
+  <span class="hljs-comment">/** ... */</span>
+  {
+    <span class="hljs-attr">url</span>: <span class="hljs-string">&#x27;/about&#x27;</span>,
+    <span class="hljs-attr">template</span>: writeAboutPage
+  }
+];
+
+</code></pre>
+<p>Now go back and implement however you want to create the About page and save it to the
+correct location on the filesystem.</p>
+
+              </main>
+    <aside>
+        <h3>Webmentions on this page</h3>
+        <div id="webmentions">
+          Loading...
+        </div>
+    </aside>
+    <footer>
+      <p>
+        Did you spot anything wrong? Do you disagree vehemently? Post on your own site, mark it up as a <a href="https://indieweb.org/reply" target="_blank">
+        <span class="code">reply</span></a>, and email me (email found in my <span class="code">h-card</span>).
+      </p>
+    </footer>
+  </article>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+  <script>
+    
+window.addEventListener('load', async () => {
+  const mentionsHTMLContainer = document.getElementById('webmentions')
+  if (mentionsHTMLContainer) {
+    const mentionHTML = await fetch('/api/webmentions?path=/docs/internal/create-new-custom-page').then(x => {
+      if (x.status < 300) {
+        return x.text()
+      }
+  
+      return '<i>None Available. Send me one?</i>'
+    })
+  
+    mentionsHTMLContainer.innerHTML = mentionHTML
+    console.log('Updated webmentions')
+  }
+})
+
+  </script>
+</body>
+</html>
