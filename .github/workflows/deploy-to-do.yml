@@ -2,7 +2,7 @@ name: Deply to DO
 
 on:
   push:
-    branches: [ CI/initial-setup ]
+    branches: [ 'main' ]
   
 
   # Allows you to run this workflow manually from the Actions tab
