@@ -6,6 +6,7 @@ const trace = require("../utils/trace");
 
 const createHomePage = require("../transformers/homepage-to-html");
 const createSitemapPage = require('../transformers/sitemap-to-html')
+const createSitemapXML = require('../transformers/sitemap-to-xml')
 const tagTemplate = require('../transformers/type-into-list-html')
 
 const Types = require("../types");
@@ -111,6 +112,12 @@ const writeSitemapPage = trace(async (types, tags) => {
 
   await fs.writeFile(`${rootDir}/app/sitemap.html`, sitemapPage);
   
+  const sitemapXML = createSitemapXML({
+    groups: sitemap.groups
+  })
+
+  await fs.writeFile(`${rootDir}/app/sitemap.xml`, sitemapXML)
+
  }, 'Write Sitemap Page')
 
 const writeLeafPage = trace(async (page) => {
