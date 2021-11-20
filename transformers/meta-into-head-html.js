@@ -8,7 +8,7 @@ module.exports = (meta) => `
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  ${ifPresent(meta.summary, (value) => `<meta name="description" content="${value}">` )}
+  ${ifPresent(meta.summary, (value) => `<meta name="description" content="${value}">`, '')}
   <meta name="author" content="Tim Roberts">
 
   <!--
@@ -21,9 +21,10 @@ module.exports = (meta) => `
   <!--
     Facebook OpenGraph Cards
   -->
-  <meta property="og:url" content="https://timonapath.com/${meta.url}"/>
+  <meta property="og:url" content="https://timonapath.com/${meta.url.indexOf('/') === 0 
+  ? meta.url.slice(1) : meta.url}"/>
   <meta property="og:title" content="${meta.title ? `${meta.title} | ` : ''}Tim on a Path" />
-  ${ifPresent(meta.summary, (value) => `<meta property="og:description" content="${value}" />` )}
+  ${ifPresent(meta.summary, (value) => `<meta property="og:description" content="${value}" />`, '')}
   <meta property="og:site_name" content="Tim on a Path" />
 
   <!--

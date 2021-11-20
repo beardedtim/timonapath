@@ -28,7 +28,7 @@ module.exports = ({ links, type }) => {
     <!--
       Facebook OpenGraph Cards
     -->
-    <meta property="og:url" content="https://timonapath.com/" />
+    <meta property="og:url" content="https://timonapath.com/${urlCase.indexOf('/') === 0 ? urlCase.slice(1): urlCase}" />
     <meta property="og:title" content="Snippets | Tim on a Path" />
     <meta property="og:description" content="A list of ${sentenceCase} from Tim Roberts" />
     <meta property="og:site_name" content="Tim on a Path" />
