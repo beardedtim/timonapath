@@ -8,7 +8,7 @@
  */
 module.exports.Home = require("./home");
 module.exports.Sitemap = require("./sitemap");
-module.exports.RSS = require('./rss')
+module.exports.RSS = require("./rss");
 
 /**
  * This is used to build the generic

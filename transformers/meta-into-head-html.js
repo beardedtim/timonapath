@@ -51,11 +51,17 @@ module.exports = (meta) => `
   <link href="https://indieauth.com/auth" rel="authorization_endpoint" />
   <link rel="openid.delegate" href="https://timonapath.com/" />
   <link rel="openid.server" href="https://openid.indieauth.com/openid" />
-
+    
   <!--
     Webmentions
   -->
   <link href="${meta.webmentionURL}" rel="webmentions" />
+
+
+  <!--
+    RSS Feed
+  -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://timonapath.com/rss.xml"/>
 
   <!--
     Fonts
