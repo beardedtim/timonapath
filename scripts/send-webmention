@@ -1,0 +1,8 @@
+# !/bin/sh
+
+set -e;
+
+curl -i \
+  -d source=https://timonapath.com/articles/body-politic \
+  -d target=https://timonapath.com/docs/sending-web-mention  \
+  https://timonapath.com/api/webmentions
