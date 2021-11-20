@@ -747,3 +747,7 @@ article {
 #webmentions {
   margin-bottom: calc(4 * var(--base-size));
 }
+blockquote {
+  background: blanchedalmond;
+  padding: calc(2.5 * var(--base-size));
+}
