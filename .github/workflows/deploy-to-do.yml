@@ -31,6 +31,5 @@ jobs:
       
       - name: Run SSH Command
         run: ssh root@${{ secrets.SSH_HOST}} <<'EOT'
-            cd /timonapath.com/timonapath/
-            git pull
+            cd /timonapath.com/timonapath/ && git pull
           EOT
