@@ -1,6 +1,7 @@
 const trace = require("../utils/trace");
 const fs = require("fs/promises");
 const config = require("../config/static");
+const Case = require("case");
 
 const getTagGroup = trace(async (types) => {
   const tags = new Map();
@@ -28,7 +29,7 @@ const writeTagsPage = (tagTemplate) =>
 
     for (const [tag, pages] of tags.entries()) {
       const template = tagTemplate({
-        type: `Tag: ${tag}`,
+        type: `Tag: ${Case.capital(tag)}`,
         links: [...pages.values()].map(({ metadata }) => metadata),
       });
 

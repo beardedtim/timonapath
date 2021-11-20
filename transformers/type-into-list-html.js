@@ -67,7 +67,7 @@ module.exports = ({ links, type }) => {
     <main>
       <section class="links">
         <header class="section-header">
-          <h3>${sentenceCase}</h3>
+          <h3>${type}</h3>
         </header>
         <div class="links-body">
           <div>
