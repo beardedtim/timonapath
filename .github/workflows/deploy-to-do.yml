@@ -31,7 +31,7 @@ jobs:
       
       - name: Run SSH Command
         run: |
-          ssh root@${{ secrets.SSH_HOST}}
+          ssh -T root@${{ secrets.SSH_HOST}}
           cd /timonapath.com/timonapath/
           git pull
           exit;
