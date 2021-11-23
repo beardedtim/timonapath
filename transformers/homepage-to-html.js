@@ -8,7 +8,6 @@ ${metaHTML({
   css: `
     <link rel="stylesheet" href="/css/home.css" />
   `,
-  title: "",
   summary: "The Internet Portal for Tim Roberts",
   url: "/",
 })}

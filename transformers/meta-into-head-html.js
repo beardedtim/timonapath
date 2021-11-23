@@ -1,4 +1,5 @@
 const ifPresent = require("../utils/if-present");
+const config = require("../config/static");
 
 module.exports = (meta) => `
 <head>
@@ -36,7 +37,7 @@ module.exports = (meta) => `
     (value) => `<meta property="og:description" content="${value}" />`,
     ""
   )}
-  <meta property="og:site_name" content="Tim on a Path" />
+  <meta property="og:site_name" content="${config.title}" />
 
   <!--
     Twitter Card
@@ -75,6 +76,6 @@ module.exports = (meta) => `
   ${meta.css || ""}
   <link rel="stylesheet"
       href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
-  <title>${meta.title ? `${meta.title} | ` : ""}Tim on a Path</title>
+  <title>${meta.title ? `${meta.title} | ` : ""}${config.title}</title>
 
 </head>`;

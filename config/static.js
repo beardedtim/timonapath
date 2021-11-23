@@ -11,4 +11,5 @@ module.exports = {
     data: dataDir,
     output: outputDir,
   },
+  title: "Tim on a Path",
 };

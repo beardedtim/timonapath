@@ -79,6 +79,7 @@ app
 
     console.log('Looking for webmentions for "%s"', path);
     console.log('Setting target at "%s"', `https://timonapath.com${path}`);
+
     try {
       const mentions = await db
         .from("webmentions")
@@ -91,6 +92,7 @@ app
     } catch (e) {
       console.log("ERROR READING WEBMENTION");
       console.error(e);
+
       res.status(400).json({
         error: {
           message:
