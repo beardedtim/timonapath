@@ -13,7 +13,7 @@ synonyms:
 
 ## Palter
 
-> intr.v. pal·tered, pal·ter·ing, pal·ters Archaic
+_**intr.v. pal·tered, pal·ter·ing, pal·ters Archaic**_
 
 1. To talk or act insincerely or misleadingly; equivocate.
 2. To be capricious; trifle.

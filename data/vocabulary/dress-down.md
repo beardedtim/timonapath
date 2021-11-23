@@ -33,6 +33,6 @@ synonyms:
 
 ## Dressed Down
 
-> Phrasal Verb
+_**Phrasal Verb**_
 
 1. To scold; reprimand
