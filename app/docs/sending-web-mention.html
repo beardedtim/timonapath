@@ -1,136 +1,183 @@
-
 <!DOCTYPE html>
 <html lang="en" xmlns:og="http://ogp.me/ns#">
-
-
-<head>
-  <!--
+  <head>
+    <!--
     Meta Tags
   -->
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="We go over how to send an HTTP request to this server for webmentions">
-  <meta name="author" content="Tim Roberts">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="We go over how to send an HTTP request to this server for webmentions"
+    />
+    <meta name="author" content="Tim Roberts" />
 
-  <!--
+    <!--
     Icon Links
   -->
-  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-  <link rel="manifest" href="img/site.webmanifest">
-  <!--
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="img/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="img/favicon-16x16.png"
+    />
+    <link rel="manifest" href="img/site.webmanifest" />
+    <!--
     Facebook OpenGraph Cards
   -->
-  <meta property="og:url" content="https://timonapath.com/docs/sending-web-mention"/>
-  <meta property="og:title" content="Sending Tim on a Path a Webmention | Tim on a Path" />
-  <meta property="og:description" content="We go over how to send an HTTP request to this server for webmentions" />
-  <meta property="og:site_name" content="Tim on a Path" />
+    <meta
+      property="og:url"
+      content="https://timonapath.com/docs/sending-web-mention"
+    />
+    <meta
+      property="og:title"
+      content="Sending Tim on a Path a Webmention | Tim on a Path"
+    />
+    <meta
+      property="og:description"
+      content="We go over how to send an HTTP request to this server for webmentions"
+    />
+    <meta property="og:site_name" content="Tim on a Path" />
 
-  <!--
+    <!--
     Twitter Card
   -->
-  <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary" />
 
-  <!--
+    <!--
     IndieAuth
   -->
-  <link href="mailto:timroberts@fastmail.org" rel="me" />
-  <link href="https://github.com/beardedtim" rel="me" />
-  <link href="https://indieauth.com/auth" rel="authorization_endpoint" />
-  <link rel="openid.delegate" href="https://timonapath.com/" />
-  <link rel="openid.server" href="https://openid.indieauth.com/openid" />
-    
-  <!--
+    <link href="mailto:timroberts@fastmail.org" rel="me" />
+    <link href="https://github.com/beardedtim" rel="me" />
+    <link href="https://indieauth.com/auth" rel="authorization_endpoint" />
+    <link rel="openid.delegate" href="https://timonapath.com/" />
+    <link rel="openid.server" href="https://openid.indieauth.com/openid" />
+
+    <!--
     Webmentions
   -->
-  <link href="https://timonapath.com/api/webmentions" rel="webmentions" />
+    <link href="https://timonapath.com/api/webmentions" rel="webmentions" />
 
-
-  <!--
+    <!--
     RSS Feed
   -->
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://timonapath.com/rss.xml"/>
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="RSS"
+      href="https://timonapath.com/rss.xml"
+    />
 
-  <!--
+    <!--
     Fonts
   -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600&display=swap" rel="stylesheet" as="font"
-    type="text/css">
+    <link
+      href="//fonts.googleapis.com/css?family=Raleway:400,300,600&display=swap"
+      rel="stylesheet"
+      as="font"
+      type="text/css"
+    />
 
-  <!--
+    <!--
     Styles
   -->
-  
+
     <link rel="stylesheet" href="/css/leaf.css" />
-  
-  <link rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
-  <title>Sending Tim on a Path a Webmention | Tim on a Path</title>
 
-</head>
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css"
+    />
+    <title>Sending Tim on a Path a Webmention | Tim on a Path</title>
+  </head>
 
-<body>
-  <article class="h-entry">
-    <header>
-      <a href="https://timonapath.com/docs/sending-web-mention" class="u-url">
-        <h2 class="p-name">Sending Tim on a Path a Webmention</h2>
-      </a>
-      <p>Published by <a class="p-author h-card" href="https://timonapath.com">Tim Roberts</a>
-        on <time class="dt-published" datetime="undefined">November 13th, 2021 at 5:04 PM</time>
-         |  <span>Updated on <time class="dt-updated" datetime="2021-11-20T21:25:09.315Z">November 20th, 2021 at 4:25 PM</time></span></p>
-              <p class="p-summary">We go over how to send an HTTP request to this server for webmentions</p>
-              </header>
-              <main class="e-content">
-              
-<h2>Step 0: Send Request To Store Webmention</h2>
-<pre><code class="language-sh">curl -i \
+  <body>
+    <article class="h-entry">
+      <header>
+        <a href="https://timonapath.com/docs/sending-web-mention" class="u-url">
+          <h2 class="p-name">Sending Tim on a Path a Webmention</h2>
+        </a>
+        <p>
+          Published by
+          <a class="p-author h-card" href="https://timonapath.com"
+            >Tim Roberts</a
+          >
+          on
+          <time class="dt-published" datetime="undefined"
+            >November 13th, 2021 at 5:04 PM</time
+          >
+          |
+          <span
+            >Updated on
+            <time class="dt-updated" datetime="2021-11-20T21:25:09.315Z"
+              >November 20th, 2021 at 4:25 PM</time
+            ></span
+          >
+        </p>
+        <p class="p-summary">
+          We go over how to send an HTTP request to this server for webmentions
+        </p>
+      </header>
+      <main class="e-content">
+        <h2>Step 0: Send Request To Store Webmention</h2>
+        <pre><code class="language-sh">curl -i \
   -d <span class="hljs-built_in">source</span>=https://timonapath.com/replies/my-new-reply \
   -d target=https://target.url/we/are/replying/to \
   https://timonapath.com/api/webmentions
 </code></pre>
-<h2>Step 1 (optional): Send UPDATE or DELETE</h2>
-<pre><code class="language-sh">curl -i \
+        <h2>Step 1 (optional): Send UPDATE or DELETE</h2>
+        <pre><code class="language-sh">curl -i \
   -d <span class="hljs-built_in">source</span>=https://timonapath.com/replies/my-new-reply \
   -d target=https://target.url/we/are/replying/to \
   -d <span class="hljs-built_in">type</span>=update \ <span class="hljs-comment"># also -d type=delete</span>
   https://timonapath.com/api/webmentions
 </code></pre>
-
-              </main>
-    <aside>
+      </main>
+      <aside>
         <h3>Webmentions on this page</h3>
-        <div id="webmentions">
-          Loading...
-        </div>
-    </aside>
-    <footer>
-      <p>
-        Did you spot anything wrong? Do you disagree vehemently? Post on your own site, mark it up as a <a href="https://indieweb.org/reply" target="_blank">
-        <span class="code">reply</span></a>, and email me (email found in my <span class="code">h-card</span>).
-      </p>
-    </footer>
-  </article>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
-  <script>
-    
-window.addEventListener('load', async () => {
-  const mentionsHTMLContainer = document.getElementById('webmentions')
-  if (mentionsHTMLContainer) {
-    const mentionHTML = await fetch('/api/webmentions?path=/docs/sending-web-mention').then(x => {
-      if (x.status < 300) {
-        return x.text()
-      }
-  
-      return '<i>None Available. Send me one?</i>'
-    })
-  
-    mentionsHTMLContainer.innerHTML = mentionHTML
-    console.log('Updated webmentions')
-  }
-})
+        <div id="webmentions">Loading...</div>
+      </aside>
+      <footer>
+        <p>
+          Did you spot anything wrong? Do you disagree vehemently? Post on your
+          own site, mark it up as a
+          <a href="https://indieweb.org/reply" target="_blank">
+            <span class="code">reply</span></a
+          >, and email me (email found in my <span class="code">h-card</span>).
+        </p>
+      </footer>
+    </article>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script>
+      window.addEventListener("load", async () => {
+        const mentionsHTMLContainer = document.getElementById("webmentions");
+        if (mentionsHTMLContainer) {
+          const mentionHTML = await fetch(
+            "/api/webmentions?path=/docs/sending-web-mention"
+          ).then((x) => {
+            if (x.status < 300) {
+              return x.text();
+            }
 
-  </script>
-</body>
+            return "<i>None Available. Send me one?</i>";
+          });
+
+          mentionsHTMLContainer.innerHTML = mentionHTML;
+          console.log("Updated webmentions");
+        }
+      });
+    </script>
+  </body>
 </html>

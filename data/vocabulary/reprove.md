@@ -1,10 +1,10 @@
 ---
 title: Reprove
 
-synonyms: [ 'admonish', 'chide', 'rebuke', 'reprimand', 'reproach', 'tick off' ]
+synonyms: ["admonish", "chide", "rebuke", "reprimand", "reproach", "tick off"]
 ---
 
-## Palter
+## Reprove
 
 > tr.v. re·proved, re·prov·ing, re·proves
 
