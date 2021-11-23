@@ -110,7 +110,19 @@
 
         
             <url>
+              <loc>https://timonapath.com/vocabulary/dress-down</loc>
+              <changefreq>daily</changefreq>
+            </url>
+          
+
+            <url>
               <loc>https://timonapath.com/vocabulary/palter</loc>
+              <changefreq>daily</changefreq>
+            </url>
+          
+
+            <url>
+              <loc>https://timonapath.com/vocabulary/reprove</loc>
               <changefreq>daily</changefreq>
             </url>
           

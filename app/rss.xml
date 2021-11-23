@@ -4,8 +4,18 @@
         <description><![CDATA[The RSS Feed for the Internet Portal of Tim Roberts]]></description>
         <link>https://timonapath.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 20 Nov 2021 22:17:49 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 23 Nov 2021 18:25:35 GMT</lastBuildDate>
         <atom:link href="https://timonapath.com/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[No title]]></title>
+            <link>https://timonapath.com/vocabulary/reprove</link>
+            <guid isPermaLink="true">https://timonapath.com/vocabulary/reprove</guid>
+        </item>
+        <item>
+            <title><![CDATA[No title]]></title>
+            <link>https://timonapath.com/vocabulary/dress-down</link>
+            <guid isPermaLink="true">https://timonapath.com/vocabulary/dress-down</guid>
+        </item>
         <item>
             <title><![CDATA[No title]]></title>
             <link>https://timonapath.com/replies/re-making-drunk-lumber</link>

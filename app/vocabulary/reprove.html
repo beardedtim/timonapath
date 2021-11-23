@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:og="http://ogp.me/ns#">
 
+
 <head>
   <!--
     Meta Tags
@@ -9,7 +10,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="In Reply To https://timonapath.com/docs/creating-replies">
+  
   <meta name="author" content="Tim Roberts">
 
   <!--
@@ -22,9 +23,9 @@
   <!--
     Facebook OpenGraph Cards
   -->
-  <meta property="og:url" content="https://timonapath.com//replies/replying-to-myself"/>
-  <meta property="og:title" content="Replying to Myself | Tim on a Path" />
-  <meta property="og:description" content="In Reply To https://timonapath.com/docs/creating-replies" />
+  <meta property="og:url" content="https://timonapath.com/vocabulary/reprove"/>
+  <meta property="og:title" content="Reprove | Tim on a Path" />
+  
   <meta property="og:site_name" content="Tim on a Path" />
 
   <!--
@@ -38,11 +39,19 @@
   <link href="mailto:timroberts@fastmail.org" rel="me" />
   <link href="https://github.com/beardedtim" rel="me" />
   <link href="https://indieauth.com/auth" rel="authorization_endpoint" />
-
+  <link rel="openid.delegate" href="https://timonapath.com/" />
+  <link rel="openid.server" href="https://openid.indieauth.com/openid" />
+    
   <!--
     Webmentions
   -->
   <link href="https://timonapath.com/api/webmentions" rel="webmentions" />
+
+
+  <!--
+    RSS Feed
+  -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://timonapath.com/rss.xml"/>
 
   <!--
     Fonts
@@ -53,32 +62,39 @@
   <!--
     Styles
   -->
-  <link rel="stylesheet" href="/css/leaf.css" />
+  
+    <link rel="stylesheet" href="/css/leaf.css" />
+  
   <link rel="stylesheet"
       href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
-  <title>Replying to Myself | Tim on a Path</title>
+  <title>Reprove | Tim on a Path</title>
 
 </head>
 
 <body>
   <article class="h-entry">
     <header>
-      <a href="https://timonapath.com/replies/replying-to-myself" class="u-url">
-        <h2 class="p-name">Replying to Myself</h2>
+      <a href="https://timonapath.com/vocabulary/reprove" class="u-url">
+        <h2 class="p-name">Reprove</h2>
       </a>
-      <p>Published by <a class="p-author h-card u-url" href="https://timonapath.com">Tim Roberts</a>
-        on <time class="dt-published" datetime="undefined">November 13th, 2021 at 2:55 PM</time>
-      </p>
-      </header>
-      <main class="e-content">
-      Repling to <a class="u-in-reply-to" href="https://timonapath.com/docs/creating-replies" target="_blank">https://timonapath.com/docs/creating-replies</a>
-        
-<p>This reply is in reply to my homepage. This will prove that I can
-handle Webmentions and will serve as a reminder in case I ever try
-to re-send Webmentions in bulk.</p>
+      <p>Published by <a class="p-author h-card" href="https://timonapath.com">Tim Roberts</a>
+        on <time class="dt-published" datetime="undefined">November 23rd, 2021 at 1:23 PM</time>
+         |  <span>Updated on <time class="dt-updated" datetime="2021-11-23T18:25:31.676Z">November 23rd, 2021 at 1:25 PM</time></span></p>
+              undefined
+              </header>
+              <main class="e-content">
+              
+<h2>Palter</h2>
+<blockquote>
+<p>tr.v. re·proved, re·prov·ing, re·proves</p>
+</blockquote>
+<ol>
+<li>To express disapproval to (someone); criticize</li>
+<li>To express disapproval about (something)</li>
+</ol>
 
-      </main>
-      <aside>
+              </main>
+    <aside>
         <h3>Webmentions on this page</h3>
         <div id="webmentions">
           Loading...
@@ -97,7 +113,7 @@ to re-send Webmentions in bulk.</p>
 window.addEventListener('load', async () => {
   const mentionsHTMLContainer = document.getElementById('webmentions')
   if (mentionsHTMLContainer) {
-    const mentionHTML = await fetch('/api/webmentions?path=/replies/replying-to-myself').then(x => {
+    const mentionHTML = await fetch('/api/webmentions?path=/vocabulary/reprove').then(x => {
       if (x.status < 300) {
         return x.text()
       }
