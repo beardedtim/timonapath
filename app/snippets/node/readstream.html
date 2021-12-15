@@ -106,7 +106,7 @@
   <body>
     <article class="h-entry">
       <header>
-        <a href="https://timonapath.comsnippets/node/readstream" class="u-url">
+        <a href="https://timonapath.com/snippets/node/readstream" class="u-url">
           <h2 class="p-name">Readable Streams in Node</h2>
         </a>
         <p>
@@ -179,7 +179,7 @@ stream.<span class="hljs-title function_">pipe</span>(writeable)
         const mentionsHTMLContainer = document.getElementById("webmentions");
         if (mentionsHTMLContainer) {
           const mentionHTML = await fetch(
-            "/api/webmentions?path=snippets/node/readstream"
+            "/api/webmentions?path=/snippets/node/readstream"
           ).then((x) => {
             if (x.status < 300) {
               return x.text();

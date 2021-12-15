@@ -7,7 +7,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <meta
+      name="description"
+      content="A reply to the article titled Body Politic that I received via email
+"
+    />
     <meta name="author" content="Tim Roberts" />
 
     <!--
@@ -42,7 +46,11 @@
       property="og:title"
       content="The Body Politic - Reply | Tim on a Path"
     />
-
+    <meta
+      property="og:description"
+      content="A reply to the article titled Body Politic that I received via email
+"
+    />
     <meta property="og:site_name" content="Tim on a Path" />
 
     <!--
@@ -101,7 +109,7 @@
     <article class="h-entry">
       <header>
         <a
-          href="https://timonapath.comemail-replies/14-12-2021-15-39"
+          href="https://timonapath.com/email-replies/14-12-2021-15-39"
           class="u-url"
         >
           <h2 class="p-name">The Body Politic - Reply</h2>
@@ -118,12 +126,14 @@
           |
           <span
             >Updated on
-            <time class="dt-updated" datetime="2021-12-15T22:46:26.854Z"
-              >December 15th, 2021 at 5:46 PM</time
+            <time class="dt-updated" datetime="2021-12-15T22:50:08.052Z"
+              >December 15th, 2021 at 5:50 PM</time
             ></span
           >
         </p>
-        undefined
+        <p class="p-summary">
+          A reply to the article titled Body Politic that I received via email
+        </p>
       </header>
       <main class="e-content">
         <h2>Social Contract</h2>
@@ -228,7 +238,7 @@
         const mentionsHTMLContainer = document.getElementById("webmentions");
         if (mentionsHTMLContainer) {
           const mentionHTML = await fetch(
-            "/api/webmentions?path=email-replies/14-12-2021-15-39"
+            "/api/webmentions?path=/email-replies/14-12-2021-15-39"
           ).then((x) => {
             if (x.status < 300) {
               return x.text();

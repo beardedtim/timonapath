@@ -98,7 +98,7 @@
     <article class="h-entry">
       <header>
         <a
-          href="https://timonapath.comsnippets/node/create-async-iterator"
+          href="https://timonapath.com/snippets/node/create-async-iterator"
           class="u-url"
         >
           <h2 class="p-name">Create Async Iterator</h2>
@@ -183,7 +183,7 @@
         const mentionsHTMLContainer = document.getElementById("webmentions");
         if (mentionsHTMLContainer) {
           const mentionHTML = await fetch(
-            "/api/webmentions?path=snippets/node/create-async-iterator"
+            "/api/webmentions?path=/snippets/node/create-async-iterator"
           ).then((x) => {
             if (x.status < 300) {
               return x.text();

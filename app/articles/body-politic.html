@@ -103,7 +103,7 @@
   <body>
     <article class="h-entry">
       <header>
-        <a href="https://timonapath.comarticles/body-politic" class="u-url">
+        <a href="https://timonapath.com/articles/body-politic" class="u-url">
           <h2 class="p-name">The Body Politic</h2>
         </a>
         <p>
@@ -604,7 +604,7 @@
         const mentionsHTMLContainer = document.getElementById("webmentions");
         if (mentionsHTMLContainer) {
           const mentionHTML = await fetch(
-            "/api/webmentions?path=articles/body-politic"
+            "/api/webmentions?path=/articles/body-politic"
           ).then((x) => {
             if (x.status < 300) {
               return x.text();
