@@ -1,0 +1,36 @@
+---
+title: "The Body Politic - Reply"
+author: Lar
+subtitle: |
+  A reply to the article titled Body Politic that I received via email
+tags:
+  - email-reply
+---
+
+## Social Contract
+
+Most often we do today what we have been doing without giving it much thought. We live a life out of habit, not intent. Then Tim comes along and talks about such things as Agency and The Group and living a life of purpose. Well, I’ve got some time, so…
+
+Rousseau says man is born free. That wasn’t my experience. I was born into a group (called family) that had rules and consequences for not following rules. I was also born a citizen of America, with its own rules and consequences. I became a member of school, church, work, circle of friends, and so many other groups (I’m skipping online groups altogether). Many of these groups I became a part of more by random chance rather that some brilliant plan. And I stay a part of the group because that is what we humans do… What we have always done before.
+
+A choice we all have is we can leave the groups we are in and live a life of exile. But, for the most part, banishment from the group is seen as a punishment, not a goal. There are benefits to cooperation.
+
+If there are advantages to being in groups, perhaps our focus should be how we make the most of our fate. How do we maximize our benefits and minimize our costs? We must make rational decisions to successful play this game else we could easy play the sucker. Or cause harm to the group (which could then harm our future benefits).
+
+But how rational are we? Who would say, “I could change my life to better suit your mood,” from a rational point? The Moral Animal states our decisions are not rational, but deeply ingrained in our psyche. Our rational thought is merely a rationalizer and cheerleader for our emotional desires.
+
+I am going down this rabbit hole of we do what we do because of our genes, random chance, and habit and not because of rational choice. So, why bother investing much thought when we all know we’re awash in a sea of emotions driven by the winds of chance and we’ll just end up doing what we always have done?
+
+Let’s pretend for a moment that we do have self-will and can actually improve our situation through rational thought and careful planning.
+
+In any group I belong I’ll contribute in exchange for benefits. To be successful, we must be self-aware of our wants and our abilities. We need to have empathy and be aware of the wants and abilities of others. This sounds like a negotiation, and a continuously one at that.
+
+We must also be aware that we live in a complex multi-dimensional Venn Diagram of many groups that are all interacting with each other and all these wants and abilities are constantly changing over time. What I needed as a newlywed is clearly different from what I need as a parent.
+
+We must also consider that there might be deception in the world (shocking). People lie, or at the very least are mistaken. We even lie to ourselves. Sometimes the truth is hidden behind a façade of falsehood. The real consequences of our actions are much more of a crapshoot that a given.
+
+The amount of wisdom it would take to be fully successful in these constantly changing circumstances would be tremendous. But then there is rule 1: Humans are stupid. It would be extremely arrogant to believe you could constantly foresee the bottom-line consequences of our interactions with others.
+
+As a person who knows nothing, how can I be at least a little more successful at this complicated and convoluted game?
+
+I have some thoughts…

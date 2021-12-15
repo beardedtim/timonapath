@@ -97,7 +97,7 @@
   <body>
     <article class="h-entry">
       <header>
-        <a href="https://timonapath.com/vocabulary/palter" class="u-url">
+        <a href="https://timonapath.comvocabulary/palter" class="u-url">
           <h2 class="p-name">Palter</h2>
         </a>
         <p>
@@ -154,7 +154,7 @@
         const mentionsHTMLContainer = document.getElementById("webmentions");
         if (mentionsHTMLContainer) {
           const mentionHTML = await fetch(
-            "/api/webmentions?path=/vocabulary/palter"
+            "/api/webmentions?path=vocabulary/palter"
           ).then((x) => {
             if (x.status < 300) {
               return x.text();

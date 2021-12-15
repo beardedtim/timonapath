@@ -97,7 +97,7 @@
   <body>
     <article class="h-entry">
       <header>
-        <a href="https://timonapath.com/vocabulary/reprove" class="u-url">
+        <a href="https://timonapath.comvocabulary/reprove" class="u-url">
           <h2 class="p-name">Reprove</h2>
         </a>
         <p>
@@ -149,7 +149,7 @@
         const mentionsHTMLContainer = document.getElementById("webmentions");
         if (mentionsHTMLContainer) {
           const mentionHTML = await fetch(
-            "/api/webmentions?path=/vocabulary/reprove"
+            "/api/webmentions?path=vocabulary/reprove"
           ).then((x) => {
             if (x.status < 300) {
               return x.text();

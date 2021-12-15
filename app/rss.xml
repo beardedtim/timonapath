@@ -4,47 +4,52 @@
         <description><![CDATA[The RSS Feed for the Internet Portal of Tim Roberts]]></description>
         <link>https://timonapath.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 23 Nov 2021 22:10:37 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 15 Dec 2021 22:46:36 GMT</lastBuildDate>
         <atom:link href="https://timonapath.com/rss.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[No title]]></title>
-            <link>https://timonapath.com/vocabulary/dress-down</link>
-            <guid isPermaLink="true">https://timonapath.com/vocabulary/dress-down</guid>
+            <link>https://timonapath.comemail-replies/14-12-2021-15-39</link>
+            <guid isPermaLink="true">https://timonapath.comemail-replies/14-12-2021-15-39</guid>
         </item>
         <item>
             <title><![CDATA[No title]]></title>
-            <link>https://timonapath.com/vocabulary/palter</link>
-            <guid isPermaLink="true">https://timonapath.com/vocabulary/palter</guid>
+            <link>https://timonapath.comvocabulary/dress-down</link>
+            <guid isPermaLink="true">https://timonapath.comvocabulary/dress-down</guid>
         </item>
         <item>
             <title><![CDATA[No title]]></title>
-            <link>https://timonapath.com/vocabulary/reprove</link>
-            <guid isPermaLink="true">https://timonapath.com/vocabulary/reprove</guid>
+            <link>https://timonapath.comvocabulary/palter</link>
+            <guid isPermaLink="true">https://timonapath.comvocabulary/palter</guid>
         </item>
         <item>
             <title><![CDATA[No title]]></title>
-            <link>https://timonapath.com/replies/re-making-drunk-lumber</link>
-            <guid isPermaLink="true">https://timonapath.com/replies/re-making-drunk-lumber</guid>
+            <link>https://timonapath.comvocabulary/reprove</link>
+            <guid isPermaLink="true">https://timonapath.comvocabulary/reprove</guid>
         </item>
         <item>
             <title><![CDATA[No title]]></title>
-            <link>https://timonapath.com/snippets/node/readstream</link>
-            <guid isPermaLink="true">https://timonapath.com/snippets/node/readstream</guid>
+            <link>https://timonapath.comreplies/re-making-drunk-lumber</link>
+            <guid isPermaLink="true">https://timonapath.comreplies/re-making-drunk-lumber</guid>
         </item>
         <item>
             <title><![CDATA[No title]]></title>
-            <link>https://timonapath.com/snippets/node/create-async-iterator</link>
-            <guid isPermaLink="true">https://timonapath.com/snippets/node/create-async-iterator</guid>
+            <link>https://timonapath.comsnippets/node/readstream</link>
+            <guid isPermaLink="true">https://timonapath.comsnippets/node/readstream</guid>
         </item>
         <item>
             <title><![CDATA[No title]]></title>
-            <link>https://timonapath.com/replies/replying-to-myself</link>
-            <guid isPermaLink="true">https://timonapath.com/replies/replying-to-myself</guid>
+            <link>https://timonapath.comsnippets/node/create-async-iterator</link>
+            <guid isPermaLink="true">https://timonapath.comsnippets/node/create-async-iterator</guid>
         </item>
         <item>
             <title><![CDATA[No title]]></title>
-            <link>https://timonapath.com/docs/sending-web-mention</link>
-            <guid isPermaLink="true">https://timonapath.com/docs/sending-web-mention</guid>
+            <link>https://timonapath.comreplies/replying-to-myself</link>
+            <guid isPermaLink="true">https://timonapath.comreplies/replying-to-myself</guid>
+        </item>
+        <item>
+            <title><![CDATA[No title]]></title>
+            <link>https://timonapath.comdocs/sending-web-mention</link>
+            <guid isPermaLink="true">https://timonapath.comdocs/sending-web-mention</guid>
         </item>
         <item>
             <title><![CDATA[No title]]></title>
@@ -53,8 +58,8 @@
         </item>
         <item>
             <title><![CDATA[No title]]></title>
-            <link>https://timonapath.com/docs/creating-replies</link>
-            <guid isPermaLink="true">https://timonapath.com/docs/creating-replies</guid>
+            <link>https://timonapath.comdocs/creating-replies</link>
+            <guid isPermaLink="true">https://timonapath.comdocs/creating-replies</guid>
         </item>
         <item>
             <title><![CDATA[No title]]></title>
@@ -68,18 +73,18 @@
         </item>
         <item>
             <title><![CDATA[No title]]></title>
-            <link>https://timonapath.com/docs/add-tag-to-post</link>
-            <guid isPermaLink="true">https://timonapath.com/docs/add-tag-to-post</guid>
+            <link>https://timonapath.comdocs/add-tag-to-post</link>
+            <guid isPermaLink="true">https://timonapath.comdocs/add-tag-to-post</guid>
         </item>
         <item>
             <title><![CDATA[No title]]></title>
-            <link>https://timonapath.com/articles/posting-on-the-indie-web</link>
-            <guid isPermaLink="true">https://timonapath.com/articles/posting-on-the-indie-web</guid>
+            <link>https://timonapath.comarticles/posting-on-the-indie-web</link>
+            <guid isPermaLink="true">https://timonapath.comarticles/posting-on-the-indie-web</guid>
         </item>
         <item>
             <title><![CDATA[No title]]></title>
-            <link>https://timonapath.com/articles/body-politic</link>
-            <guid isPermaLink="true">https://timonapath.com/articles/body-politic</guid>
+            <link>https://timonapath.comarticles/body-politic</link>
+            <guid isPermaLink="true">https://timonapath.comarticles/body-politic</guid>
         </item>
     </channel>
 </rss>

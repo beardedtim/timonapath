@@ -97,7 +97,7 @@
   <body>
     <article class="h-entry">
       <header>
-        <a href="https://timonapath.com/vocabulary/dress-down" class="u-url">
+        <a href="https://timonapath.comvocabulary/dress-down" class="u-url">
           <h2 class="p-name">Dressed Down</h2>
         </a>
         <p>
@@ -148,7 +148,7 @@
         const mentionsHTMLContainer = document.getElementById("webmentions");
         if (mentionsHTMLContainer) {
           const mentionHTML = await fetch(
-            "/api/webmentions?path=/vocabulary/dress-down"
+            "/api/webmentions?path=vocabulary/dress-down"
           ).then((x) => {
             if (x.status < 300) {
               return x.text();

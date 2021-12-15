@@ -39,7 +39,7 @@
   -->
     <meta
       property="og:url"
-      content="https://timonapath.com//replies/re-making-drunk-lumber"
+      content="https://timonapath.com/replies/re-making-drunk-lumber"
     />
     <meta
       property="og:title"
@@ -93,7 +93,7 @@
     <article class="h-entry">
       <header>
         <a
-          href="https://timonapath.com/replies/re-making-drunk-lumber"
+          href="https://timonapath.comreplies/re-making-drunk-lumber"
           class="u-url"
         >
           <h2 class="p-name">Reply: Making Drunk Lumber</h2>
@@ -143,7 +143,7 @@
         const mentionsHTMLContainer = document.getElementById("webmentions");
         if (mentionsHTMLContainer) {
           const mentionHTML = await fetch(
-            "/api/webmentions?path=/replies/re-making-drunk-lumber"
+            "/api/webmentions?path=replies/re-making-drunk-lumber"
           ).then((x) => {
             if (x.status < 300) {
               return x.text();

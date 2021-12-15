@@ -107,7 +107,7 @@
     <article class="h-entry">
       <header>
         <a
-          href="https://timonapath.com/articles/posting-on-the-indie-web"
+          href="https://timonapath.comarticles/posting-on-the-indie-web"
           class="u-url"
         >
           <h2 class="p-name">Posting on the IndieWeb</h2>
@@ -308,7 +308,7 @@
         const mentionsHTMLContainer = document.getElementById("webmentions");
         if (mentionsHTMLContainer) {
           const mentionHTML = await fetch(
-            "/api/webmentions?path=/articles/posting-on-the-indie-web"
+            "/api/webmentions?path=articles/posting-on-the-indie-web"
           ).then((x) => {
             if (x.status < 300) {
               return x.text();

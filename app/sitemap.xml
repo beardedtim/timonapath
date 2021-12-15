@@ -6,19 +6,19 @@
 
         
             <url>
-              <loc>https://timonapath.com/articles/body-politic</loc>
+              <loc>https://timonapath.comarticles/body-politic</loc>
               <changefreq>daily</changefreq>
             </url>
           
 
             <url>
-              <loc>https://timonapath.com/articles/posting-on-the-indie-web</loc>
+              <loc>https://timonapath.comarticles/posting-on-the-indie-web</loc>
               <changefreq>daily</changefreq>
             </url>
           
 
             <url>
-              <loc>https://timonapath.com/articles</loc>
+              <loc>https://timonapath.comarticles</loc>
               <changefreq>daily</changefreq>
             </url>
           
@@ -26,7 +26,7 @@
 
         
             <url>
-              <loc>https://timonapath.com/docs/add-tag-to-post</loc>
+              <loc>https://timonapath.comdocs/add-tag-to-post</loc>
               <changefreq>daily</changefreq>
             </url>
           
@@ -44,7 +44,7 @@
           
 
             <url>
-              <loc>https://timonapath.com/docs/creating-replies</loc>
+              <loc>https://timonapath.comdocs/creating-replies</loc>
               <changefreq>daily</changefreq>
             </url>
           
@@ -56,33 +56,13 @@
           
 
             <url>
-              <loc>https://timonapath.com/docs/sending-web-mention</loc>
+              <loc>https://timonapath.comdocs/sending-web-mention</loc>
               <changefreq>daily</changefreq>
             </url>
           
 
             <url>
-              <loc>https://timonapath.com/docs</loc>
-              <changefreq>daily</changefreq>
-            </url>
-          
-  
-
-        
-            <url>
-              <loc>https://timonapath.com/replies/re-making-drunk-lumber</loc>
-              <changefreq>daily</changefreq>
-            </url>
-          
-
-            <url>
-              <loc>https://timonapath.com/replies/replying-to-myself</loc>
-              <changefreq>daily</changefreq>
-            </url>
-          
-
-            <url>
-              <loc>https://timonapath.com/replies</loc>
+              <loc>https://timonapath.comdocs</loc>
               <changefreq>daily</changefreq>
             </url>
           
@@ -90,19 +70,13 @@
 
         
             <url>
-              <loc>https://timonapath.com/snippets/node/create-async-iterator</loc>
+              <loc>https://timonapath.comemail-replies/14-12-2021-15-39</loc>
               <changefreq>daily</changefreq>
             </url>
           
 
             <url>
-              <loc>https://timonapath.com/snippets/node/readstream</loc>
-              <changefreq>daily</changefreq>
-            </url>
-          
-
-            <url>
-              <loc>https://timonapath.com/snippets</loc>
+              <loc>https://timonapath.comemail-replies</loc>
               <changefreq>daily</changefreq>
             </url>
           
@@ -110,25 +84,65 @@
 
         
             <url>
-              <loc>https://timonapath.com/vocabulary/dress-down</loc>
+              <loc>https://timonapath.comreplies/re-making-drunk-lumber</loc>
               <changefreq>daily</changefreq>
             </url>
           
 
             <url>
-              <loc>https://timonapath.com/vocabulary/palter</loc>
+              <loc>https://timonapath.comreplies/replying-to-myself</loc>
               <changefreq>daily</changefreq>
             </url>
           
 
             <url>
-              <loc>https://timonapath.com/vocabulary/reprove</loc>
+              <loc>https://timonapath.comreplies</loc>
+              <changefreq>daily</changefreq>
+            </url>
+          
+  
+
+        
+            <url>
+              <loc>https://timonapath.comsnippets/node/create-async-iterator</loc>
               <changefreq>daily</changefreq>
             </url>
           
 
             <url>
-              <loc>https://timonapath.com/vocabulary</loc>
+              <loc>https://timonapath.comsnippets/node/readstream</loc>
+              <changefreq>daily</changefreq>
+            </url>
+          
+
+            <url>
+              <loc>https://timonapath.comsnippets</loc>
+              <changefreq>daily</changefreq>
+            </url>
+          
+  
+
+        
+            <url>
+              <loc>https://timonapath.comvocabulary/dress-down</loc>
+              <changefreq>daily</changefreq>
+            </url>
+          
+
+            <url>
+              <loc>https://timonapath.comvocabulary/palter</loc>
+              <changefreq>daily</changefreq>
+            </url>
+          
+
+            <url>
+              <loc>https://timonapath.comvocabulary/reprove</loc>
+              <changefreq>daily</changefreq>
+            </url>
+          
+
+            <url>
+              <loc>https://timonapath.comvocabulary</loc>
               <changefreq>daily</changefreq>
             </url>
           
@@ -155,6 +169,12 @@
 
             <url>
               <loc>https://timonapath.com/tags/site docs</loc>
+              <changefreq>daily</changefreq>
+            </url>
+          
+
+            <url>
+              <loc>https://timonapath.com/tags/email-reply</loc>
               <changefreq>daily</changefreq>
             </url>
           
