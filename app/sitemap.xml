@@ -104,6 +104,12 @@
 
         
             <url>
+              <loc>https://timonapath.com/snippets/docker/docker-compose-start-redis-with-password</loc>
+              <changefreq>daily</changefreq>
+            </url>
+          
+
+            <url>
               <loc>https://timonapath.com/snippets/node/create-async-iterator</loc>
               <changefreq>daily</changefreq>
             </url>
@@ -175,6 +181,12 @@
 
             <url>
               <loc>https://timonapath.com/tags/email-reply</loc>
+              <changefreq>daily</changefreq>
+            </url>
+          
+
+            <url>
+              <loc>https://timonapath.com/tags/docker</loc>
               <changefreq>daily</changefreq>
             </url>
           
