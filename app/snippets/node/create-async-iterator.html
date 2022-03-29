@@ -1,129 +1,89 @@
+
 <!DOCTYPE html>
 <html lang="en" xmlns:og="http://ogp.me/ns#">
-  <head>
-    <!--
+
+
+<head>
+  <!--
     Meta Tags
   -->
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="How to create an Async Iterator" />
-    <meta name="author" content="Tim Roberts" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How to create an Async Iterator">
+  <meta name="author" content="Tim Roberts">
 
-    <!--
+  <!--
     Icon Links
   -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="img/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="img/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="img/favicon-16x16.png"
-    />
-    <link rel="manifest" href="img/site.webmanifest" />
-    <!--
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="manifest" href="img/site.webmanifest">
+  <!--
     Facebook OpenGraph Cards
   -->
-    <meta
-      property="og:url"
-      content="https://timonapath.com/snippets/node/create-async-iterator"
-    />
-    <meta property="og:title" content="Create Async Iterator | Tim on a Path" />
-    <meta property="og:description" content="How to create an Async Iterator" />
-    <meta property="og:site_name" content="Tim on a Path" />
+  <meta property="og:url" content="https://timonapath.com/snippets/node/create-async-iterator"/>
+  <meta property="og:title" content="Create Async Iterator | Tim on a Path" />
+  <meta property="og:description" content="How to create an Async Iterator" />
+  <meta property="og:site_name" content="Tim on a Path" />
 
-    <!--
+  <!--
     Twitter Card
   -->
-    <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary" />
 
-    <!--
+  <!--
     IndieAuth
   -->
-    <link href="mailto:timroberts@fastmail.org" rel="me" />
-    <link href="https://github.com/beardedtim" rel="me" />
-    <link href="https://indieauth.com/auth" rel="authorization_endpoint" />
-    <link rel="openid.delegate" href="https://timonapath.com/" />
-    <link rel="openid.server" href="https://openid.indieauth.com/openid" />
-
-    <!--
+  <link href="mailto:timroberts@fastmail.org" rel="me" />
+  <link href="https://github.com/beardedtim" rel="me" />
+  <link href="https://indieauth.com/auth" rel="authorization_endpoint" />
+  <link rel="openid.delegate" href="https://timonapath.com/" />
+  <link rel="openid.server" href="https://openid.indieauth.com/openid" />
+    
+  <!--
     Webmentions
   -->
-    <link href="https://timonapath.com/api/webmentions" rel="webmentions" />
+  <link href="https://timonapath.com/api/webmentions" rel="webmentions" />
 
-    <!--
+
+  <!--
     RSS Feed
   -->
-    <link
-      rel="alternate"
-      type="application/rss+xml"
-      title="RSS"
-      href="https://timonapath.com/rss.xml"
-    />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://timonapath.com/rss.xml"/>
 
-    <!--
+  <!--
     Fonts
   -->
-    <link
-      href="//fonts.googleapis.com/css?family=Raleway:400,300,600&display=swap"
-      rel="stylesheet"
-      as="font"
-      type="text/css"
-    />
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600&display=swap" rel="stylesheet" as="font"
+    type="text/css">
 
-    <!--
+  <!--
     Styles
   -->
-
+  
     <link rel="stylesheet" href="/css/leaf.css" />
+  
+  <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
+  <title>Create Async Iterator | Tim on a Path</title>
 
-    <link
-      rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css"
-    />
-    <title>Create Async Iterator | Tim on a Path</title>
-  </head>
+</head>
 
-  <body>
-    <article class="h-entry">
-      <header>
-        <a
-          href="https://timonapath.com/snippets/node/create-async-iterator"
-          class="u-url"
-        >
-          <h2 class="p-name">Create Async Iterator</h2>
-        </a>
-        <p>
-          Published by
-          <a class="p-author h-card" href="https://timonapath.com"
-            >Tim Roberts</a
-          >
-          on
-          <time class="dt-published" datetime="undefined"
-            >November 12th, 2021 at 12:33 PM</time
-          >
-          |
-          <span
-            >Updated on
-            <time class="dt-updated" datetime="2021-11-20T21:25:09.347Z"
-              >November 20th, 2021 at 4:25 PM</time
-            ></span
-          >
+<body>
+  <article class="h-entry">
+    <header>
+      <a href="https://timonapath.com/snippets/node/create-async-iterator" class="u-url">
+        <h2 class="p-name">Create Async Iterator</h2>
+      </a>
+      <p>Published by <a class="p-author h-card" href="https://timonapath.com">Tim Roberts</a>
+        on <time class="dt-published" datetime="undefined">March 29th, 2022 at 12:01 PM</time>
         </p>
-        <p class="p-summary">How to create an Async Iterator</p>
-      </header>
-      <main class="e-content">
-        <pre><code class="language-ts"><span class="hljs-comment">// This will go on forever and ever,</span>
+              <p class="p-summary">How to create an Async Iterator</p>
+              </header>
+              <main class="e-content">
+              <pre><code class="language-ts"><span class="hljs-comment">// This will go on forever and ever,</span>
 <span class="hljs-comment">// emitting larger and larger values until</span>
 <span class="hljs-comment">// we stop pulling from the iterator or it</span>
 <span class="hljs-comment">// runs out of space</span>
@@ -162,40 +122,40 @@
   <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(value); <span class="hljs-comment">// 22, ...</span>
 }
 </code></pre>
-      </main>
-      <aside>
+
+              </main>
+    <aside>
         <h3>Webmentions on this page</h3>
-        <div id="webmentions">Loading...</div>
-      </aside>
-      <footer>
-        <p>
-          Did you spot anything wrong? Do you disagree vehemently? Post on your
-          own site, mark it up as a
-          <a href="https://indieweb.org/reply" target="_blank">
-            <span class="code">reply</span></a
-          >, and email me (email found in my <span class="code">h-card</span>).
-        </p>
-      </footer>
-    </article>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
-    <script>
-      window.addEventListener("load", async () => {
-        const mentionsHTMLContainer = document.getElementById("webmentions");
-        if (mentionsHTMLContainer) {
-          const mentionHTML = await fetch(
-            "/api/webmentions?path=/snippets/node/create-async-iterator"
-          ).then((x) => {
-            if (x.status < 300) {
-              return x.text();
-            }
+        <div id="webmentions">
+          Loading...
+        </div>
+    </aside>
+    <footer>
+      <p>
+        Did you spot anything wrong? Do you disagree vehemently? Post on your own site, mark it up as a <a href="https://indieweb.org/reply" target="_blank">
+        <span class="code">reply</span></a>, and email me (email found in my <span class="code">h-card</span>).
+      </p>
+    </footer>
+  </article>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+  <script>
+    
+window.addEventListener('load', async () => {
+  const mentionsHTMLContainer = document.getElementById('webmentions')
+  if (mentionsHTMLContainer) {
+    const mentionHTML = await fetch('/api/webmentions?path=/snippets/node/create-async-iterator').then(x => {
+      if (x.status < 300) {
+        return x.text()
+      }
+  
+      return '<i>None Available. Send me one?</i>'
+    })
+  
+    mentionsHTMLContainer.innerHTML = mentionHTML
+    console.log('Updated webmentions')
+  }
+})
 
-            return "<i>None Available. Send me one?</i>";
-          });
-
-          mentionsHTMLContainer.innerHTML = mentionHTML;
-          console.log("Updated webmentions");
-        }
-      });
-    </script>
-  </body>
+  </script>
+</body>
 </html>

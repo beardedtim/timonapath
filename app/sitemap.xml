@@ -18,6 +18,12 @@
           
 
             <url>
+              <loc>https://timonapath.com/articles/there-are-no-trees-in-the-forest</loc>
+              <changefreq>daily</changefreq>
+            </url>
+          
+
+            <url>
               <loc>https://timonapath.com/articles</loc>
               <changefreq>daily</changefreq>
             </url>
@@ -163,6 +169,12 @@
 
             <url>
               <loc>https://timonapath.com/tags/the-path</loc>
+              <changefreq>daily</changefreq>
+            </url>
+          
+
+            <url>
+              <loc>https://timonapath.com/tags/religion</loc>
               <changefreq>daily</changefreq>
             </url>
           
