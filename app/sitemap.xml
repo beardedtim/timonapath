@@ -110,6 +110,20 @@
 
         
             <url>
+              <loc>https://timonapath.com/retrospectives/apr-02-2022</loc>
+              <changefreq>daily</changefreq>
+            </url>
+          
+
+            <url>
+              <loc>https://timonapath.com/retrospectives</loc>
+              <changefreq>daily</changefreq>
+            </url>
+          
+  
+
+        
+            <url>
               <loc>https://timonapath.com/snippets/docker/docker-compose-start-redis-with-password</loc>
               <changefreq>daily</changefreq>
             </url>

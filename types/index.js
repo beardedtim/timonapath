@@ -4,3 +4,4 @@ module.exports.Articles = require("./articles");
 module.exports.Replies = require("./replies");
 module.exports.Vocabulary = require("./vocabulary");
 module.exports.EmailReplies = require("./email-replies");
+module.exports.Retrospectives = require("./retrospectives");
