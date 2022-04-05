@@ -130,6 +130,12 @@
           
 
             <url>
+              <loc>https://timonapath.com/snippets/kubernetes/namespace</loc>
+              <changefreq>daily</changefreq>
+            </url>
+          
+
+            <url>
               <loc>https://timonapath.com/snippets/node/create-async-iterator</loc>
               <changefreq>daily</changefreq>
             </url>
@@ -213,6 +219,12 @@
 
             <url>
               <loc>https://timonapath.com/tags/docker</loc>
+              <changefreq>daily</changefreq>
+            </url>
+          
+
+            <url>
+              <loc>https://timonapath.com/tags/k8s</loc>
               <changefreq>daily</changefreq>
             </url>
           
