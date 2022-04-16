@@ -38,6 +38,18 @@
           
 
             <url>
+              <loc>https://timonapath.com/docs/bigi/basic-types</loc>
+              <changefreq>daily</changefreq>
+            </url>
+          
+
+            <url>
+              <loc>https://timonapath.com/docs/bigi/example-usage</loc>
+              <changefreq>daily</changefreq>
+            </url>
+          
+
+            <url>
               <loc>https://timonapath.com/docs/internal/create-new-custom-page</loc>
               <changefreq>daily</changefreq>
             </url>
@@ -207,6 +219,24 @@
 
             <url>
               <loc>https://timonapath.com/tags/site docs</loc>
+              <changefreq>daily</changefreq>
+            </url>
+          
+
+            <url>
+              <loc>https://timonapath.com/tags/bigi</loc>
+              <changefreq>daily</changefreq>
+            </url>
+          
+
+            <url>
+              <loc>https://timonapath.com/tags/programming</loc>
+              <changefreq>daily</changefreq>
+            </url>
+          
+
+            <url>
+              <loc>https://timonapath.com/tags/programming language</loc>
               <changefreq>daily</changefreq>
             </url>
           

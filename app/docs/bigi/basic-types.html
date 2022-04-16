@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:og="http://ogp.me/ns#">
+
+
+<head>
+  <!--
+    Meta Tags
+  -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="As I build Bigi, I want to document what choices I made, why,
+and how to use the things I build. This Bigi Doc expresses the
+basic types or Primitives of the Bigi language
+">
+  <meta name="author" content="Tim Roberts">
+
+  <!--
+    Icon Links
+  -->
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="manifest" href="img/site.webmanifest">
+  <!--
+    Facebook OpenGraph Cards
+  -->
+  <meta property="og:url" content="https://timonapath.com/docs/bigi/basic-types"/>
+  <meta property="og:title" content="Bigi Docs: Basic Types
+ | Tim on a Path" />
+  <meta property="og:description" content="As I build Bigi, I want to document what choices I made, why,
+and how to use the things I build. This Bigi Doc expresses the
+basic types or Primitives of the Bigi language
+" />
+  <meta property="og:site_name" content="Tim on a Path" />
+
+  <!--
+    Twitter Card
+  -->
+  <meta name="twitter:card" content="summary" />
+
+  <!--
+    IndieAuth
+  -->
+  <link href="mailto:timroberts@fastmail.org" rel="me" />
+  <link href="https://github.com/beardedtim" rel="me" />
+  <link href="https://indieauth.com/auth" rel="authorization_endpoint" />
+  <link rel="openid.delegate" href="https://timonapath.com/" />
+  <link rel="openid.server" href="https://openid.indieauth.com/openid" />
+    
+  <!--
+    Webmentions
+  -->
+  <link href="https://timonapath.com/api/webmentions" rel="webmentions" />
+
+
+  <!--
+    RSS Feed
+  -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://timonapath.com/rss.xml"/>
+
+  <!--
+    Fonts
+  -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600&display=swap" rel="stylesheet" as="font"
+    type="text/css">
+
+  <!--
+    Styles
+  -->
+  
+    <link rel="stylesheet" href="/css/leaf.css" />
+  
+  <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
+  <title>Bigi Docs: Basic Types
+ | Tim on a Path</title>
+
+</head>
+
+<body>
+  <article class="h-entry">
+    <header>
+      <a href="https://timonapath.com/docs/bigi/basic-types" class="u-url">
+        <h2 class="p-name">Bigi Docs: Basic Types
+</h2>
+      </a>
+      <p>Published by <a class="p-author h-card" href="https://timonapath.com">Tim Roberts</a>
+        on <time class="dt-published" datetime="undefined">April 16th, 2022 at 12:32 PM</time>
+         |  <span>Updated on <time class="dt-updated" datetime="2022-04-16T16:40:54.859Z">April 16th, 2022 at 12:40 PM</time></span></p>
+              <p class="p-summary">As I build Bigi, I want to document what choices I made, why,
+and how to use the things I build. This Bigi Doc expresses the
+basic types or Primitives of the Bigi language
+</p>
+              </header>
+              <main class="e-content">
+              
+<h2>Comments</h2>
+<pre><code class="language-bigi"><span class="hljs-bullet">--
+</span><span class="hljs-bullet">-- </span>a line that starts with -- will be parsed as
+<span class="hljs-bullet">-- </span>a comment until an End of Line character is
+<span class="hljs-section">-- reached.
+--</span>
+<span class="hljs-bullet">-- </span>It is convention to put an empty comment line at
+<span class="hljs-section">-- the top and bottom of a comment block.
+--</span>
+</code></pre>
+<h2>Numbers</h2>
+<pre><code class="language-bigi">12
+<span class="hljs-deletion">-12</span>
+<span class="hljs-deletion">-12.34</span>
+</code></pre>
+<h2>Strings</h2>
+<pre><code class="language-bigi"><span class="hljs-symbol">&#x27;this</span> <span class="hljs-keyword">is</span> a valid <span class="hljs-built_in">string</span>&#x27;
+&#x27;&#x27; <span class="hljs-comment">-- so is this</span>
+<span class="hljs-symbol">&#x27;you</span> can even escape things inside <span class="hljs-keyword">of</span> the <span class="hljs-built_in">string</span>\<span class="hljs-symbol">&#x27;s</span> <span class="hljs-keyword">body</span>&#x27;
+</code></pre>
+<hr>
+<p>The current implementation and test suite of Bigi can be found
+at the <a href="https://github.com/mck-p/bigi">GitHub Repo</a>.</p>
+
+              </main>
+    <aside>
+        <h3>Webmentions on this page</h3>
+        <div id="webmentions">
+          Loading...
+        </div>
+    </aside>
+    <footer>
+      <p>
+        Did you spot anything wrong? Do you disagree vehemently? Post on your own site, mark it up as a <a href="https://indieweb.org/reply" target="_blank">
+        <span class="code">reply</span></a>, and email me (email found in my <span class="code">h-card</span>).
+      </p>
+    </footer>
+  </article>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+  <script>
+    
+window.addEventListener('load', async () => {
+  const mentionsHTMLContainer = document.getElementById('webmentions')
+  if (mentionsHTMLContainer) {
+    const mentionHTML = await fetch('/api/webmentions?path=/docs/bigi/basic-types').then(x => {
+      if (x.status < 300) {
+        return x.text()
+      }
+  
+      return '<i>None Available. Send me one?</i>'
+    })
+  
+    mentionsHTMLContainer.innerHTML = mentionHTML
+    console.log('Updated webmentions')
+  }
+})
+
+  </script>
+</body>
+</html>

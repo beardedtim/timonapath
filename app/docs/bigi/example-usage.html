@@ -1,0 +1,398 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:og="http://ogp.me/ns#">
+
+
+<head>
+  <!--
+    Meta Tags
+  -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="This is what Bigi will allow me to do eventually. This is
+to be used as a reference on how to write my vision of a
+language, not specifically what Bigi implements today.
+">
+  <meta name="author" content="Tim Roberts">
+
+  <!--
+    Icon Links
+  -->
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="manifest" href="img/site.webmanifest">
+  <!--
+    Facebook OpenGraph Cards
+  -->
+  <meta property="og:url" content="https://timonapath.com/docs/bigi/example-usage"/>
+  <meta property="og:title" content="Bigi Docs: Example Usage
+ | Tim on a Path" />
+  <meta property="og:description" content="This is what Bigi will allow me to do eventually. This is
+to be used as a reference on how to write my vision of a
+language, not specifically what Bigi implements today.
+" />
+  <meta property="og:site_name" content="Tim on a Path" />
+
+  <!--
+    Twitter Card
+  -->
+  <meta name="twitter:card" content="summary" />
+
+  <!--
+    IndieAuth
+  -->
+  <link href="mailto:timroberts@fastmail.org" rel="me" />
+  <link href="https://github.com/beardedtim" rel="me" />
+  <link href="https://indieauth.com/auth" rel="authorization_endpoint" />
+  <link rel="openid.delegate" href="https://timonapath.com/" />
+  <link rel="openid.server" href="https://openid.indieauth.com/openid" />
+    
+  <!--
+    Webmentions
+  -->
+  <link href="https://timonapath.com/api/webmentions" rel="webmentions" />
+
+
+  <!--
+    RSS Feed
+  -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://timonapath.com/rss.xml"/>
+
+  <!--
+    Fonts
+  -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600&display=swap" rel="stylesheet" as="font"
+    type="text/css">
+
+  <!--
+    Styles
+  -->
+  
+    <link rel="stylesheet" href="/css/leaf.css" />
+  
+  <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
+  <title>Bigi Docs: Example Usage
+ | Tim on a Path</title>
+
+</head>
+
+<body>
+  <article class="h-entry">
+    <header>
+      <a href="https://timonapath.com/docs/bigi/example-usage" class="u-url">
+        <h2 class="p-name">Bigi Docs: Example Usage
+</h2>
+      </a>
+      <p>Published by <a class="p-author h-card" href="https://timonapath.com">Tim Roberts</a>
+        on <time class="dt-published" datetime="undefined">April 16th, 2022 at 12:41 PM</time>
+         |  <span>Updated on <time class="dt-updated" datetime="2022-04-16T16:48:02.621Z">April 16th, 2022 at 12:48 PM</time></span></p>
+              <p class="p-summary">This is what Bigi will allow me to do eventually. This is
+to be used as a reference on how to write my vision of a
+language, not specifically what Bigi implements today.
+</p>
+              </header>
+              <main class="e-content">
+              <pre><code class="language-bigi"><span class="hljs-bullet">--
+</span><span class="hljs-bullet">-- </span>Comments are how we build our documentation
+<span class="hljs-bullet">-- </span>with the code itself, hopefully, being much
+<span class="hljs-section">-- smaller units that get added in codeblocks.
+--</span>
+<span class="hljs-bullet">-- </span>While Bigi is not a Literate Language, whatever
+<span class="hljs-bullet">-- </span>that may mean, it does want to be a lanugage where
+<span class="hljs-bullet">-- </span>I as the author am actively speaking to the computer
+<span class="hljs-bullet">-- </span>mostly in my native tongue and only creating objects
+<span class="hljs-section">-- in code that I need to.
+--</span>
+<span class="hljs-bullet">-- </span>Put it another way, the <span class="hljs-emphasis">_act of writing these comments_</span>
+<span class="hljs-bullet">-- </span>is what I am after because they will help me understand
+<span class="hljs-bullet">-- </span>not only what to write in the codeblocks but also what
+<span class="hljs-section">-- I have already written.
+--</span>
+<span class="hljs-bullet">-- </span>Bigi is a language that will do what <span class="hljs-emphasis">_I want it to do_</span>
+<span class="hljs-bullet">-- </span>which means that the closer I can get it to being english
+<span class="hljs-bullet">-- </span>the better for me. And there is nothing better to that
+<span class="hljs-bullet">-- </span>goal than actively creating every program with as much
+<span class="hljs-section">-- english describing Bigi blocks as possible.
+--</span>
+<span class="hljs-section">-- I think.
+--</span>
+
+<span class="hljs-bullet">--
+</span><span class="hljs-section">-- ---
+--</span>
+
+<span class="hljs-bullet">--
+</span><span class="hljs-bullet">-- </span>a Datum is a Thing
+<span class="hljs-bullet">-- </span>and we describe what they
+<span class="hljs-section">-- are via the below schema
+--</span>
+<span class="hljs-bullet">-- </span>We can reference other Things
+<span class="hljs-bullet">-- </span>in our Schema and we can reference
+<span class="hljs-section">-- our Own Thing
+--</span>
+<span class="hljs-bullet">-- </span>data &lt;Name&gt; {
+<span class="hljs-bullet">--  </span>attr AttrType::Filters
+<span class="hljs-section">-- }
+--</span>
+
+<span class="hljs-bullet">--
+</span><span class="hljs-section">-- We are creating this Thing called a User
+--</span>
+
+data User {
+<span class="hljs-code">  --</span>
+<span class="hljs-code">  -- This Thing has a Property of email and</span>
+<span class="hljs-code">  -- that Property is of type Text with an Email</span>
+<span class="hljs-code">  -- filter applied, meaning that only Text that</span>
+<span class="hljs-code">  -- pass some Email filter will be allowed and</span>
+<span class="hljs-code">  -- all others will throw</span>
+<span class="hljs-code">  --</span>
+<span class="hljs-code">  email Text::Email</span>
+<span class="hljs-code">  --</span>
+<span class="hljs-code">  -- This Thing also has a username. The username</span>
+<span class="hljs-code">  -- is a max of 50 characters and one of the allowed</span>
+<span class="hljs-code">  -- regexp/characters</span>
+<span class="hljs-code">  --</span>
+<span class="hljs-code">  username Text::Max50::OneOf&lt;A-Z|a-z|0-9|\_|\-&gt;</span>
+}
+
+<span class="hljs-bullet">--
+</span><span class="hljs-section">-- Next we create a Thing called a Post
+--</span>
+
+data Post {
+<span class="hljs-code">  --</span>
+<span class="hljs-code">  -- A Post has a title that is Text</span>
+<span class="hljs-code">  -- and max 50 characters</span>
+<span class="hljs-code">  --</span>
+<span class="hljs-code">  title Text::Max50</span>
+<span class="hljs-code">  --</span>
+<span class="hljs-code">  -- It has a description that is Text</span>
+<span class="hljs-code">  -- and this Text can be Markdown and</span>
+<span class="hljs-code">  -- will be parsed as such.</span>
+<span class="hljs-code">  --</span>
+<span class="hljs-code">  -- It will still be stored as Text</span>
+<span class="hljs-code">  --</span>
+<span class="hljs-code">  description Text::Markdown</span>
+<span class="hljs-code">  --</span>
+<span class="hljs-code">  -- A Post also has a Property of tags</span>
+<span class="hljs-code">  -- which are a list of References to</span>
+<span class="hljs-code">  -- a Tag Thing</span>
+<span class="hljs-code">  --</span>
+<span class="hljs-code">  tags [Tag]</span>
+<span class="hljs-code">  --</span>
+<span class="hljs-code">  -- A Post has an author which is a</span>
+<span class="hljs-code">  -- Reference to a User Thing</span>
+<span class="hljs-code">  --</span>
+<span class="hljs-code">  author User</span>
+<span class="hljs-code">  --</span>
+<span class="hljs-code">  -- A Post has comments that are a</span>
+<span class="hljs-code">  -- list of References to a Comment Thing</span>
+<span class="hljs-code">  --</span>
+<span class="hljs-code">  comments [Comments]</span>
+}
+
+
+<span class="hljs-bullet">--
+</span><span class="hljs-bullet">-- </span>The Comment Thing that we reference
+<span class="hljs-section">-- above is defined here
+--</span>
+
+data Comment {
+<span class="hljs-code">  post Post</span>
+<span class="hljs-code">  author User</span>
+<span class="hljs-code">  text Text::Max280::Markdown</span>
+}
+
+<span class="hljs-bullet">--
+</span><span class="hljs-section">-- And likewise the tag
+--</span>
+
+data Tag {
+<span class="hljs-code">  name Text::Max50::OneOf&lt;A-Z|a-z|0-9|\_|\-|\s&gt;</span>
+}
+
+<span class="hljs-bullet">--
+</span><span class="hljs-bullet">-- </span>We can describe a Datum as one of
+<span class="hljs-section">-- a subset of other Datums
+--</span>
+<span class="hljs-bullet">-- </span>This says that a ReactionSubject is either
+<span class="hljs-section">-- a Post, or a Comment
+--</span>
+
+data ReactionSubject
+<span class="hljs-code">  | Post</span>
+<span class="hljs-code">  | Comment</span>
+
+<span class="hljs-bullet">--
+</span><span class="hljs-bullet">-- </span>We can also have Enums, which would
+<span class="hljs-bullet">-- </span>mean that a ReactionAction is one of
+<span class="hljs-section">-- the things described
+--</span>
+<span class="hljs-bullet">-- </span>The functional difference between Enums
+<span class="hljs-bullet">-- </span>and the above is that an Enum type are
+<span class="hljs-section">-- not other Things while the above are other Things
+--</span>
+<span class="hljs-bullet">-- </span>Ex:
+<span class="hljs-bullet">--    </span>data Foo { name Text }
+<span class="hljs-section">--    data Bar { super Bool }
+--</span>
+<span class="hljs-bullet">--    </span>-- This would mean that OneOf is either data Foo
+<span class="hljs-bullet">--    </span>-- or Data Bar
+<span class="hljs-bullet">--    </span>data OneOf
+<span class="hljs-bullet">--          </span>| Foo
+<span class="hljs-section">--          | Bar
+--</span>
+<span class="hljs-bullet">--    </span>-- This would mean that OneOfEnum is either the
+<span class="hljs-bullet">--    </span>-- Symbol Foo or the Symbol Bar
+<span class="hljs-bullet">--    </span>enum OneOfEnum
+<span class="hljs-bullet">--          </span>| Foo
+<span class="hljs-section">--          | Bar
+--</span>
+
+enum ReactionAction
+<span class="hljs-code">  | Like</span>
+<span class="hljs-code">  | Love</span>
+<span class="hljs-code">  | Frown</span>
+<span class="hljs-code">  | Laugh</span>
+
+data Reaction {
+<span class="hljs-code">  subject ReactionSubject</span>
+<span class="hljs-code">  action ReactionAction</span>
+<span class="hljs-code">  actor User</span>
+}
+
+<span class="hljs-bullet">--
+</span><span class="hljs-bullet">-- </span>We describe our Datums but if we can&#x27;t
+<span class="hljs-bullet">-- </span>do anything with them, then what is this
+<span class="hljs-section">-- for?
+--</span>
+<span class="hljs-bullet">-- </span>Each Datum comes with methods that can
+<span class="hljs-section">-- be used to perform Business Logic
+--</span>
+
+<span class="hljs-bullet">--
+</span><span class="hljs-section">-- I can create a user
+--</span>
+let tim = User&lt;{email: <span class="hljs-emphasis">&#x27;tim@mck-p.com&#x27;</span>, username: <span class="hljs-emphasis">&#x27;tim&#x27;</span>}&gt;
+
+
+<span class="hljs-bullet">--
+</span><span class="hljs-section">-- I can create a post
+--</span>
+let post = Post&lt;{
+<span class="hljs-code">  --</span>
+<span class="hljs-code">  -- and I can attach an author to it</span>
+<span class="hljs-code">  -- by reference</span>
+<span class="hljs-code">  --</span>
+<span class="hljs-code">  author: tim,</span>
+<span class="hljs-code">  title: &#x27;My First Post&#x27;,</span>
+<span class="hljs-code">  description: &#x27;#markdown\n\nAccepted\n-here&#x27;,</span>
+<span class="hljs-code">  tags: [Tag&lt;{name &#x27;demo&#x27;}&gt;]</span>
+}&gt;
+
+<span class="hljs-bullet">--
+</span><span class="hljs-bullet">-- </span>I can create a Comment, referencing
+<span class="hljs-section">-- both User and Post above
+--</span>
+let comment = Comment&lt;{post, author: tim, text: <span class="hljs-emphasis">&#x27;Something cool here!&#x27;</span>}&gt;
+
+<span class="hljs-bullet">--
+</span><span class="hljs-section">-- And finally, let&#x27;s add reactions!
+--</span>
+Reaction&lt;{ subject: post, action: Like, actor: tim }&gt;
+Reaction&lt;{ subject: comment, action: Frown, actor: tim }&gt;
+
+<span class="hljs-bullet">--
+</span><span class="hljs-bullet">-- </span>At the end of the above, we would have some User created,
+<span class="hljs-bullet">-- </span>with the usernmae and email given. That user would be
+<span class="hljs-bullet">-- </span>associated with a Post created, along with the Comment,
+<span class="hljs-section">-- with the Comment being associated with the Post.
+--</span>
+<span class="hljs-bullet">-- </span>Note how there is no discussion of <span class="hljs-emphasis">_where_</span> these values
+<span class="hljs-section">-- are created. I do not think that it matters at this point.
+--</span>
+<span class="hljs-bullet">-- </span>We <span class="hljs-emphasis">_could_</span> store this all in memory, we <span class="hljs-emphasis">_could_</span> have written
+<span class="hljs-bullet">-- </span>it to a file, or even a <span class="hljs-emphasis">_database_</span>. The storage unit is not
+<span class="hljs-section">-- important to the _language_ itself.
+--</span>
+<span class="hljs-section">-- All values are lazy until they are needed to be read from State.
+--</span>
+<span class="hljs-bullet">-- </span>If we have multiple instances of Bigi running, if we want them to
+<span class="hljs-bullet">-- </span>share State, they must point their runtime at the correct State
+<span class="hljs-section">-- instance they are sharing.
+--</span>
+<span class="hljs-section">-- This may come as ENV VARs, Config Files, etc.
+--</span>
+let userId = <span class="hljs-emphasis">&#x27;some-user-id&#x27;</span>
+
+<span class="hljs-bullet">--
+</span><span class="hljs-section">-- I can Read a User by their ID
+--</span>
+let readUser = User.readById&lt;userId&gt;
+
+<span class="hljs-bullet">--
+</span><span class="hljs-section">-- I can Update a User by their ID
+--</span>
+let updatedUser = User.updateById&lt;userId, { email: <span class="hljs-emphasis">&#x27;some-new@email.com&#x27;</span> }&gt;
+
+<span class="hljs-bullet">--
+</span><span class="hljs-section">-- I can Delete a User by their ID
+--</span>
+let deletedUser = User.deleteById&lt;userId&gt;
+
+<span class="hljs-bullet">--
+</span><span class="hljs-bullet">-- </span>That gets CRUD out of the way. Let&#x27;s now see how we might offer
+<span class="hljs-section">-- the programmer a way to query or scan or list the different Datums
+--</span>
+let gmailUsers = User.where&lt;{ email: { contains: <span class="hljs-emphasis">&#x27;@gmail.com&#x27;</span>} }&gt;
+
+<span class="hljs-bullet">--
+</span><span class="hljs-section">-- And basic iteration works
+--</span>
+for &lt;user of gmailUsers&gt; {
+<span class="hljs-code">  User.updateById&lt;user.id, {</span>
+<span class="hljs-code">    email user.email.replace(&#x27;gmail&#x27;, &#x27;feemail&#x27;)</span>
+<span class="hljs-code">  }&gt;</span>
+}
+</code></pre>
+
+              </main>
+    <aside>
+        <h3>Webmentions on this page</h3>
+        <div id="webmentions">
+          Loading...
+        </div>
+    </aside>
+    <footer>
+      <p>
+        Did you spot anything wrong? Do you disagree vehemently? Post on your own site, mark it up as a <a href="https://indieweb.org/reply" target="_blank">
+        <span class="code">reply</span></a>, and email me (email found in my <span class="code">h-card</span>).
+      </p>
+    </footer>
+  </article>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+  <script>
+    
+window.addEventListener('load', async () => {
+  const mentionsHTMLContainer = document.getElementById('webmentions')
+  if (mentionsHTMLContainer) {
+    const mentionHTML = await fetch('/api/webmentions?path=/docs/bigi/example-usage').then(x => {
+      if (x.status < 300) {
+        return x.text()
+      }
+  
+      return '<i>None Available. Send me one?</i>'
+    })
+  
+    mentionsHTMLContainer.innerHTML = mentionHTML
+    console.log('Updated webmentions')
+  }
+})
+
+  </script>
+</body>
+</html>
