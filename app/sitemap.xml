@@ -44,6 +44,12 @@
           
 
             <url>
+              <loc>https://timonapath.com/docs/bigi/data-and-functions</loc>
+              <changefreq>daily</changefreq>
+            </url>
+          
+
+            <url>
               <loc>https://timonapath.com/docs/bigi/example-usage</loc>
               <changefreq>daily</changefreq>
             </url>

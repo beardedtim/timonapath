@@ -4,8 +4,13 @@
         <description><![CDATA[The RSS Feed for the Internet Portal of Tim Roberts]]></description>
         <link>https://timonapath.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 16 Apr 2022 16:48:31 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 26 Apr 2022 20:16:51 GMT</lastBuildDate>
         <atom:link href="https://timonapath.com/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[No title]]></title>
+            <link>https://timonapath.com/docs/bigi/data-and-functions</link>
+            <guid isPermaLink="true">https://timonapath.com/docs/bigi/data-and-functions</guid>
+        </item>
         <item>
             <title><![CDATA[No title]]></title>
             <link>https://timonapath.com/docs/bigi/example-usage</link>
@@ -100,11 +105,6 @@
             <title><![CDATA[No title]]></title>
             <link>https://timonapath.com/snippets/node/readstream</link>
             <guid isPermaLink="true">https://timonapath.com/snippets/node/readstream</guid>
-        </item>
-        <item>
-            <title><![CDATA[No title]]></title>
-            <link>https://timonapath.com/vocabulary/dress-down</link>
-            <guid isPermaLink="true">https://timonapath.com/vocabulary/dress-down</guid>
         </item>
     </channel>
 </rss>

@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:og="http://ogp.me/ns#">
+
+
+<head>
+  <!--
+    Meta Tags
+  -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Following the initial release, we are adding the ability for the
+lexer to understand how to parse data definitions and function calls
+">
+  <meta name="author" content="Tim Roberts">
+
+  <!--
+    Icon Links
+  -->
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="manifest" href="img/site.webmanifest">
+  <!--
+    Facebook OpenGraph Cards
+  -->
+  <meta property="og:url" content="https://timonapath.com/docs/bigi/data-and-functions"/>
+  <meta property="og:title" content="Bigi Docs: Data and Functions
+ | Tim on a Path" />
+  <meta property="og:description" content="Following the initial release, we are adding the ability for the
+lexer to understand how to parse data definitions and function calls
+" />
+  <meta property="og:site_name" content="Tim on a Path" />
+
+  <!--
+    Twitter Card
+  -->
+  <meta name="twitter:card" content="summary" />
+
+  <!--
+    IndieAuth
+  -->
+  <link href="mailto:timroberts@fastmail.org" rel="me" />
+  <link href="https://github.com/beardedtim" rel="me" />
+  <link href="https://indieauth.com/auth" rel="authorization_endpoint" />
+  <link rel="openid.delegate" href="https://timonapath.com/" />
+  <link rel="openid.server" href="https://openid.indieauth.com/openid" />
+    
+  <!--
+    Webmentions
+  -->
+  <link href="https://timonapath.com/api/webmentions" rel="webmentions" />
+
+
+  <!--
+    RSS Feed
+  -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://timonapath.com/rss.xml"/>
+
+  <!--
+    Fonts
+  -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600&display=swap" rel="stylesheet" as="font"
+    type="text/css">
+
+  <!--
+    Styles
+  -->
+  
+    <link rel="stylesheet" href="/css/leaf.css" />
+  
+  <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
+  <title>Bigi Docs: Data and Functions
+ | Tim on a Path</title>
+
+</head>
+
+<body>
+  <article class="h-entry">
+    <header>
+      <a href="https://timonapath.com/docs/bigi/data-and-functions" class="u-url">
+        <h2 class="p-name">Bigi Docs: Data and Functions
+</h2>
+      </a>
+      <p>Published by <a class="p-author h-card" href="https://timonapath.com">Tim Roberts</a>
+        on <time class="dt-published" datetime="undefined">April 26th, 2022 at 4:11 PM</time>
+         |  <span>Updated on <time class="dt-updated" datetime="2022-04-26T20:16:31.179Z">April 26th, 2022 at 4:16 PM</time></span></p>
+              <p class="p-summary">Following the initial release, we are adding the ability for the
+lexer to understand how to parse data definitions and function calls
+</p>
+              </header>
+              <main class="e-content">
+              
+<h2>Data Defintions</h2>
+<pre><code class="language-bigi"><span class="hljs-comment">--</span>
+<span class="hljs-comment">-- a Datum is a _Thing_. By creating one, you are saying to</span>
+<span class="hljs-comment">-- the system &quot;Hey, I want to store some state and offer CRUD&quot;</span>
+<span class="hljs-comment">-- Another way to say it is that when we create a Data, we are</span>
+<span class="hljs-comment">-- creating a new Domain inside of our system, with APIs, DataBase,</span>
+<span class="hljs-comment">-- Caches, etc all created behind the scenes.</span>
+<span class="hljs-comment">--</span>
+<span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">Foo</span> {
+  <span class="hljs-title">name</span>: <span class="hljs-type">Text</span>::<span class="hljs-type">Max50</span>::<span class="hljs-type">Markdown</span>,
+  <span class="hljs-title">age</span>: <span class="hljs-type">Int</span>
+}</span>
+</code></pre>
+<h2>Function Calls</h2>
+<pre><code class="language-bigi"><span class="hljs-bullet">--
+</span><span class="hljs-bullet">-- </span>If you have a function followed by &lt;,
+<span class="hljs-bullet">-- </span>we will parse it as calling or invoking
+<span class="hljs-bullet">-- </span>the function with the arguments supplied,
+<span class="hljs-section">-- separated by a comma, until the closing &gt;
+--</span>
+<span class="hljs-bullet">-- </span>We are calling these CAROT_BRACKETS internally
+<span class="hljs-bullet">-- </span>until I do research and find out what they are
+<span class="hljs-section">-- actually called.
+--</span>
+functionName&lt;functionArg1, functionArg2&gt;
+</code></pre>
+
+              </main>
+    <aside>
+        <h3>Webmentions on this page</h3>
+        <div id="webmentions">
+          Loading...
+        </div>
+    </aside>
+    <footer>
+      <p>
+        Did you spot anything wrong? Do you disagree vehemently? Post on your own site, mark it up as a <a href="https://indieweb.org/reply" target="_blank">
+        <span class="code">reply</span></a>, and email me (email found in my <span class="code">h-card</span>).
+      </p>
+    </footer>
+  </article>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+  <script>
+    
+window.addEventListener('load', async () => {
+  const mentionsHTMLContainer = document.getElementById('webmentions')
+  if (mentionsHTMLContainer) {
+    const mentionHTML = await fetch('/api/webmentions?path=/docs/bigi/data-and-functions').then(x => {
+      if (x.status < 300) {
+        return x.text()
+      }
+  
+      return '<i>None Available. Send me one?</i>'
+    })
+  
+    mentionsHTMLContainer.innerHTML = mentionHTML
+    console.log('Updated webmentions')
+  }
+})
+
+  </script>
+</body>
+</html>
